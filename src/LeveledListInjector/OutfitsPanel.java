@@ -11,6 +11,7 @@ import skyproc.gui.*;
 import skyproc.*;
 import java.awt.BorderLayout;
 import java.util.ArrayList;
+import java.util.Locale;
 
 /**
  *
@@ -99,13 +100,13 @@ public class OutfitsPanel extends SPSettingPanel {
 
                 LLabel name = new LLabel(key, LeveledListInjector.settingsFont, LeveledListInjector.settingsColor);
 
-                LComboBox banditHeavy = new LComboBox("Bandit Heavy Tier:");
+                LComboBox banditHeavy = new LComboBox("Bandit Heavy Tier:");//asdf
                 LComboBox banditBoss = new LComboBox("Bandit Boss Tier:");
                 LComboBox banditLight = new LComboBox("Bandit Light Tier:");
                 LComboBox thalmor = new LComboBox("Thalmor Tier:");
                 LComboBox necromancer = new LComboBox("Necromancer Tier:");
                 LComboBox warlock = new LComboBox("Warlock Tier:");
-
+                        
                 banditHeavy.addItem("None");
                 banditBoss.addItem("None");
                 banditLight.addItem("None");

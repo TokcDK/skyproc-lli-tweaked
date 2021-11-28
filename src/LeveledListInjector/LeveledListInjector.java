@@ -82,13 +82,14 @@ public class LeveledListInjector implements SUM {
         GRUP_TYPE.LVLI, GRUP_TYPE.ARMO, GRUP_TYPE.WEAP, GRUP_TYPE.FLST, GRUP_TYPE.KYWD, GRUP_TYPE.OTFT
     };
     public static String myPatchName = "LLI";
-    public static String authorName = "Dienes";
-    public static String version = "0.6.6";
+    public static String authorName = "Dienes, updated to 0.7+ by TokcDK";
+    public static String version = "0.7 LE";
     public static String welcomeText = "Lootifies weapons and armors";
     public static String descriptionToShowInSUM = "Lootify weapons and armor.";
     public static Color headerColor = new Color(66, 181, 184);  // Teal
     public static Color settingsColor = new Color(72, 179, 58);  // Green
-    public static Font settingsFont = new Font("Serif", Font.BOLD, 15);
+    public static Font settingsFont = new Font("Arial Unicode MS", Font.BOLD, 15);
+    public static Font settingsFont1 = new Font("Times New Roman", Font.BOLD, 7);
     public static SkyProcSave save = new YourSaveFile();
     public static ArrayList<Mod> activeMods = new ArrayList<>(0);
     public static Mod gearVariants;

@@ -11,6 +11,10 @@ import lev.gui.*;
 import org.w3c.dom.Node;
 import skyproc.*;
 import skyproc.gui.*;
+import java.io.PrintStream;
+import java.io.UnsupportedEncodingException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -289,8 +293,11 @@ public class ModPanel extends SPSettingPanel {
                 if (!non_playable && (enchant.isNull()) && newItem) {
                     LPanel panel = new LPanel(275, 200);
                     panel.setSize(300, 80);
-                    LLabel armorName = new LLabel(armor.getName(), LeveledListInjector.settingsFont, LeveledListInjector.settingsColor);
-
+                    //asdf Р¦РµРЅС‚СЂР°Р»СЊРЅР°СЏ РїР°РЅРµР»СЊ СЃ РѕС‚РєСЂС‹С‚С‹Рј СЃРїРёСЃРєРѕРј Р±СЂРѕРЅРё РјРѕРґР°
+                    
+                    
+                    LLabel armorName = new LLabel(armor.getName(), LeveledListInjector.settingsFont1, LeveledListInjector.settingsColor);
+                    
                     LComboBox box = new LComboBox("", LeveledListInjector.settingsFont, LeveledListInjector.settingsColor);
                     for (String s : armorVariantNames) {
                         box.addItem(s);

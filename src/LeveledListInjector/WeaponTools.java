@@ -159,11 +159,13 @@ public class WeaponTools {
     }
 
     static void buildWeaponVariants(FLST baseKeys, FLST varKeys) {
-        FormID axeForm = new FormID("06D932", "Skyrim.esm");
-        KYWD axe = (KYWD) merger.getMajor(axeForm, GRUP_TYPE.KYWD);
+        //FormID axeForm = new FormID("06D932", "Skyrim.esm");
+        //KYWD axe = (KYWD) merger.getMajor(axeForm, GRUP_TYPE.KYWD);
+        KYWD axe = (KYWD) merger.getMajor("WeapTypeBattleaxe", GRUP_TYPE.KYWD);
 
-        FormID hammerForm = new FormID("06D930", "Skyrim.esm");
-        KYWD hammer = (KYWD) merger.getMajor(hammerForm, GRUP_TYPE.KYWD);
+        //FormID hammerForm = new FormID("06D930", "Skyrim.esm");
+        //KYWD hammer = (KYWD) merger.getMajor(hammerForm, GRUP_TYPE.KYWD);
+        KYWD hammer = (KYWD) merger.getMajor("WeapTypeWarhammer", GRUP_TYPE.KYWD);
 
         //SPGlobal.log("Build Variants", "Building Base Weapons");
 //        buildWeaponBases(baseKeys);
@@ -190,18 +192,26 @@ public class WeaponTools {
                                 comp = (WEAP) merger.getMajor(formBase, GRUP_TYPE.WEAP);
                             }
                             if (comp.getWeaponType() == weapon.getWeaponType()) {
-                                //SPGlobal.log("weapon type", weapon.getWeaponType() + " " + comp.getWeaponType());
+                                //SPGlobal.log("line 195 weapon type", weapon.getWeaponType() + " " + comp.getWeaponType());
 
                                 //hack to split warhammers and battleaxes
                                 if (weapon.getWeaponType() == WEAP.WeaponType.TwoHBluntAxe) {
+                                    
+                                    
+                                        
                                     if (weaponHasKeyword(weapon, axe, merger) && weaponHasKeyword(comp, axe, merger)) {
+                                        //SPGlobal.log("Line 199 weapon="+weapon,"comp="+comp,"weaponHasKeyword(weapon, axe, merger)="+weaponHasKeyword(weapon, axe, merger),"weaponHasKeyword(comp, axe, merger)="+weaponHasKeyword(comp, axe, merger));
                                         passed = true;
                                     } else if (weaponHasKeyword(weapon, hammer, merger) && (weaponHasKeyword(comp, hammer, merger))) {
+                                        //SPGlobal.log("Line 199 weapon="+weapon,"comp="+comp,"weaponHasKeyword(weapon, hammer, merger)="+weaponHasKeyword(weapon, hammer, merger),"weaponHasKeyword(comp, hammer, merger)="+weaponHasKeyword(comp, hammer, merger));
                                         passed = true;
                                     } else {
                                         SPGlobal.log("Error building weapon variants", weapon.getEDID()
                                                 + " cannot tell if axe or hammer");
                                     }
+                                    
+                                    
+                                    
 
                                 } else {
                                     passed = true;
@@ -260,13 +270,23 @@ public class WeaponTools {
             if (baseName.contains(templateName)) {
                 ret = baseName.replace(templateName, name);
             } else {
+                //Рљ С…СѓСЏРј РІСЃРµ РїСЂРѕРІРµСЂРєРё, РµСЃР»Рё РЅРµ РїСЂРѕС€Р»Р° РїРµСЂРІР°СЏ, РєРѕРіРґР° РїСЂРѕРІРµСЂСЏРµС‚СЃСЏ РїРѕ С€Р°Р±Р»РѕРЅСѓ С‡Р°СЂ, С‚Рѕ РїСЂРѕСЃС‚Рѕ РЅРµ РјРµРЅСЏС‚СЊ РёРјСЏ
+                //ret = name;
+                
                 String lcseq = lcs(baseName, templateName);
-                if (baseName.contains(lcseq)) {
+                if (lcseq.length() > 1 && baseName.contains(lcseq)) {
                     ret = baseName.replace(lcseq, name);
                 } else {
                     String gcs = longestCommonSubstring(baseName, templateName);
-                    ret = baseName.replace(gcs, name);
+                    if (gcs.length() > 1)
+                    {
+                        ret = baseName.replace(gcs, name);
+                    }else
+                    {
+                        ret = name;
+                    }
                 }
+                
             }
         }
 
