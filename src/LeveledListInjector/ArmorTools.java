@@ -4148,6 +4148,7 @@ FX01 = _
         for (String s : names) {
             if (name.contentEquals(s)) {
                 ret = true;
+                break;
             }
         }
 
@@ -4852,6 +4853,8 @@ FX01 = _
     }
 }
 
+
+// TIERS INFO ------------------------------------------------------------------
 abstract class TierBase {
     // tier identifier
     abstract String EDID();
@@ -4901,7 +4904,6 @@ class ThalmorTier9 extends TierBase {
     }
 }
 
-
 class NecromancerTier0 extends TierBase {
     @Override
     String EDID() {
@@ -4929,7 +4931,6 @@ class NecromancerTier0 extends TierBase {
         return false;
     }
 }
-
 
 class WarlockTier0 extends TierBase {
     @Override
@@ -4959,7 +4960,6 @@ class WarlockTier0 extends TierBase {
     }
 }
 
-
 class ImperialHeavyTier0 extends TierBase {
     @Override
     String EDID() {
@@ -4986,7 +4986,6 @@ class ImperialHeavyTier0 extends TierBase {
         return false;
     }
 }
-
 
 class ImperialLightTier0 extends TierBase {
     @Override
@@ -5015,7 +5014,6 @@ class ImperialLightTier0 extends TierBase {
     }
 }
 
-
 class ImperialBossTier0 extends TierBase {
     @Override
     String EDID() {
@@ -5042,7 +5040,6 @@ class ImperialBossTier0 extends TierBase {
         return false;
     }
 }
-
 
 class StormcloakTier0 extends TierBase {
     @Override
@@ -5071,7 +5068,6 @@ class StormcloakTier0 extends TierBase {
     }
 }
 
-
 class StormcloakBossTier0 extends TierBase {
     @Override
     String EDID() {
@@ -5098,7 +5094,6 @@ class StormcloakBossTier0 extends TierBase {
         return false;
     }
 }
-
 
 class VampireTier0 extends TierBase {
     @Override
@@ -5127,7 +5122,6 @@ class VampireTier0 extends TierBase {
     }
 }
 
-
 class VampireBossTier0 extends TierBase {
     @Override
     String EDID() {
@@ -5154,7 +5148,6 @@ class VampireBossTier0 extends TierBase {
         return false;
     }
 }
-
 
 class ChildTier0 extends TierBase {
     @Override
@@ -5183,7 +5176,6 @@ class ChildTier0 extends TierBase {
     }
 }
 
-
 class NobleTier0 extends TierBase {
     @Override
     String EDID() {
@@ -5210,7 +5202,6 @@ class NobleTier0 extends TierBase {
         return false;
     }
 }
-
 
 class JarlTier0 extends TierBase {
     @Override
@@ -5239,7 +5230,6 @@ class JarlTier0 extends TierBase {
     }
 }
 
-
 class RedguardTier0 extends TierBase {
     @Override
     String EDID() {
@@ -5267,7 +5257,6 @@ class RedguardTier0 extends TierBase {
     }
 }
 
-
 class FarmTier0 extends TierBase {
     @Override
     String EDID() {
@@ -5294,7 +5283,6 @@ class FarmTier0 extends TierBase {
         return false;
     }
 }
-
 
 class DraugrTier0 extends TierBase {
     @Override
@@ -5339,7 +5327,6 @@ class DraugrTier0 extends TierBase {
     }
 }
 
-
 class VigilantTier0 extends TierBase {
     @Override
     String EDID() {
@@ -5366,7 +5353,6 @@ class VigilantTier0 extends TierBase {
         return false;
     }
 }
-
 
 class DawnguardTier0 extends TierBase {
     @Override
@@ -5395,7 +5381,6 @@ class DawnguardTier0 extends TierBase {
     }
 }
 
-
 class DawnguardHeavyTier0 extends TierBase {
     @Override
     String EDID() {
@@ -5422,7 +5407,6 @@ class DawnguardHeavyTier0 extends TierBase {
         return false;
     }
 }
-
 
 class DawnguardLightTier0 extends TierBase {
     @Override
@@ -5451,7 +5435,6 @@ class DawnguardLightTier0 extends TierBase {
     }
 }
 
-
 class SkaalTier0 extends TierBase {
     @Override
     String EDID() {
@@ -5478,7 +5461,6 @@ class SkaalTier0 extends TierBase {
         return false;
     }
 }
-
 
 class HunterTier0 extends TierBase {
     @Override
@@ -5507,7 +5489,6 @@ class HunterTier0 extends TierBase {
     }
 }
 
-
 class WenchTier0 extends TierBase {
     @Override
     String EDID() {
@@ -5534,7 +5515,6 @@ class WenchTier0 extends TierBase {
         return false;
     }
 }
-
 
 class BladesTier0 extends TierBase {
     @Override
@@ -5566,7 +5546,6 @@ class BladesTier0 extends TierBase {
     }
 }
 
-
 class ForswornBossTier0 extends TierBase {
     @Override
     String EDID() {
@@ -5595,7 +5574,6 @@ class ForswornBossTier0 extends TierBase {
         return false;
     }
 }
-
 
 class ForswornTier0 extends TierBase {
     @Override
@@ -5626,7 +5604,6 @@ class ForswornTier0 extends TierBase {
         return false;
     }
 }
-
 class TiersList{
     static TierBase[] Get() {
         return new TierBase[] {
@@ -5659,3 +5636,5 @@ class TiersList{
         };
     }
 }
+
+// TIERS INFO ------------------------------------------------------------------
