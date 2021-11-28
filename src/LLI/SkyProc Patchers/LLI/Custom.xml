@@ -1,2 +1,3322 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<lootification/>
+<lootification>
+  <mod modName="StalhrimExtraCrafting.esp">
+    <item EDID="DLC2ArmorStalhrimHeavyCuirassv2" type="armor">
+      <keyword>DRAGONPLATE</keyword>
+      <keyword>dienes_outfit_SEC_Stalhrim</keyword>
+    </item>
+    <item EDID="DLC2ArmorStalhrimHeavyGauntletsv2" type="armor">
+      <keyword>DRAGONPLATE</keyword>
+      <keyword>dienes_outfit_SEC_Stalhrim</keyword>
+    </item>
+    <item EDID="DLC2ArmorStalhrimHeavyHelmetv2" type="armor">
+      <keyword>DRAGONPLATE</keyword>
+      <keyword>dienes_outfit_SEC_Stalhrim</keyword>
+    </item>
+    <item EDID="DLC2ArmorStalhrimShieldHeavy" type="armor">
+      <keyword>DRAGONPLATE</keyword>
+      <keyword>dienes_outfit_SEC_Stalhrim</keyword>
+    </item>
+    <item EDID="DLC2StalhrimBastardSword" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="DLC2StalhrimClaymore" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+  </mod>
+  <mod modName="Bucklers-Complete.esp">
+    <item EDID="ArmorEbonyShieldLight" type="armor">
+      <keyword>ARMOR_ELVEN_GILDED</keyword>
+      <keyword>dienes_outfit_BC_ArmorEbonyLight</keyword>
+      <keyword>BanditLight_Tier_9</keyword>
+      <keyword>Thalmor_Tier_9</keyword>
+    </item>
+    <item EDID="ArmorEbonyBucklerHeavy" type="armor">
+      <keyword>ARMOR_EBONY</keyword>
+    </item>
+    <item EDID="ArmorEbonyBootsLight" type="armor">
+      <keyword>ARMOR_ELVEN_GILDED</keyword>
+      <keyword>dienes_outfit_BC_ArmorEbonyLight</keyword>
+      <keyword>BanditLight_Tier_9</keyword>
+      <keyword>Thalmor_Tier_9</keyword>
+    </item>
+    <item EDID="ArmorEbonyCuirassLight" type="armor">
+      <keyword>ARMOR_ELVEN_GILDED</keyword>
+      <keyword>dienes_outfit_BC_ArmorEbonyLight</keyword>
+      <keyword>BanditLight_Tier_9</keyword>
+      <keyword>Thalmor_Tier_9</keyword>
+    </item>
+    <item EDID="ArmorEbonyGauntletsLight" type="armor">
+      <keyword>ARMOR_ELVEN_GILDED</keyword>
+      <keyword>dienes_outfit_BC_ArmorEbonyLight</keyword>
+      <keyword>BanditLight_Tier_9</keyword>
+      <keyword>Thalmor_Tier_9</keyword>
+    </item>
+    <item EDID="ArmorEbonyHelmetLight" type="armor">
+      <keyword>ARMOR_ELVEN_GILDED</keyword>
+      <keyword>dienes_outfit_BC_ArmorEbonyLight</keyword>
+      <keyword>BanditLight_Tier_9</keyword>
+      <keyword>Thalmor_Tier_9</keyword>
+    </item>
+    <item EDID="ArmorOrcishShieldLight" type="armor">
+      <keyword>ARMOR_SCALED</keyword>
+      <keyword>dienes_outfit_BC_ArmorOrcishLight</keyword>
+      <keyword>BanditLight_Tier_6</keyword>
+    </item>
+    <item EDID="ArmorOrcishBucklerHeavy" type="armor">
+      <keyword>ARMOR_ORCISH</keyword>
+    </item>
+    <item EDID="ArmorOrcishBootsLight" type="armor">
+      <keyword>ARMOR_SCALED</keyword>
+      <keyword>dienes_outfit_BC_ArmorOrcishLight</keyword>
+      <keyword>BanditLight_Tier_6</keyword>
+    </item>
+    <item EDID="ArmorOrcishCuirassLight" type="armor">
+      <keyword>ARMOR_SCALED</keyword>
+      <keyword>dienes_outfit_BC_ArmorOrcishLight</keyword>
+      <keyword>BanditLight_Tier_6</keyword>
+    </item>
+    <item EDID="ArmorOrcishGauntletsLight" type="armor">
+      <keyword>ARMOR_SCALED</keyword>
+      <keyword>dienes_outfit_BC_ArmorOrcishLight</keyword>
+      <keyword>BanditLight_Tier_6</keyword>
+    </item>
+    <item EDID="ArmorOrcishHelmetLight" type="armor">
+      <keyword>ARMOR_SCALED</keyword>
+      <keyword>dienes_outfit_BC_ArmorOrcishLight</keyword>
+      <keyword>BanditLight_Tier_6</keyword>
+    </item>
+    <item EDID="ArmorSteelShieldLight" type="armor">
+      <keyword>ARMOR_STUDDED</keyword>
+      <keyword>ARMOR_STEEL</keyword>
+      <keyword>dienes_outfit_BC_ArmorSteelLight</keyword>
+      <keyword>dienes_outfit_FalskaarReinforcedGuard</keyword>
+      <keyword>BanditLight_Tier_0</keyword>
+    </item>
+    <item EDID="ArmorSteelBucklerHeavy" type="armor">
+      <keyword>ARMOR_STEEL</keyword>
+    </item>
+    <item EDID="ArmorSteelBuckler" type="armor">
+      <keyword>ARMOR_STUDDED</keyword>
+      <keyword>dienes_outfit_BC_ArmorSteelLight</keyword>
+      <keyword>BanditLight_Tier_0</keyword>
+    </item>
+    <item EDID="ArmorOrcishBuckler" type="armor">
+      <keyword>ARMOR_SCALED</keyword>
+      <keyword>dienes_outfit_BC_ArmorOrcishLight</keyword>
+      <keyword>BanditLight_Tier_6</keyword>
+    </item>
+    <item EDID="ArmorEbonyBuckler" type="armor">
+      <keyword>ARMOR_ELVEN_GILDED</keyword>
+      <keyword>dienes_outfit_BC_ArmorEbonyLight</keyword>
+      <keyword>BanditLight_Tier_9</keyword>
+      <keyword>Thalmor_Tier_9</keyword>
+    </item>
+    <item EDID="ArmorIronShieldLight" type="armor">
+      <keyword>ARMOR_FUR</keyword>
+      <keyword>dienes_outfit_BC_ArmorIronLight</keyword>
+      <keyword>BanditLight_Tier_0</keyword>
+    </item>
+    <item EDID="ArmorIronBucklerHeavy" type="armor">
+      <keyword>ARMOR_IRON</keyword>
+    </item>
+    <item EDID="ArmorIronHelmetLight" type="armor">
+      <keyword>ARMOR_FUR</keyword>
+      <keyword>dienes_outfit_BC_ArmorIronLight</keyword>
+      <keyword>BanditLight_Tier_0</keyword>
+    </item>
+    <item EDID="ArmorIronGauntletsLight" type="armor">
+      <keyword>ARMOR_FUR</keyword>
+      <keyword>dienes_outfit_BC_ArmorIronLight</keyword>
+      <keyword>BanditLight_Tier_0</keyword>
+    </item>
+    <item EDID="ArmorIronCuirassLight" type="armor">
+      <keyword>ARMOR_FUR</keyword>
+      <keyword>dienes_outfit_BC_ArmorIronLight</keyword>
+      <keyword>BanditLight_Tier_0</keyword>
+    </item>
+    <item EDID="ArmorIronBootsLight" type="armor">
+      <keyword>ARMOR_FUR</keyword>
+      <keyword>dienes_outfit_BC_ArmorIronLight</keyword>
+      <keyword>BanditLight_Tier_0</keyword>
+    </item>
+    <item EDID="ArmorIronBuckler" type="armor">
+      <keyword>ARMOR_FUR</keyword>
+      <keyword>dienes_outfit_BC_ArmorIronLight</keyword>
+      <keyword>BanditLight_Tier_0</keyword>
+    </item>
+    <item EDID="ArmorIronBandedBucklerHeavy" type="armor">
+      <keyword>ARMOR_BANDED</keyword>
+    </item>
+    <item EDID="ArmorIronBandedCuirassLight" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="ArmorDaedricBucklerHeavy" type="armor">
+      <keyword>ARMOR_DAEDRIC</keyword>
+    </item>
+    <item EDID="ArmorDragonplateBucklerHeavy" type="armor">
+      <keyword>DRAGONPLATE</keyword>
+    </item>
+    <item EDID="ArmorDwarvenBucklerHeavy" type="armor">
+      <keyword>ARMOR_DWARVEN</keyword>
+    </item>
+    <item EDID="ArmorImperialBucklerHeavy" type="armor">
+      <keyword>ARMOR_IMPERIAL</keyword>
+    </item>
+    <item EDID="ArmorElvenCuirassHeavy" type="armor">
+      <keyword>ARMOR_PLATE</keyword>
+      <keyword>dienes_outfit_BC_ArmorElvenHeavy</keyword>
+      <keyword>BanditHeavy_Tier_6</keyword>
+      <keyword>BanditBoss_Tier_5</keyword>
+      <keyword>Warlock_Tier_6</keyword>
+    </item>
+    <item EDID="ArmorElvenGauntletsHeavy" type="armor">
+      <keyword>ARMOR_PLATE</keyword>
+      <keyword>dienes_outfit_BC_ArmorElvenHeavy</keyword>
+      <keyword>BanditHeavy_Tier_6</keyword>
+      <keyword>BanditBoss_Tier_5</keyword>
+      <keyword>Warlock_Tier_6</keyword>
+    </item>
+    <item EDID="ArmorElvenGildedCuirassHeavy" type="armor">
+      <keyword>ARMOR_EBONY</keyword>
+      <keyword>dienes_outfit_BC_ArmorElvenHeavy</keyword>
+      <keyword>BanditHeavy_Tier_6</keyword>
+      <keyword>BanditBoss_Tier_5</keyword>
+      <keyword>Warlock_Tier_6</keyword>
+    </item>
+    <item EDID="ArmorElvenBootsHeavy" type="armor">
+      <keyword>ARMOR_PLATE</keyword>
+      <keyword>dienes_outfit_BC_ArmorElvenHeavy</keyword>
+      <keyword>BanditHeavy_Tier_6</keyword>
+      <keyword>BanditBoss_Tier_5</keyword>
+      <keyword>Warlock_Tier_6</keyword>
+    </item>
+    <item EDID="ArmorElvenHelmetHeavy" type="armor">
+      <keyword>ARMOR_PLATE</keyword>
+      <keyword>dienes_outfit_BC_ArmorElvenHeavy</keyword>
+      <keyword>BanditHeavy_Tier_6</keyword>
+      <keyword>BanditBoss_Tier_5</keyword>
+      <keyword>Warlock_Tier_6</keyword>
+    </item>
+    <item EDID="ArmorGlassCuirassHeavy" type="armor">
+      <keyword>DRAGONPLATE</keyword>
+      <keyword>dienes_outfit_BC_ArmorGlassHeavy</keyword>
+      <keyword>BanditHeavy_Tier_13</keyword>
+      <keyword>BanditBoss_Tier_12</keyword>
+    </item>
+    <item EDID="ArmorGlassGauntletsHeavy" type="armor">
+      <keyword>DRAGONPLATE</keyword>
+      <keyword>dienes_outfit_BC_ArmorGlassHeavy</keyword>
+      <keyword>BanditHeavy_Tier_13</keyword>
+      <keyword>BanditBoss_Tier_12</keyword>
+    </item>
+    <item EDID="ArmorGlassBootsHeavy" type="armor">
+      <keyword>DRAGONPLATE</keyword>
+      <keyword>dienes_outfit_BC_ArmorGlassHeavy</keyword>
+      <keyword>BanditHeavy_Tier_13</keyword>
+      <keyword>BanditBoss_Tier_12</keyword>
+    </item>
+    <item EDID="ArmorGlassHelmetHeavy" type="armor">
+      <keyword>DRAGONPLATE</keyword>
+      <keyword>dienes_outfit_BC_ArmorGlassHeavy</keyword>
+      <keyword>BanditHeavy_Tier_13</keyword>
+      <keyword>BanditBoss_Tier_12</keyword>
+    </item>
+    <item EDID="ArmorGlassShieldHeavy" type="armor">
+      <keyword>DRAGONPLATE</keyword>
+      <keyword>dienes_outfit_BC_ArmorGlassHeavy</keyword>
+      <keyword>BanditHeavy_Tier_13</keyword>
+      <keyword>BanditBoss_Tier_12</keyword>
+    </item>
+    <item EDID="ArmorElvenShieldHeavy" type="armor">
+      <keyword>ARMOR_PLATE</keyword>
+      <keyword>dienes_outfit_BC_ArmorElvenHeavy</keyword>
+      <keyword>BanditHeavy_Tier_6</keyword>
+      <keyword>BanditBoss_Tier_5</keyword>
+      <keyword>Warlock_Tier_6</keyword>
+    </item>
+    <item EDID="ArmorHideBootsHeavy" type="armor">
+      <keyword>ARMOR_BANDED</keyword>
+      <keyword>dienes_outfit_BC_ArmorHideHeavy</keyword>
+      <keyword>BanditHeavy_Tier_0</keyword>
+    </item>
+    <item EDID="ArmorHideCuirassHeavy" type="armor">
+      <keyword>ARMOR_BANDED</keyword>
+      <keyword>dienes_outfit_BC_ArmorHideHeavy</keyword>
+      <keyword>BanditHeavy_Tier_0</keyword>
+    </item>
+    <item EDID="ArmorHideGauntletsHeavy" type="armor">
+      <keyword>ARMOR_BANDED</keyword>
+      <keyword>dienes_outfit_BC_ArmorHideHeavy</keyword>
+      <keyword>BanditHeavy_Tier_0</keyword>
+    </item>
+    <item EDID="ArmorHideHelmetHeavy" type="armor">
+      <keyword>ARMOR_BANDED</keyword>
+      <keyword>dienes_outfit_BC_ArmorHideHeavy</keyword>
+      <keyword>BanditHeavy_Tier_0</keyword>
+    </item>
+    <item EDID="ArmorHideShieldHeavy" type="armor">
+      <keyword>ARMOR_BANDED</keyword>
+      <keyword>dienes_outfit_BC_ArmorHideHeavy</keyword>
+      <keyword>BanditHeavy_Tier_0</keyword>
+    </item>
+    <item EDID="ArmorLeatherBootsHeavy" type="armor">
+      <keyword>ARMOR_DWARVEN</keyword>
+      <keyword>dienes_outfit_BC_ArmorLeatherHeavy</keyword>
+      <keyword>BanditHeavy_Tier_4</keyword>
+      <keyword>BanditBoss_Tier_3</keyword>
+    </item>
+    <item EDID="ArmorLeatherCuirassHeavy" type="armor">
+      <keyword>ARMOR_DWARVEN</keyword>
+      <keyword>dienes_outfit_BC_ArmorLeatherHeavy</keyword>
+      <keyword>BanditHeavy_Tier_4</keyword>
+      <keyword>BanditBoss_Tier_3</keyword>
+    </item>
+    <item EDID="ArmorLeatherGauntletsHeavy" type="armor">
+      <keyword>ARMOR_DWARVEN</keyword>
+      <keyword>dienes_outfit_BC_ArmorLeatherHeavy</keyword>
+      <keyword>BanditHeavy_Tier_4</keyword>
+      <keyword>BanditBoss_Tier_3</keyword>
+    </item>
+    <item EDID="ArmorLeatherHelmetHeavy" type="armor">
+      <keyword>ARMOR_DWARVEN</keyword>
+      <keyword>dienes_outfit_BC_ArmorLeatherHeavy</keyword>
+      <keyword>BanditHeavy_Tier_4</keyword>
+      <keyword>BanditBoss_Tier_3</keyword>
+    </item>
+    <item EDID="ArmorDaedricBootsLight" type="armor">
+      <keyword>ARMOR_DRAGONSCALE</keyword>
+      <keyword>dienes_outfit_BC_ArmorDaedricLight</keyword>
+      <keyword>Necromancer_Tier_16</keyword>
+    </item>
+    <item EDID="ArmorDaedricCuirassLight" type="armor">
+      <keyword>ARMOR_DRAGONSCALE</keyword>
+      <keyword>dienes_outfit_BC_ArmorDaedricLight</keyword>
+      <keyword>Necromancer_Tier_16</keyword>
+    </item>
+    <item EDID="ArmorDaedricGauntletsLight" type="armor">
+      <keyword>ARMOR_DRAGONSCALE</keyword>
+      <keyword>dienes_outfit_BC_ArmorDaedricLight</keyword>
+      <keyword>Necromancer_Tier_16</keyword>
+    </item>
+    <item EDID="ArmorDaedricHelmetLight" type="armor">
+      <keyword>ARMOR_DRAGONSCALE</keyword>
+      <keyword>dienes_outfit_BC_ArmorDaedricLight</keyword>
+      <keyword>Necromancer_Tier_16</keyword>
+    </item>
+    <item EDID="ArmorDwarvenBootsLight" type="armor">
+      <keyword>ARMOR_LEATHER</keyword>
+      <keyword>dienes_outfit_BC_ArmorDwarvenLight</keyword>
+      <keyword>BanditLight_Tier_3</keyword>
+      <keyword>Warlock_Tier_3</keyword>
+    </item>
+    <item EDID="ArmorDwarvenCuirassLight" type="armor">
+      <keyword>ARMOR_LEATHER</keyword>
+      <keyword>dienes_outfit_BC_ArmorDwarvenLight</keyword>
+      <keyword>BanditLight_Tier_3</keyword>
+      <keyword>Warlock_Tier_3</keyword>
+    </item>
+    <item EDID="ArmorDwarvenGauntletsLight" type="armor">
+      <keyword>ARMOR_LEATHER</keyword>
+      <keyword>dienes_outfit_BC_ArmorDwarvenLight</keyword>
+      <keyword>BanditLight_Tier_3</keyword>
+      <keyword>Warlock_Tier_3</keyword>
+    </item>
+    <item EDID="ArmorDwarvenHelmetLight" type="armor">
+      <keyword>ARMOR_LEATHER</keyword>
+      <keyword>dienes_outfit_BC_ArmorDwarvenLight</keyword>
+      <keyword>BanditLight_Tier_3</keyword>
+      <keyword>Warlock_Tier_3</keyword>
+    </item>
+    <item EDID="ArmorSteelBootsALight" type="armor">
+      <keyword>ARMOR_STUDDED</keyword>
+      <keyword>dienes_outfit_BC_ArmorSteelLight</keyword>
+      <keyword>BanditLight_Tier_0</keyword>
+    </item>
+    <item EDID="ArmorSteelCuirassALight" type="armor">
+      <keyword>ARMOR_STUDDED</keyword>
+      <keyword>dienes_outfit_BC_ArmorSteelLight</keyword>
+      <keyword>BanditLight_Tier_0</keyword>
+    </item>
+    <item EDID="ArmorSteelGauntletsALight" type="armor">
+      <keyword>ARMOR_STUDDED</keyword>
+      <keyword>dienes_outfit_BC_ArmorSteelLight</keyword>
+      <keyword>BanditLight_Tier_0</keyword>
+    </item>
+    <item EDID="ArmorSteelHelmetBLight" type="armor">
+      <keyword>ARMOR_STUDDED</keyword>
+      <keyword>dienes_outfit_BC_ArmorSteelLight</keyword>
+      <keyword>BanditLight_Tier_0</keyword>
+    </item>
+    <item EDID="ArmorSteelPlateBootsLight" type="armor">
+      <keyword>ARMOR_ELVEN</keyword>
+      <keyword>dienes_outfit_BC_ArmorPlateLight</keyword>
+      <keyword>BanditLight_Tier_4</keyword>
+    </item>
+    <item EDID="ArmorSteelPlateCuirassLight" type="armor">
+      <keyword>ARMOR_ELVEN</keyword>
+      <keyword>dienes_outfit_BC_ArmorPlateLight</keyword>
+      <keyword>BanditLight_Tier_4</keyword>
+    </item>
+    <item EDID="ArmorSteelPlateGauntletsLight" type="armor">
+      <keyword>ARMOR_ELVEN</keyword>
+      <keyword>dienes_outfit_BC_ArmorPlateLight</keyword>
+      <keyword>BanditLight_Tier_4</keyword>
+    </item>
+    <item EDID="ArmorSteelPlateHelmetLight" type="armor">
+      <keyword>ARMOR_ELVEN</keyword>
+      <keyword>dienes_outfit_BC_ArmorPlateLight</keyword>
+      <keyword>BanditLight_Tier_4</keyword>
+    </item>
+    <item EDID="ArmorIronBandedBuckler" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="ArmorDaedricBuckler" type="armor">
+      <keyword>ARMOR_DRAGONSCALE</keyword>
+      <keyword>dienes_outfit_BC_ArmorDaedricLight</keyword>
+      <keyword>Necromancer_Tier_16</keyword>
+    </item>
+    <item EDID="ArmorDragonplateBuckler" type="armor">
+      <keyword>ARMOR_GLASS</keyword>
+    </item>
+    <item EDID="ArmorDragonscaleBuckler" type="armor">
+      <keyword>ARMOR_DRAGONSCALE</keyword>
+    </item>
+    <item EDID="ArmorGlassBucklerHeavy" type="armor">
+      <keyword>DRAGONPLATE</keyword>
+      <keyword>dienes_outfit_BC_ArmorGlassHeavy</keyword>
+      <keyword>BanditHeavy_Tier_13</keyword>
+      <keyword>BanditBoss_Tier_12</keyword>
+    </item>
+    <item EDID="ArmorElvenBucklerHeavy" type="armor">
+      <keyword>ARMOR_PLATE</keyword>
+      <keyword>dienes_outfit_BC_ArmorElvenHeavy</keyword>
+      <keyword>BanditHeavy_Tier_6</keyword>
+      <keyword>BanditBoss_Tier_5</keyword>
+      <keyword>Warlock_Tier_6</keyword>
+    </item>
+    <item EDID="ArmorDwarvenBuckler" type="armor">
+      <keyword>ARMOR_LEATHER</keyword>
+      <keyword>dienes_outfit_BC_ArmorDwarvenLight</keyword>
+      <keyword>BanditLight_Tier_3</keyword>
+      <keyword>Warlock_Tier_3</keyword>
+    </item>
+    <item EDID="ArmorElvenBuckler" type="armor">
+      <keyword>ARMOR_ELVEN</keyword>
+    </item>
+    <item EDID="ArmorGlassBuckler" type="armor">
+      <keyword>ARMOR_GLASS</keyword>
+    </item>
+    <item EDID="ArmorHideBuckler" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="ArmorImperialBuckler" type="armor">
+      <keyword>ARMOR_IMPERIAL_LIGHT</keyword>
+    </item>
+    <item EDID="ArmorIronBandedShieldLight" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="ArmorDaedricShieldLight" type="armor">
+      <keyword>ARMOR_DRAGONSCALE</keyword>
+      <keyword>dienes_outfit_BC_ArmorDaedricLight</keyword>
+      <keyword>Necromancer_Tier_16</keyword>
+    </item>
+    <item EDID="ArmorDwarvenShieldLight" type="armor">
+      <keyword>ARMOR_LEATHER</keyword>
+      <keyword>dienes_outfit_BC_ArmorDwarvenLight</keyword>
+      <keyword>BanditLight_Tier_3</keyword>
+      <keyword>Warlock_Tier_3</keyword>
+    </item>
+    <item EDID="ArmorSteelBootsBLight" type="armor">
+      <keyword>ARMOR_IMPERIAL_LIGHT</keyword>
+    </item>
+    <item EDID="ArmorSteelCuirassBLight" type="armor">
+      <keyword>ARMOR_IMPERIAL_LIGHT</keyword>
+    </item>
+    <item EDID="ArmorSteelGauntletsBLight" type="armor">
+      <keyword>ARMOR_IMPERIAL_LIGHT</keyword>
+    </item>
+    <item EDID="ArmorSteelHelmetALight" type="armor">
+      <keyword>ARMOR_IMPERIAL_LIGHT</keyword>
+    </item>
+  </mod>
+  <mod modName="DragonbornArmorFix.esp">
+    <item EDID="DLC2ArmorChitinHeavyShield" type="armor">
+      <keyword>ARMOR_PLATE</keyword>
+      <keyword>dienes_outfit_DB_ChitinHeavy</keyword>
+    </item>
+  </mod>
+  <mod modName="SkyRe_Main.esp">
+    <item EDID="xxxWAYQualityLeatherBoots" type="armor">
+      <keyword>ARMOR_LEATHER</keyword>
+      <keyword>dienes_outfit_SkyRe_MainxxxWAYQualityLeather</keyword>
+    </item>
+    <item EDID="xxxWAYQualityLeatherArmor" type="armor">
+      <keyword>ARMOR_LEATHER</keyword>
+      <keyword>dienes_outfit_SkyRe_MainxxxWAYQualityLeather</keyword>
+    </item>
+    <item EDID="xxxWAYQualityLeatherBracers" type="armor">
+      <keyword>ARMOR_LEATHER</keyword>
+      <keyword>dienes_outfit_SkyRe_MainxxxWAYQualityLeather</keyword>
+    </item>
+    <item EDID="xxxWAYQualityLeatherHelmet" type="armor">
+      <keyword>ARMOR_LEATHER</keyword>
+      <keyword>dienes_outfit_SkyRe_MainxxxWAYQualityLeather</keyword>
+    </item>
+    <item EDID="xxxLongswordEbony" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="xxxBattlestaffGlass" type="weapon">
+      <keyword>WEAPON_GLASS</keyword>
+    </item>
+    <item EDID="xxxSaberSteel" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="xxxBattlestaffTapered" type="weapon">
+      <keyword>WEAPON_IRON</keyword>
+    </item>
+    <item EDID="xxxNodachiDaedric" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="xxxNodachiIron" type="weapon">
+      <keyword>WEAPON_IRON</keyword>
+    </item>
+    <item EDID="xxxNodachiSteel" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="xxxBastardSwordEasternDwemer" type="weapon">
+      <keyword>WEAPON_DWARVEN</keyword>
+    </item>
+    <item EDID="xxxBattlestaffEbony" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="xxxBattlestaffDaedric" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="xxxScimitarSteel" type="weapon">
+      <keyword>WEAPON_REDGUARD</keyword>
+    </item>
+    <item EDID="xxxScimitarSilver" type="weapon">
+      <keyword>WEAPON_REDGUARD</keyword>
+    </item>
+    <item EDID="xxxBastardSwordDaedric" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="xxxBastardSwordEbony" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="xxxScimitarEbony" type="weapon">
+      <keyword>WEAPON_REDGUARD</keyword>
+    </item>
+    <item EDID="xxxBastardSwordSteel" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="xxxBastardSwordOrcish" type="weapon">
+      <keyword>WEAPON_ORCISH</keyword>
+    </item>
+    <item EDID="xxxBastardSwordSilver" type="weapon">
+      <keyword>WEAPON_SILVER</keyword>
+    </item>
+    <item EDID="xxxKatanaDaedric" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="xxxSaberIron" type="weapon">
+      <keyword>WEAPON_IRON</keyword>
+    </item>
+    <item EDID="xxxKatanaSteel" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="xxxKatanaIron" type="weapon">
+      <keyword>WEAPON_IRON</keyword>
+    </item>
+    <item EDID="xxxShortSwordEbony" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="xxxShortswordDraugrHoned" type="weapon">
+      <keyword>WEAPON_DRAUGRHONED</keyword>
+    </item>
+    <item EDID="xxxWarAxeSilver" type="weapon">
+      <keyword>WEAPON_SILVER</keyword>
+    </item>
+    <item EDID="xxxKatanaSilver" type="weapon">
+      <keyword>WEAPON_SILVER</keyword>
+    </item>
+    <item EDID="xxxClubSteel0" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="xxxNodachiSilver" type="weapon">
+      <keyword>WEAPON_SILVER</keyword>
+    </item>
+    <item EDID="xxxClubIron0" type="weapon">
+      <keyword>WEAPON_IRON</keyword>
+    </item>
+    <item EDID="xxxTantoDaedric" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="xxxShortSwordElven" type="weapon">
+      <keyword>WEAPON_ELVEN</keyword>
+    </item>
+    <item EDID="xxxDaedricLongBow" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="xxxDraugrLongBow" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="xxxEasternDwemerLongBow" type="weapon">
+      <keyword>WEAPON_DWARVEN</keyword>
+    </item>
+    <item EDID="xxxEbonyLongBow" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="xxxFalmerLongBow" type="weapon">
+      <keyword>WEAPON_FALMER</keyword>
+    </item>
+    <item EDID="xxxGlassLongBow" type="weapon">
+      <keyword>WEAPON_GLASS</keyword>
+    </item>
+    <item EDID="xxxNordHeroLongBow" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="xxxOrcishLongBow" type="weapon">
+      <keyword>WEAPON_ORCISH</keyword>
+    </item>
+    <item EDID="xxxStormCloakLongBow" type="weapon">
+      <keyword>WEAPON_IRON</keyword>
+    </item>
+    <item EDID="xxxShortswordDraugr" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="xxxShortSwordDaedric" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="xxxShortSwordDwarven" type="weapon">
+      <keyword>WEAPON_DWARVEN</keyword>
+    </item>
+    <item EDID="xxxShortSwordSteel" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="xxxShortswordSkyforgeSteel" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="xxxShortswordSilver" type="weapon">
+      <keyword>WEAPON_SILVER</keyword>
+    </item>
+    <item EDID="xxxShortSwordOrcish" type="weapon">
+      <keyword>WEAPON_ORCISH</keyword>
+    </item>
+    <item EDID="xxxShortswordNordHero" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="xxxShortSwordIron" type="weapon">
+      <keyword>WEAPON_IRON</keyword>
+    </item>
+    <item EDID="xxxshortswordImperial" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="xxxShortSwordGlass" type="weapon">
+      <keyword>WEAPON_GLASS</keyword>
+    </item>
+    <item EDID="xxxTantoSteel" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="xxxTantoSilver" type="weapon">
+      <keyword>WEAPON_SILVER</keyword>
+    </item>
+    <item EDID="xxxTantoIron" type="weapon">
+      <keyword>WEAPON_IRON</keyword>
+    </item>
+    <item EDID="xxxWakizashiSilver" type="weapon">
+      <keyword>WEAPON_SILVER</keyword>
+    </item>
+    <item EDID="xxxAshLongBow" type="weapon">
+      <keyword>WEAPON_IRON</keyword>
+    </item>
+    <item EDID="xxxTESTBOW" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="xxxWakizashiIron" type="weapon">
+      <keyword>WEAPON_IRON</keyword>
+    </item>
+    <item EDID="xxxWakizashiSteel" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="xxxWakizashiDaedric" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="xxxLongswordEasternDwemer" type="weapon">
+      <keyword>WEAPON_DWARVEN</keyword>
+    </item>
+    <item EDID="xxxLongswordIron" type="weapon">
+      <keyword>WEAPON_IRON</keyword>
+    </item>
+    <item EDID="xxxLongswordGlass" type="weapon">
+      <keyword>WEAPON_GLASS</keyword>
+    </item>
+    <item EDID="xxxBroadswordShadowsting" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="xxxLongswordDaedric" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="xxxLongswordSilver" type="weapon">
+      <keyword>WEAPON_SILVER</keyword>
+    </item>
+    <item EDID="xxxLongswordElven" type="weapon">
+      <keyword>WEAPON_ELVEN</keyword>
+    </item>
+    <item EDID="xxxLongswordSteel" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="xxxShortspearGlass" type="weapon">
+      <keyword>WEAPON_GLASS</keyword>
+    </item>
+    <item EDID="xxxShortspearElven" type="weapon">
+      <keyword>WEAPON_ELVEN</keyword>
+    </item>
+    <item EDID="xxxDaggerSilver" type="weapon">
+      <keyword>WEAPON_SILVER</keyword>
+    </item>
+    <item EDID="xxxShortspearSteel" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="xxxShortspearSkyforgeSteel" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="xxxShortspearNordHero" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="xxxWarhammerDraugrHoned" type="weapon">
+      <keyword>WEAPON_DRAUGRHONED</keyword>
+    </item>
+    <item EDID="xxxShortspearDwarven" type="weapon">
+      <keyword>WEAPON_DWARVEN</keyword>
+    </item>
+    <item EDID="xxxShortspearIron" type="weapon">
+      <keyword>WEAPON_IRON</keyword>
+    </item>
+    <item EDID="xxxShortspearDraugr" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="xxxShortspearDraugrHoned" type="weapon">
+      <keyword>WEAPON_DRAUGRHONED</keyword>
+    </item>
+    <item EDID="xxxWarhammerNordHero" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="xxxMaceDraugr" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="xxxHalberdIron" type="weapon">
+      <keyword>WEAPON_IRON</keyword>
+    </item>
+    <item EDID="xxxMaceSkyforgeSteel" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="xxxMaceNordfHero" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="xxxBattleaxeForsworn" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="xxxWarhammerDraugr" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="xxxClubDaedric" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="xxxClubDraugr" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="xxxClubFalmer" type="weapon">
+      <keyword>WEAPON_FALMER</keyword>
+    </item>
+    <item EDID="xxxIronHatchet" type="weapon">
+      <keyword>WEAPON_IRON</keyword>
+    </item>
+    <item EDID="xxxOrcishHatchet" type="weapon">
+      <keyword>WEAPON_ORCISH</keyword>
+    </item>
+    <item EDID="xxxSteelHatchet" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="xxxElvenHammer" type="weapon">
+      <keyword>WEAPON_ELVEN</keyword>
+    </item>
+    <item EDID="xxxGlassHammer" type="weapon">
+      <keyword>WEAPON_GLASS</keyword>
+    </item>
+    <item EDID="xxxIronHammer" type="weapon">
+      <keyword>WEAPON_IRON</keyword>
+    </item>
+    <item EDID="xxxOrcishHammer" type="weapon">
+      <keyword>WEAPON_ORCISH</keyword>
+    </item>
+    <item EDID="xxxEbonyHammer" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="xxxDwarvenHatchet" type="weapon">
+      <keyword>WEAPON_DWARVEN</keyword>
+    </item>
+    <item EDID="xxxDaedricHatchet" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="xxxSkyforgeSteelHatchet" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="xxxNordHeroHatchet" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="xxxDraugrHatchetHoned" type="weapon">
+      <keyword>WEAPON_DRAUGRHONED</keyword>
+    </item>
+    <item EDID="xxxDraugrHatchet" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="xxxSteelHammer" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="xxxDwarvenHammer" type="weapon">
+      <keyword>WEAPON_DWARVEN</keyword>
+    </item>
+    <item EDID="xxxLongmaceSteel" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="xxxLongmaceGlass" type="weapon">
+      <keyword>WEAPON_GLASS</keyword>
+    </item>
+    <item EDID="xxxLongmaceElven" type="weapon">
+      <keyword>WEAPON_ELVEN</keyword>
+    </item>
+    <item EDID="xxxLongmaceEbony" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="xxxLongmaceDwarven" type="weapon">
+      <keyword>WEAPON_DWARVEN</keyword>
+    </item>
+    <item EDID="xxxLongmaceDaedric" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="xxxClubSteel1" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="xxxClubOrcish" type="weapon">
+      <keyword>WEAPON_ORCISH</keyword>
+    </item>
+    <item EDID="xxxClubIron1" type="weapon">
+      <keyword>WEAPON_IRON</keyword>
+    </item>
+    <item EDID="xxxClubForsworn" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="xxxGlaiveOrcish" type="weapon">
+      <keyword>WEAPON_ORCISH</keyword>
+    </item>
+    <item EDID="xxxShortswordFalmer" type="weapon">
+      <keyword>WEAPON_FALMER</keyword>
+    </item>
+    <item EDID="xxxShortswordFalmerHoned" type="weapon">
+      <keyword>WEAPON_FALMERHONED</keyword>
+    </item>
+    <item EDID="xxxGlaiveEbony" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="xxxGlaiveDaedric" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="xxxWarhammerSkyforgeSteel" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="xxxMaceDraugrHoned" type="weapon">
+      <keyword>WEAPON_DRAUGRHONED</keyword>
+    </item>
+    <item EDID="xxxScimitarIron" type="weapon">
+      <keyword>WEAPON_REDGUARD</keyword>
+    </item>
+    <item EDID="xxxImperialLongbow" type="weapon">
+      <keyword>WEAPON_IMPERIAL</keyword>
+    </item>
+    <item EDID="xxxScimitarGlass" type="weapon">
+      <keyword>WEAPON_REDGUARD</keyword>
+    </item>
+    <item EDID="xxxBattlestaffSteel" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="xxxBattlestaffSilver" type="weapon">
+      <keyword>WEAPON_SILVER</keyword>
+    </item>
+    <item EDID="xxxForswornLongBow" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="xxxElvenLongBow" type="weapon">
+      <keyword>WEAPON_ELVEN</keyword>
+    </item>
+    <item EDID="xxxYariDraugr" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="xxxYariDraugrHoned" type="weapon">
+      <keyword>WEAPON_DRAUGRHONED</keyword>
+    </item>
+    <item EDID="xxxYariDwarven" type="weapon">
+      <keyword>WEAPON_DWARVEN</keyword>
+    </item>
+    <item EDID="xxxYariElven" type="weapon">
+      <keyword>WEAPON_ELVEN</keyword>
+    </item>
+    <item EDID="xxxYariForsworn" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="xxxYariGlass" type="weapon">
+      <keyword>WEAPON_GLASS</keyword>
+    </item>
+    <item EDID="xxxYariImperial" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="xxxYariIron" type="weapon">
+      <keyword>WEAPON_IRON</keyword>
+    </item>
+    <item EDID="xxxYariNordHero" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="xxxYariSilver" type="weapon">
+      <keyword>WEAPON_SILVER</keyword>
+    </item>
+    <item EDID="xxxYariSkyforgeSteel" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="xxxYariSteel" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="xxxHalberdDaedric" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="xxxHalberdDwarven" type="weapon">
+      <keyword>WEAPON_DWARVEN</keyword>
+    </item>
+    <item EDID="xxxHalberdEbony" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="xxxHalberdElven" type="weapon">
+      <keyword>WEAPON_ELVEN</keyword>
+    </item>
+    <item EDID="xxxHalberdGlass" type="weapon">
+      <keyword>WEAPON_GLASS</keyword>
+    </item>
+    <item EDID="xxxHalberdOrcish" type="weapon">
+      <keyword>WEAPON_ORCISH</keyword>
+    </item>
+    <item EDID="xxxHalberdSteel" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="xxxGlaiveElven" type="weapon">
+      <keyword>WEAPON_ELVEN</keyword>
+    </item>
+    <item EDID="xxxBattleaxeSilver" type="weapon">
+      <keyword>WEAPON_SILVER</keyword>
+    </item>
+    <item EDID="xxxEbonyHatchet" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="xxxDaedricHammer" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="xxxElvenHatchet" type="weapon">
+      <keyword>WEAPON_ELVEN</keyword>
+    </item>
+    <item EDID="xxxGlassHatchet" type="weapon">
+      <keyword>WEAPON_GLASS</keyword>
+    </item>
+    <item EDID="xxxWarAxeEasternDwemer" type="weapon">
+      <keyword>WEAPON_DWARVEN</keyword>
+    </item>
+    <item EDID="xxxStalhrimLongBow" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="xxxNordicLongBow" type="weapon">
+      <keyword>WEAPON_ELVEN</keyword>
+    </item>
+    <item EDID="xxxShortspearDragonbone" type="weapon">
+      <keyword>WEAPON_DRAGONBONE</keyword>
+    </item>
+    <item EDID="xxxNordicHammer" type="weapon">
+      <keyword>WEAPON_ELVEN</keyword>
+    </item>
+    <item EDID="xxxNordicHatchet" type="weapon">
+      <keyword>WEAPON_ELVEN</keyword>
+    </item>
+    <item EDID="xxxStalhrimHammer" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="xxxYariDragonbone" type="weapon">
+      <keyword>WEAPON_DRAGONBONE</keyword>
+    </item>
+    <item EDID="xxxStalhrimHatchet" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="xxxDragonboneLongBow" type="weapon">
+      <keyword>WEAPON_DRAGONBONE</keyword>
+    </item>
+  </mod>
+  <mod modName="Druidessentials.esp">
+    <item EDID="DruidicBootsClone" type="armor">
+      <keyword>ROBES_MAGE_ARMOR</keyword>
+      <keyword>dienes_outfit_DE_DruidicArmor</keyword>
+      <keyword>Warlock_Tier_6</keyword>
+    </item>
+    <item EDID="DruidicCuirassClone" type="armor">
+      <keyword>ROBES_MAGE_ARMOR</keyword>
+      <keyword>dienes_outfit_DE_DruidicArmor</keyword>
+      <keyword>Warlock_Tier_6</keyword>
+    </item>
+    <item EDID="DruidicHelmClone" type="armor">
+      <keyword>ROBES_MAGE_ARMOR</keyword>
+      <keyword>dienes_outfit_DE_DruidicArmor</keyword>
+      <keyword>Warlock_Tier_6</keyword>
+    </item>
+    <item EDID="DruidicGauntletsClone" type="armor">
+      <keyword>ROBES_MAGE_ARMOR</keyword>
+      <keyword>dienes_outfit_DE_DruidicArmor</keyword>
+      <keyword>Warlock_Tier_6</keyword>
+    </item>
+    <item EDID="DarkDruidicBoots" type="armor">
+      <keyword>ROBES_NECRO_ARMOR</keyword>
+      <keyword>dienes_outfit_DE_DarkDruidicArmor</keyword>
+      <keyword>Necromancer_Tier_6</keyword>
+      <keyword>Thalmor_Tier_6</keyword>
+    </item>
+    <item EDID="DarkDruidicCuirass" type="armor">
+      <keyword>ROBES_NECRO_ARMOR</keyword>
+      <keyword>dienes_outfit_DE_DarkDruidicArmor</keyword>
+      <keyword>Necromancer_Tier_6</keyword>
+      <keyword>Thalmor_Tier_6</keyword>
+    </item>
+    <item EDID="DarkDruidicHelm" type="armor">
+      <keyword>ROBES_NECRO_ARMOR</keyword>
+      <keyword>dienes_outfit_DE_DarkDruidicArmor</keyword>
+      <keyword>Necromancer_Tier_6</keyword>
+      <keyword>Thalmor_Tier_6</keyword>
+    </item>
+    <item EDID="DarkDruidicGauntlets" type="armor">
+      <keyword>ROBES_NECRO_ARMOR</keyword>
+      <keyword>dienes_outfit_DE_DarkDruidicArmor</keyword>
+      <keyword>Necromancer_Tier_6</keyword>
+      <keyword>Thalmor_Tier_6</keyword>
+    </item>
+    <item EDID="DruidicCloak2" type="armor">
+      <keyword>ROBES_MAGE_ARMOR</keyword>
+      <keyword>dienes_outfit_DE_DruidicArmor</keyword>
+      <keyword>Warlock_Tier_6</keyword>
+    </item>
+    <item EDID="DruidicCloak" type="armor">
+      <keyword>ROBES_NECRO_ARMOR</keyword>
+      <keyword>dienes_outfit_DE_DarkDruidicArmor</keyword>
+      <keyword>Necromancer_Tier_6</keyword>
+      <keyword>Thalmor_Tier_6</keyword>
+    </item>
+  </mod>
+  <mod modName="AMB Glass Variants Lore.esp">
+    <item EDID="ArmorGlassBootsMWV" type="armor">
+      <keyword>ARMOR_GLASS</keyword>
+      <keyword>dienes_outfit_AMBGlass_ArmorGlassMWV</keyword>
+      <keyword>BanditLight_Tier_12</keyword>
+    </item>
+    <item EDID="ArmorGlassCuirassMWV" type="armor">
+      <keyword>ARMOR_GLASS</keyword>
+      <keyword>dienes_outfit_AMBGlass_ArmorGlassMWV</keyword>
+      <keyword>BanditLight_Tier_12</keyword>
+    </item>
+    <item EDID="ArmorGlassShieldMWV" type="armor">
+      <keyword>ARMOR_GLASS</keyword>
+      <keyword>dienes_outfit_AMBGlass_ArmorGlassMWV</keyword>
+      <keyword>BanditLight_Tier_12</keyword>
+    </item>
+    <item EDID="ArmorGlassHelmetMWV" type="armor">
+      <keyword>ARMOR_GLASS</keyword>
+      <keyword>dienes_outfit_AMBGlass_ArmorGlassMWV</keyword>
+      <keyword>BanditLight_Tier_12</keyword>
+    </item>
+    <item EDID="ArmorGlassGauntletsMWV" type="armor">
+      <keyword>ARMOR_GLASS</keyword>
+      <keyword>dienes_outfit_AMBGlass_ArmorGlassMWV</keyword>
+      <keyword>BanditLight_Tier_12</keyword>
+    </item>
+    <item EDID="ArmorGlassBootsThalmor" type="armor">
+      <keyword>dienes_outfit_AMBGlass_ArmorGlassThalmor</keyword>
+      <keyword>Thalmor_Tier_12</keyword>
+    </item>
+    <item EDID="ArmorGlassCuirassThalmor" type="armor">
+      <keyword>dienes_outfit_AMBGlass_ArmorGlassThalmor</keyword>
+      <keyword>Thalmor_Tier_12</keyword>
+    </item>
+    <item EDID="ArmorGlassGauntletsThalmor" type="armor">
+      <keyword>dienes_outfit_AMBGlass_ArmorGlassThalmor</keyword>
+      <keyword>Thalmor_Tier_12</keyword>
+    </item>
+    <item EDID="ArmorGlassHelmetThalmor" type="armor">
+      <keyword>dienes_outfit_AMBGlass_ArmorGlassThalmor</keyword>
+      <keyword>Thalmor_Tier_12</keyword>
+    </item>
+    <item EDID="ArmorGlassShieldThalmor" type="armor">
+      <keyword>dienes_outfit_AMBGlass_ArmorGlassThalmor</keyword>
+      <keyword>Thalmor_Tier_12</keyword>
+    </item>
+  </mod>
+  <mod modName="BosmerArmorMATY743.esp">
+    <item EDID="ArmorBosmerHood" type="armor">
+      <keyword>ARMOR_ELVEN</keyword>
+      <keyword>dienes_outfit_BA_ArmorBosmer</keyword>
+      <keyword>Thalmor_Tier_2</keyword>
+    </item>
+    <item EDID="ArmorBosmerCuirass" type="armor">
+      <keyword>ARMOR_ELVEN</keyword>
+      <keyword>dienes_outfit_BA_ArmorBosmer</keyword>
+      <keyword>Thalmor_Tier_2</keyword>
+    </item>
+    <item EDID="ArmorBosmerGauntlets" type="armor">
+      <keyword>ARMOR_ELVEN</keyword>
+      <keyword>dienes_outfit_BA_ArmorBosmer</keyword>
+      <keyword>Thalmor_Tier_2</keyword>
+    </item>
+    <item EDID="ArmorBosmerShoulderCape" type="armor">
+      <keyword>ARMOR_ELVEN</keyword>
+      <keyword>dienes_outfit_BA_ArmorBosmer</keyword>
+      <keyword>Thalmor_Tier_2</keyword>
+    </item>
+    <item EDID="ArmorBosmerBoots" type="armor">
+      <keyword>ARMOR_ELVEN</keyword>
+      <keyword>dienes_outfit_BA_ArmorBosmer</keyword>
+      <keyword>Thalmor_Tier_2</keyword>
+    </item>
+    <item EDID="ArmorBosmerHelm" type="armor">
+      <keyword>ARMOR_ELVEN</keyword>
+      <keyword>dienes_outfit_BA_ArmorBosmer</keyword>
+      <keyword>Thalmor_Tier_2</keyword>
+    </item>
+    <item EDID="ArmorBosmerHelmHood" type="armor">
+      <keyword>ARMOR_ELVEN</keyword>
+      <keyword>dienes_outfit_BA_ArmorBosmer</keyword>
+      <keyword>Thalmor_Tier_2</keyword>
+    </item>
+    <item EDID="ArmorBosmerEngravedBoots" type="armor">
+      <keyword>ARMOR_GLASS</keyword>
+      <keyword>dienes_outfit_BA_ArmorBosmerElder</keyword>
+      <keyword>Thalmor_Tier_10</keyword>
+    </item>
+    <item EDID="ArmorBosmerEngravedHelm" type="armor">
+      <keyword>ARMOR_GLASS</keyword>
+      <keyword>dienes_outfit_BA_ArmorBosmerElder</keyword>
+      <keyword>Thalmor_Tier_10</keyword>
+    </item>
+    <item EDID="ArmorBosmerEngravedCuirass" type="armor">
+      <keyword>ARMOR_GLASS</keyword>
+      <keyword>dienes_outfit_BA_ArmorBosmerElder</keyword>
+      <keyword>Thalmor_Tier_10</keyword>
+    </item>
+    <item EDID="ArmorBosmerEngravedGauntlets" type="armor">
+      <keyword>ARMOR_GLASS</keyword>
+      <keyword>dienes_outfit_BA_ArmorBosmerElder</keyword>
+      <keyword>Thalmor_Tier_10</keyword>
+    </item>
+    <item EDID="ArmorBosmerEngravedHelmHood" type="armor">
+      <keyword>ARMOR_GLASS</keyword>
+      <keyword>dienes_outfit_BA_ArmorBosmerElder</keyword>
+      <keyword>Thalmor_Tier_10</keyword>
+    </item>
+    <item EDID="ArmorBosmerEngravedHood" type="armor">
+      <keyword>ARMOR_GLASS</keyword>
+      <keyword>dienes_outfit_BA_ArmorBosmerElder</keyword>
+      <keyword>Thalmor_Tier_10</keyword>
+    </item>
+    <item EDID="ArmorBosmerEngravedShoulderCape" type="armor">
+      <keyword>ARMOR_GLASS</keyword>
+      <keyword>dienes_outfit_BA_ArmorBosmerElder</keyword>
+      <keyword>Thalmor_Tier_10</keyword>
+    </item>
+    <item EDID="ArmorBosmerFullCape" type="armor">
+      <keyword>ARMOR_PLATE</keyword>
+      <keyword>dienes_outfit_BA_ArmorBosmerReinforced</keyword>
+    </item>
+    <item EDID="ArmorBosmerheavyGauntlets" type="armor">
+      <keyword>ARMOR_PLATE</keyword>
+      <keyword>dienes_outfit_BA_ArmorBosmerReinforced</keyword>
+    </item>
+    <item EDID="ArmorBosmerHEAVYCuirass" type="armor">
+      <keyword>ARMOR_PLATE</keyword>
+      <keyword>dienes_outfit_BA_ArmorBosmerReinforced</keyword>
+    </item>
+    <item EDID="ArmorBosmerheavyHelmHood" type="armor">
+      <keyword>ARMOR_PLATE</keyword>
+      <keyword>dienes_outfit_BA_ArmorBosmerReinforced</keyword>
+    </item>
+    <item EDID="ArmorBosmerHeavyHelm" type="armor">
+      <keyword>ARMOR_PLATE</keyword>
+      <keyword>dienes_outfit_BA_ArmorBosmerReinforced</keyword>
+    </item>
+    <item EDID="ArmorBosmerHeavyBoots" type="armor">
+      <keyword>ARMOR_PLATE</keyword>
+      <keyword>dienes_outfit_BA_ArmorBosmerReinforced</keyword>
+    </item>
+    <item EDID="ArmorBosmerWildHuntheavyBoots" type="armor">
+      <keyword>ARMOR_DAEDRIC</keyword>
+      <keyword>dienes_outfit_BA_ArmorBosmerHunt</keyword>
+    </item>
+    <item EDID="ArmorBosmerHuntGauntlets" type="armor">
+      <keyword>ARMOR_DAEDRIC</keyword>
+      <keyword>dienes_outfit_BA_ArmorBosmerHunt</keyword>
+    </item>
+    <item EDID="ArmorBosmerHuntHelmHood" type="armor">
+      <keyword>ARMOR_DAEDRIC</keyword>
+      <keyword>dienes_outfit_BA_ArmorBosmerHunt</keyword>
+    </item>
+    <item EDID="ArmorBosmerHuntCuirass" type="armor">
+      <keyword>ARMOR_DAEDRIC</keyword>
+      <keyword>dienes_outfit_BA_ArmorBosmerHunt</keyword>
+    </item>
+    <item EDID="ArmorBosmerHuntHood" type="armor">
+      <keyword>ARMOR_DRAGONSCALE</keyword>
+      <keyword>dienes_outfit_BA_ArmorBosmerHuntLight</keyword>
+    </item>
+    <item EDID="ArmorBosmerWildHuntlightBoots" type="armor">
+      <keyword>ARMOR_DRAGONSCALE</keyword>
+      <keyword>dienes_outfit_BA_ArmorBosmerHuntLight</keyword>
+    </item>
+    <item EDID="ArmorBosmerHuntlightGauntlets" type="armor">
+      <keyword>ARMOR_DRAGONSCALE</keyword>
+      <keyword>dienes_outfit_BA_ArmorBosmerHuntLight</keyword>
+    </item>
+    <item EDID="ArmorBosmerHuntLightCuirass" type="armor">
+      <keyword>ARMOR_DRAGONSCALE</keyword>
+      <keyword>dienes_outfit_BA_ArmorBosmerHuntLight</keyword>
+    </item>
+    <item EDID="BosmerElderBow" type="weapon">
+      <keyword>WEAPON_GLASS</keyword>
+    </item>
+    <item EDID="BosmerElderDagger" type="weapon">
+      <keyword>WEAPON_GLASS</keyword>
+    </item>
+    <item EDID="BosmerBow" type="weapon">
+      <keyword>WEAPON_ELVEN</keyword>
+    </item>
+    <item EDID="BosmerDagger" type="weapon">
+      <keyword>WEAPON_ELVEN</keyword>
+    </item>
+  </mod>
+  <mod modName="SamuraiBlades.esp">
+    <item EDID="ArmorBladesCuirassBlack" type="armor">
+      <keyword>ARMOR_DRAUGR</keyword>
+      <keyword>dienes_outfit_SB_Draugr1</keyword>
+    </item>
+    <item EDID="ArmorBladesBootsBlack" type="armor">
+      <keyword>ARMOR_DRAUGR</keyword>
+      <keyword>dienes_outfit_SB_Draugr1</keyword>
+    </item>
+    <item EDID="ArmorBladesHelmetBlack" type="armor">
+      <keyword>ARMOR_DRAUGR</keyword>
+      <keyword>dienes_outfit_SB_Draugr1</keyword>
+    </item>
+    <item EDID="ArmorBladesHelmetGenjiBlack" type="armor">
+      <keyword>ARMOR_DRAUGR</keyword>
+      <keyword>dienes_outfit_SB_Draugr1</keyword>
+    </item>
+    <item EDID="ArmorBladesHelmetOpenBlack" type="armor">
+      <keyword>ARMOR_DRAUGR</keyword>
+      <keyword>dienes_outfit_SB_Draugr1</keyword>
+    </item>
+    <item EDID="ArmorBladesHelmetClosedBlack" type="armor">
+      <keyword>ARMOR_DRAUGR</keyword>
+      <keyword>dienes_outfit_SB_Draugr1</keyword>
+    </item>
+    <item EDID="ArmorBladesHelmetPointyBlack" type="armor">
+      <keyword>ARMOR_DRAUGR</keyword>
+      <keyword>dienes_outfit_SB_Draugr1</keyword>
+    </item>
+    <item EDID="ArmorBladesHelmetTallBlack" type="armor">
+      <keyword>ARMOR_DRAUGR</keyword>
+      <keyword>dienes_outfit_SB_Draugr1</keyword>
+    </item>
+    <item EDID="ArmorBladesGauntletsBlack" type="armor">
+      <keyword>ARMOR_DRAUGR</keyword>
+      <keyword>dienes_outfit_SB_Draugr1</keyword>
+    </item>
+    <item EDID="ArmorBladesShieldGold" type="armor">
+      <keyword>ARMOR_DRAUGR</keyword>
+      <keyword>dienes_outfit_SB_Draugr1</keyword>
+    </item>
+    <item EDID="ArmorBladesShieldBlue" type="armor">
+      <keyword>ARMOR_DRAUGR</keyword>
+      <keyword>dienes_outfit_SB_Draugr2</keyword>
+    </item>
+    <item EDID="ArmorBladesHelmetBlackBlue" type="armor">
+      <keyword>ARMOR_DRAUGR</keyword>
+      <keyword>dienes_outfit_SB_Draugr2</keyword>
+    </item>
+    <item EDID="ArmorBladesCuirassBlackBlue" type="armor">
+      <keyword>ARMOR_DRAUGR</keyword>
+      <keyword>dienes_outfit_SB_Draugr2</keyword>
+    </item>
+    <item EDID="ArmorBladesHelmetClosedBlackBlue" type="armor">
+      <keyword>ARMOR_DRAUGR</keyword>
+      <keyword>dienes_outfit_SB_Draugr2</keyword>
+    </item>
+    <item EDID="ArmorBladesHelmetPointyBlackBlue" type="armor">
+      <keyword>ARMOR_DRAUGR</keyword>
+      <keyword>dienes_outfit_SB_Draugr2</keyword>
+    </item>
+    <item EDID="ArmorBladesHelmetGenjiBlackBlue" type="armor">
+      <keyword>ARMOR_DRAUGR</keyword>
+      <keyword>dienes_outfit_SB_Draugr2</keyword>
+    </item>
+    <item EDID="ArmorBladesHelmetTallBlackBlue" type="armor">
+      <keyword>ARMOR_DRAUGR</keyword>
+      <keyword>dienes_outfit_SB_Draugr2</keyword>
+    </item>
+    <item EDID="ArmorBladesGauntletsBlackBlue" type="armor">
+      <keyword>ARMOR_DRAUGR</keyword>
+      <keyword>dienes_outfit_SB_Draugr2</keyword>
+    </item>
+    <item EDID="ArmorBladesBootsBlackBlue" type="armor">
+      <keyword>ARMOR_DRAUGR</keyword>
+      <keyword>dienes_outfit_SB_Draugr2</keyword>
+    </item>
+    <item EDID="ArmorBladesHelmetOpenBlackBlue" type="armor">
+      <keyword>ARMOR_DRAUGR</keyword>
+      <keyword>dienes_outfit_SB_Draugr2</keyword>
+    </item>
+  </mod>
+  <mod modName="ExiledBladesArmor.esp">
+    <item EDID="ExiledBladesCuirass" type="armor">
+      <keyword>ARMOR_STORMCLOAK</keyword>
+      <keyword>dienes_outfit_EBA_ExiledBladesArmor</keyword>
+      <keyword>BanditBoss_Tier_7</keyword>
+    </item>
+    <item EDID="ExiledBladesGauntlets" type="armor">
+      <keyword>ARMOR_STORMCLOAK</keyword>
+      <keyword>dienes_outfit_EBA_ExiledBladesArmor</keyword>
+      <keyword>BanditBoss_Tier_7</keyword>
+    </item>
+    <item EDID="ExiledBladesBoots" type="armor">
+      <keyword>ARMOR_STORMCLOAK</keyword>
+      <keyword>dienes_outfit_EBA_ExiledBladesArmor</keyword>
+      <keyword>BanditBoss_Tier_7</keyword>
+    </item>
+    <item EDID="ExiledBladesHelm" type="armor">
+      <keyword>ARMOR_STORMCLOAK</keyword>
+      <keyword>dienes_outfit_EBA_ExiledBladesArmor</keyword>
+      <keyword>BanditBoss_Tier_7</keyword>
+    </item>
+  </mod>
+  <mod modName="SkaalHeavyArmor.esp">
+    <item EDID="DLC2ClothesSkaalHBoots" type="armor">
+      <keyword>ARMOR_PLATE</keyword>
+      <keyword>dienes_outfit_SHA_DLC2ClothesSkaalH</keyword>
+      <keyword>BanditBoss_Tier_5</keyword>
+      <keyword>BanditHeavy_Tier_6</keyword>
+    </item>
+    <item EDID="DLC2ClothesSkaalHGloves" type="armor">
+      <keyword>ARMOR_PLATE</keyword>
+      <keyword>dienes_outfit_SHA_DLC2ClothesSkaalH</keyword>
+      <keyword>BanditBoss_Tier_5</keyword>
+      <keyword>BanditHeavy_Tier_6</keyword>
+    </item>
+    <item EDID="DLC2ClothesSkaalHCoat" type="armor">
+      <keyword>ARMOR_PLATE</keyword>
+      <keyword>dienes_outfit_SHA_DLC2ClothesSkaalH</keyword>
+      <keyword>BanditBoss_Tier_5</keyword>
+      <keyword>BanditHeavy_Tier_6</keyword>
+    </item>
+    <item EDID="DLC2ClothesSkaalHHat" type="armor">
+      <keyword>ARMOR_PLATE</keyword>
+      <keyword>dienes_outfit_SHA_DLC2ClothesSkaalH</keyword>
+      <keyword>BanditBoss_Tier_5</keyword>
+      <keyword>BanditHeavy_Tier_6</keyword>
+    </item>
+    <item EDID="DLC2ClothesSkaalHHatWH" type="armor">
+      <keyword>ARMOR_PLATE</keyword>
+      <keyword>dienes_outfit_SHA_DLC2ClothesSkaalH</keyword>
+      <keyword>BanditBoss_Tier_5</keyword>
+      <keyword>BanditHeavy_Tier_6</keyword>
+    </item>
+  </mod>
+  <mod modName="AgentOfRighteousMight.esp">
+    <item EDID="DreeARMMQ04WarlockHoodedROBESCheap" type="armor">
+      <keyword>ROBES_NECRO_ARMOR</keyword>
+    </item>
+  </mod>
+  <mod modName="SamuraiBladesWeapons.esp">
+    <item EDID="BladesWakiRed" type="weapon">
+      <keyword>WEAPON_DRAUGRHONED</keyword>
+      <keyword>xxxWeapTypeWakizashi</keyword>
+    </item>
+    <item EDID="BladesTachiBlue" type="weapon">
+      <keyword>WEAPON_DRAUGRHONED</keyword>
+      <keyword>xxxWeapTypeKatana</keyword>
+    </item>
+    <item EDID="BladesKatanaRed" type="weapon">
+      <keyword>WEAPON_DRAUGRHONED</keyword>
+      <keyword>xxxWeapTypeKatana</keyword>
+    </item>
+    <item EDID="BladesDaikyuYumiBow" type="weapon">
+      <keyword>WEAPON_DRAUGRHONED</keyword>
+    </item>
+    <item EDID="BladesDaikyuYumiBowRed" type="weapon">
+      <keyword>WEAPON_DRAUGRHONED</keyword>
+    </item>
+    <item EDID="BladesDaishoRed" type="weapon">
+      <keyword>WEAPON_DRAUGRHONED</keyword>
+      <keyword>xxxWeapTypeKatana</keyword>
+    </item>
+    <item EDID="BladesDaishoBlue" type="weapon">
+      <keyword>WEAPON_DRAUGRHONED</keyword>
+      <keyword>xxxWeapTypeKatana</keyword>
+    </item>
+    <item EDID="BladesDaisho" type="weapon">
+      <keyword>WEAPON_DRAUGRHONED</keyword>
+      <keyword>xxxWeapTypeKatana</keyword>
+    </item>
+    <item EDID="BladesWakiBlue" type="weapon">
+      <keyword>WEAPON_DRAUGRHONED</keyword>
+      <keyword>xxxWeapTypeWakizashi</keyword>
+    </item>
+    <item EDID="BladesTachi" type="weapon">
+      <keyword>WEAPON_DRAUGRHONED</keyword>
+      <keyword>xxxWeapTypeKatana</keyword>
+    </item>
+    <item EDID="BladesTachiRed" type="weapon">
+      <keyword>WEAPON_DRAUGRHONED</keyword>
+      <keyword>xxxWeapTypeKatana</keyword>
+    </item>
+    <item EDID="BladesKatanaBlue" type="weapon">
+      <keyword>WEAPON_DRAUGRHONED</keyword>
+      <keyword>xxxWeapTypeKatana</keyword>
+    </item>
+    <item EDID="BladesWaki" type="weapon">
+      <keyword>WEAPON_DRAUGRHONED</keyword>
+      <keyword>xxxWeapTypeWakizashi</keyword>
+    </item>
+    <item EDID="BladesKatana" type="weapon">
+      <keyword>WEAPON_DRAUGRHONED</keyword>
+      <keyword>xxxWeapTypeKatana</keyword>
+    </item>
+    <item EDID="BladesBoStaff" type="weapon">
+      <keyword>xxxWeapTypeBattlestaff</keyword>
+    </item>
+  </mod>
+  <mod modName="Crossbows_Basic_Collection_EN_LL.esp">
+    <item EDID="CBC_Glass_Crossbow" type="weapon">
+      <keyword>WEAPON_GLASS</keyword>
+    </item>
+    <item EDID="CBC_Elven_Crossbow" type="weapon">
+      <keyword>WEAPON_ELVEN</keyword>
+    </item>
+    <item EDID="CBC_Ebony_Crossbow" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="CBC_Daedric_Crossbow" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="CBC_Orcish_Crossbow_Enhanced" type="weapon">
+      <keyword>WEAPON_ORCISH</keyword>
+    </item>
+    <item EDID="CBC_Glass_Crossbow_Enhanced" type="weapon">
+      <keyword>WEAPON_GLASS</keyword>
+    </item>
+    <item EDID="CBC_Elven_Crossbow_Enhanced" type="weapon">
+      <keyword>WEAPON_ELVEN</keyword>
+    </item>
+    <item EDID="CBC_Ebony_Crossbow_Enhanced" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="CBC_Daedric_Crossbow_Enhanced" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="CBC_Daedric_Crossbow_Light" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="CBC_Orcish_Crossbow" type="weapon">
+      <keyword>WEAPON_ORCISH</keyword>
+    </item>
+    <item EDID="CBC_Dragonbone_Crossbow" type="weapon">
+      <keyword>WEAPON_DRAGONBONE</keyword>
+    </item>
+    <item EDID="CBC_Dragonbone_Crossbow_Enhanced" type="weapon">
+      <keyword>WEAPON_DRAGONBONE</keyword>
+    </item>
+    <item EDID="CBC_Dragonskull_Crossbow" type="weapon">
+      <keyword>WEAPON_DRAGONBONE</keyword>
+    </item>
+  </mod>
+  <mod modName="skyforgedShields.esp">
+    <item EDID="ArmorSkyforgedSteelShieldHvyOrc" type="armor">
+      <keyword>ARMOR_ORCISH</keyword>
+    </item>
+    <item EDID="ArmorSkyforgedSteelShieldLightMoon" type="armor">
+      <keyword>ARMOR_ELVEN</keyword>
+    </item>
+    <item EDID="ArmorSkyforgedSteelShieldHvyDwem" type="armor">
+      <keyword>ARMOR_DWARVEN</keyword>
+    </item>
+    <item EDID="ArmorSkyforgedSteelShieldHvyWolf" type="armor">
+      <keyword>ARMOR_STEEL</keyword>
+    </item>
+    <item EDID="ArmorSkyforgedSteelShieldHvy" type="armor">
+      <keyword>ARMOR_STEEL</keyword>
+    </item>
+    <item EDID="ArmorSkyforgedSteelShieldHvyEbony" type="armor">
+      <keyword>ARMOR_EBONY</keyword>
+    </item>
+    <item EDID="ArmorSkyforgedSteelShieldLightEbony" type="armor">
+      <keyword>ARMOR_EBONY</keyword>
+    </item>
+    <item EDID="ArmorSkyforgedSteelShieldLight" type="armor">
+      <keyword>ARMOR_STEEL</keyword>
+    </item>
+    <item EDID="ArmorSkyforgedSteelShieldLightOrc" type="armor">
+      <keyword>ARMOR_ORCISH</keyword>
+    </item>
+  </mod>
+  <mod modName="Inconsequential NPCs.esp">
+    <item EDID="AAForeignChainMailBoots" type="armor">
+      <keyword>ARMOR_SCALED</keyword>
+      <keyword>dienes_outfit_INPC_ForeignLight</keyword>
+      <keyword>BanditLight_Tier_7</keyword>
+    </item>
+    <item EDID="AAForeignChainMailHelm" type="armor">
+      <keyword>ARMOR_SCALED</keyword>
+      <keyword>dienes_outfit_INPC_ForeignHeavy</keyword>
+      <keyword>BanditBoss_Tier_1</keyword>
+      <keyword>dienes_outfit_INPC_ForeignLight</keyword>
+      <keyword>BanditLight_Tier_7</keyword>
+    </item>
+    <item EDID="AAForeignChainMailCuirass" type="armor">
+      <keyword>ARMOR_SCALED</keyword>
+      <keyword>dienes_outfit_INPC_ForeignLight</keyword>
+      <keyword>BanditLight_Tier_7</keyword>
+    </item>
+    <item EDID="AAForeignChainMailGauntlets" type="armor">
+      <keyword>ARMOR_SCALED</keyword>
+      <keyword>dienes_outfit_INPC_ForeignLight</keyword>
+      <keyword>BanditLight_Tier_7</keyword>
+    </item>
+    <item EDID="AAForeignFullPlateCuirass" type="armor">
+      <keyword>ARMOR_STEEL</keyword>
+      <keyword>dienes_outfit_INPC_ForeignHeavy</keyword>
+      <keyword>BanditBoss_Tier_1</keyword>
+    </item>
+    <item EDID="AAForeignFullPlateGauntlets" type="armor">
+      <keyword>ARMOR_STEEL</keyword>
+      <keyword>dienes_outfit_INPC_ForeignHeavy</keyword>
+      <keyword>BanditBoss_Tier_1</keyword>
+    </item>
+    <item EDID="AAForeignFullPlateGreaves" type="armor">
+      <keyword>ARMOR_STEEL</keyword>
+      <keyword>dienes_outfit_INPC_ForeignHeavy</keyword>
+      <keyword>BanditBoss_Tier_1</keyword>
+    </item>
+
+  </mod>
+  <mod modName="Immersive Weapons.esp">
+    <item EDID="IWSorrowTanto" type="weapon">
+      <keyword>WEAPON_GLASS</keyword>
+    </item>
+    <item EDID="IWSorrowDaito" type="weapon">
+      <keyword>WEAPON_GLASS</keyword>
+    </item>
+    <item EDID="IWPenUmbraSword" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="IWBlackStingGreatsword" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="IWBlackStingSword" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="IWBlackStingDagger" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="IWExoticBow" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="IWMightySteelGreatsword" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="IWCamoranSaber" type="weapon">
+      <keyword>WEAPON_GLASS</keyword>
+    </item>
+    <item EDID="IWNordicDwemerBlade" type="weapon">
+      <keyword>WEAPON_DWARVEN</keyword>
+    </item>
+    <item EDID="IWAlinorSaber" type="weapon">
+      <keyword>WEAPON_ELVEN</keyword>
+    </item>
+    <item EDID="IWSeekerSaber" type="weapon">
+      <keyword>WEAPON_ELVEN</keyword>
+    </item>
+    <item EDID="IWOrnateAlikrScimitar" type="weapon">
+      <keyword>WEAPON_REDGUARD</keyword>
+    </item>
+    <item EDID="IWJusticiarSaber" type="weapon">
+      <keyword>WEAPON_GLASS</keyword>
+    </item>
+    <item EDID="IWSeekerKnife" type="weapon">
+      <keyword>WEAPON_ELVEN</keyword>
+    </item>
+    <item EDID="IWJusticiarChangdao" type="weapon">
+      <keyword>WEAPON_GLASS</keyword>
+    </item>
+    <item EDID="IWSeekerChangdao" type="weapon">
+      <keyword>WEAPON_ELVEN</keyword>
+    </item>
+    <item EDID="IWStrosMKaiScimitar" type="weapon">
+      <keyword>WEAPON_REDGUARD</keyword>
+    </item>
+    <item EDID="IWJusticiarKnife" type="weapon">
+      <keyword>WEAPON_GLASS</keyword>
+    </item>
+    <item EDID="IWAlikrCrownScimitar" type="weapon">
+      <keyword>WEAPON_REDGUARD</keyword>
+    </item>
+    <item EDID="IWCBiPolarBladeGreatsword" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="IWSixthHouseBellWarhammer" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="IWSithissRazorTanto" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="IWAevarStoneSingerMace" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="IWBlueDragonNinjato" type="weapon">
+      <keyword>WEAPON_ELVEN</keyword>
+    </item>
+    <item EDID="IWBlackDragonNinjato" type="weapon">
+      <keyword>WEAPON_GLASS</keyword>
+    </item>
+    <item EDID="IWForkofHorripilationDagger" type="weapon">
+      <keyword>WEAPON_IRON</keyword>
+    </item>
+    <item EDID="IWChakramDagger" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="IWThresherMaulWarhammer" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="IWPhoenixNinjato" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="IWEbonyDoubleAxe" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="IWExecutionerDoubleAxe" type="weapon">
+      <keyword>WEAPON_IRON</keyword>
+    </item>
+    <item EDID="IWElvenDoubleAxe" type="weapon">
+      <keyword>WEAPON_ELVEN</keyword>
+    </item>
+    <item EDID="IWVikingDoubleAxe" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="IWFalmerDoubleAxe" type="weapon">
+      <keyword>WEAPON_FALMER</keyword>
+    </item>
+    <item EDID="IWSkullDoubleAxe" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="IWGlassDoubleAxe" type="weapon">
+      <keyword>WEAPON_GLASS</keyword>
+    </item>
+    <item EDID="IWIronDoubleAxe" type="weapon">
+      <keyword>WEAPON_IRON</keyword>
+    </item>
+    <item EDID="IWDaedricDoubleAxe" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="IWNordHeroDoubleAxe" type="weapon">
+      <keyword>WEAPON_DRAUGRHONED</keyword>
+    </item>
+    <item EDID="IWAzurasMoonWarAxe" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="IWAsumaTrenchKnife" type="weapon">
+      <keyword>WEAPON_ORCISH</keyword>
+    </item>
+    <item EDID="IWCAssassinSword" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="IWArmingSword" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="IWHollowBladeSword" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="IWGreybladeGreatsword" type="weapon">
+      <keyword>WEAPON_ELVEN</keyword>
+    </item>
+    <item EDID="IWFleurDeLysSword" type="weapon">
+      <keyword>WEAPON_DRAUGRHONED</keyword>
+    </item>
+    <item EDID="IWDaedricCrescentGreatsword" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="IWDeadricCrescentSword" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="IWDwemerControlRodMace" type="weapon">
+      <keyword>WEAPON_DWARVEN</keyword>
+    </item>
+    <item EDID="IWHousecarlsGreatsword" type="weapon">
+      <keyword>WEAPON_DRAUGRHONED</keyword>
+    </item>
+    <item EDID="IWEbonyHammerMace" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="IWFalkreathBladeSword" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="IWMalacathsCleaverGreatsword" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="IWOrnateMaulWarhammer" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="IWKnightsClaymore" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="IWKnightsBroadsword" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="IWTridentBladeSword" type="weapon">
+      <keyword>WEAPON_DWARVEN</keyword>
+    </item>
+    <item EDID="IWCSplitbladeSword" type="weapon">
+      <keyword>WEAPON_IRON</keyword>
+    </item>
+    <item EDID="IWRidersBladeSword" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="IWGreatRidersBladeGreatsword" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="IWCPokebladeSword" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="IWSteelWarPick" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="IWDremoraHalberd" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="IWWraithScythe" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="IWWarchiefsHalberd" type="weapon">
+      <keyword>WEAPON_ORCISH</keyword>
+    </item>
+    <item EDID="IWNordHeroAxestaff" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="IWEtherealAxestaff" type="weapon">
+      <keyword>WEAPON_GLASS</keyword>
+    </item>
+    <item EDID="IWWabbaJaxeHalberd" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="IWAldmeriAxestaff" type="weapon">
+      <keyword>WEAPON_ELVEN</keyword>
+    </item>
+    <item EDID="IWWabbaJackWarhammer" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="IWFalkreathWarhammer" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="IWAnXileelWarBow" type="weapon">
+      <keyword>WEAPON_ORCISH</keyword>
+    </item>
+    <item EDID="IWWickedScimitar" type="weapon">
+      <keyword>WEAPON_REDGUARD</keyword>
+    </item>
+    <item EDID="IWWickedDagger" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="IWOrcishSaber" type="weapon">
+      <keyword>WEAPON_ORCISH</keyword>
+    </item>
+    <item EDID="IWAriesCeremonialGreatsword" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="IWTombstoneCeremonialGreatsword" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="IWCaptainsCutlass" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="IWAyleidGreatsword" type="weapon">
+      <keyword>WEAPON_GLASS</keyword>
+    </item>
+    <item EDID="IWCeymallariSword" type="weapon">
+      <keyword>WEAPON_GLASS</keyword>
+    </item>
+    <item EDID="IWEbonyDadao" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="IWEbonyScimitar" type="weapon">
+      <keyword>WEAPON_REDGUARD</keyword>
+    </item>
+    <item EDID="IWDaedricHalberd" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="IWNordicWarPick" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="IWHonedSilverLongsword" type="weapon">
+      <keyword>WEAPON_DRAUGRHONED</keyword>
+    </item>
+    <item EDID="IWDaedricBattleStaff" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="IWHonedSilverBattleStaff" type="weapon">
+      <keyword>WEAPON_DRAUGRHONED</keyword>
+    </item>
+    <item EDID="IWSteelBattleStaff" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="IWAntiqueDaedricSword" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="IWShadowstingSword" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="IWImperialEbonySword" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="IWAntiqueGlassSword" type="weapon">
+      <keyword>WEAPON_GLASS</keyword>
+    </item>
+    <item EDID="IWElvenSteelSword" type="weapon">
+      <keyword>WEAPON_ELVEN</keyword>
+    </item>
+    <item EDID="IWCrowSword" type="weapon">
+      <keyword>WEAPON_DRAUGRHONED</keyword>
+    </item>
+    <item EDID="IWCrowGreatsword" type="weapon">
+      <keyword>WEAPON_DRAUGRHONED</keyword>
+    </item>
+    <item EDID="IWAntiqueHonedSilverSword" type="weapon">
+      <keyword>WEAPON_DRAUGRHONED</keyword>
+    </item>
+    <item EDID="IWSithissBladeNinjato" type="weapon">
+      <keyword>WEAPON_DRAUGRHONED</keyword>
+    </item>
+    <item EDID="IWBarbarianBattleAxe" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="IWAntiqueSteelSword" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="IWHonedSilverWarAxe" type="weapon">
+      <keyword>WEAPON_DRAUGRHONED</keyword>
+    </item>
+    <item EDID="IWHonedSilverBattleaxe" type="weapon">
+      <keyword>WEAPON_DRAUGRHONED</keyword>
+    </item>
+    <item EDID="IWElvenGreatBladeGreatsword" type="weapon">
+      <keyword>WEAPON_GLASS</keyword>
+    </item>
+    <item EDID="IWElvenGreatBloodGreatsword" type="weapon">
+      <keyword>WEAPON_GLASS</keyword>
+    </item>
+    <item EDID="IWElvenGreatWingsGreatsword" type="weapon">
+      <keyword>WEAPON_GLASS</keyword>
+    </item>
+    <item EDID="IWHotBloodGreatsword" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="IWHonedSilverScimitar" type="weapon">
+      <keyword>WEAPON_DRAUGRHONED</keyword>
+      <keyword>WEAPON_REDGUARD</keyword>
+    </item>
+    <item EDID="IWRegentsLongsword" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="IWDukesSword" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="IWGuardiansLongsword" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="IWGuardiansSword" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="IWJusticeGreatsword" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="IWCaptainsSword" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="IWSoldiersBroadsword" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="IWDukesLongsword" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="IWCavalryBroadsword" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="IWArmsmansSword" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="IWAntiqueIronSword" type="weapon">
+      <keyword>WEAPON_IRON</keyword>
+    </item>
+    <item EDID="IWAntiqueSilverSword" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="IWIronHuntersSpear" type="weapon">
+      <keyword>WEAPON_IRON</keyword>
+    </item>
+    <item EDID="IWOrcishCripplerSpear" type="weapon">
+      <keyword>WEAPON_ORCISH</keyword>
+    </item>
+    <item EDID="IWSteelNordicSpear" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="IWElvenQuarterstaff" type="weapon">
+      <keyword>WEAPON_ELVEN</keyword>
+    </item>
+    <item EDID="IWDwarvenQuarterstaff" type="weapon">
+      <keyword>WEAPON_DWARVEN</keyword>
+    </item>
+    <item EDID="IWGlassQuarterstaff" type="weapon">
+      <keyword>WEAPON_GLASS</keyword>
+    </item>
+    <item EDID="IWSteelQuarterstaff" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="IWOrcishQuarterstaff" type="weapon">
+      <keyword>WEAPON_ORCISH</keyword>
+    </item>
+    <item EDID="IWEbonyQuarterstaff" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="IWDaedricQuarterstaff" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="IWExecutionersHookScythe" type="weapon">
+      <keyword>WEAPON_ORCISH</keyword>
+    </item>
+    <item EDID="IWWolfClaymore" type="weapon">
+      <keyword>WEAPON_DRAUGRHONED</keyword>
+    </item>
+    <item EDID="IWOrsimerChieftanBow" type="weapon">
+      <keyword>WEAPON_ORCISH</keyword>
+    </item>
+    <item EDID="IWBlackMammothRecurveBow" type="weapon">
+      <keyword>WEAPON_DRAUGRHONED</keyword>
+    </item>
+    <item EDID="IWOrnateKhajiitBow" type="weapon">
+      <keyword>WEAPON_ORCISH</keyword>
+    </item>
+    <item EDID="IWColovianDarkCompositeBow" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="IWSilverHawkBow" type="weapon">
+      <keyword>WEAPON_GLASS</keyword>
+    </item>
+    <item EDID="IWColovianCompositeBow" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="IWElvenHawkBow" type="weapon">
+      <keyword>WEAPON_ELVEN</keyword>
+    </item>
+    <item EDID="IWWolfSword" type="weapon">
+      <keyword>WEAPON_DRAUGRHONED</keyword>
+    </item>
+    <item EDID="IWWolfDadao" type="weapon">
+      <keyword>WEAPON_DRAUGRHONED</keyword>
+    </item>
+    <item EDID="IWWolfScimitar" type="weapon">
+      <keyword>WEAPON_DRAUGRHONED</keyword>
+      <keyword>WEAPON_REDGUARD</keyword>
+    </item>
+    <item EDID="IWWolfDaito" type="weapon">
+      <keyword>WEAPON_DRAUGRHONED</keyword>
+    </item>
+    <item EDID="IWWolfKatana" type="weapon">
+      <keyword>WEAPON_DRAUGRHONED</keyword>
+    </item>
+    <item EDID="IWNobleClaymore" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="IWNobleSword" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="IWOrgnumsDagger" type="weapon">
+      <keyword>WEAPON_GLASS</keyword>
+    </item>
+    <item EDID="IWChrysamereGreatsword" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="IWDragonguardKatana" type="weapon">
+      <keyword>WEAPON_IMPERIAL</keyword>
+    </item>
+    <item EDID="IWGoldbrandKatana" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="IWIceBladeoftheMonarchGreatsword" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="IWWhiteMammothRecurveBow" type="weapon">
+      <keyword>WEAPON_DRAUGRHONED</keyword>
+    </item>
+    <item EDID="IWCAfterslashSword" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="IWCSpearbladeDagger" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="IWHonedNordicWarPick" type="weapon">
+      <keyword>WEAPON_DRAUGRHONED</keyword>
+    </item>
+    <item EDID="IWHonedFalmerDoubleAxe" type="weapon">
+      <keyword>WEAPON_FALMERHONED</keyword>
+    </item>
+    <item EDID="IWHonedSteelNordicSpear" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="IWSorrowKatana" type="weapon">
+      <keyword>WEAPON_GLASS</keyword>
+    </item>
+    <item EDID="IWSpringsteelBow" type="weapon">
+      <keyword>WEAPON_IMPERIAL</keyword>
+    </item>
+    <item EDID="IWNordicScrimshawBow" type="weapon">
+      <keyword>WEAPON_DRAUGR</keyword>
+    </item>
+    <item EDID="IWGemstoneSapphireBow" type="weapon">
+      <keyword>WEAPON_GLASS</keyword>
+    </item>
+    <item EDID="IWGemstoneEmeraldBow" type="weapon">
+      <keyword>WEAPON_GLASS</keyword>
+    </item>
+    <item EDID="IWGemstoneRubyBow" type="weapon">
+      <keyword>WEAPON_GLASS</keyword>
+    </item>
+    <item EDID="IWValenwoodWarBow" type="weapon">
+      <keyword>WEAPON_ELVEN</keyword>
+    </item>
+    <item EDID="IWCVolendrung" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="IWCMehrunesRazor" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="IWCEbonyBlade" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="IWCDawnbreaker" type="weapon">
+      <keyword>WEAPON_GLASS</keyword>
+    </item>
+    <item EDID="IWCMaceofMolagBal" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="IWCBladeOfWoe" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="IWCNightingaleBlade" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="IWCNightingaleBow" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="IWCChillrend" type="weapon">
+      <keyword>WEAPON_GLASS</keyword>
+    </item>
+    <item EDID="IWCRuefulAxe" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="IWDragonsteelKatana" type="weapon">
+      <keyword>WEAPON_DRAGONBONE</keyword>
+    </item>
+    <item EDID="IWDragonsteelGreatsword" type="weapon">
+      <keyword>WEAPON_DRAGONBONE</keyword>
+    </item>
+    <item EDID="IWDragonsteelMace" type="weapon">
+      <keyword>WEAPON_DRAGONBONE</keyword>
+    </item>
+    <item EDID="IWDragonsteelSword" type="weapon">
+      <keyword>WEAPON_DRAGONBONE</keyword>
+    </item>
+    <item EDID="IWDragonsteelWarhammer" type="weapon">
+      <keyword>WEAPON_DRAGONBONE</keyword>
+    </item>
+    <item EDID="IWDragonsteelBow" type="weapon">
+      <keyword>WEAPON_DRAGONBONE</keyword>
+    </item>
+    <item EDID="IWDragonsteelAnlaceDagger" type="weapon">
+      <keyword>WEAPON_DRAGONBONE</keyword>
+    </item>
+    <item EDID="IWDragonsteelSaber" type="weapon">
+      <keyword>WEAPON_DRAGONBONE</keyword>
+    </item>
+    <item EDID="IWDragonsteelWarAxe" type="weapon">
+      <keyword>WEAPON_DRAGONBONE</keyword>
+    </item>
+    <item EDID="IWDragonsteelNodachi" type="weapon">
+      <keyword>WEAPON_DRAGONBONE</keyword>
+    </item>
+    <item EDID="IWStaffDragonboneTemplate" type="weapon">
+      <keyword>WEAPON_DRAGONBONE</keyword>
+    </item>
+    <item EDID="IWDragonsteelBattleaxe" type="weapon">
+      <keyword>WEAPON_DRAGONBONE</keyword>
+    </item>
+    <item EDID="IWDragonsteelScythe" type="weapon">
+      <keyword>WEAPON_DRAGONBONE</keyword>
+    </item>
+    <item EDID="IWDragonsteelDagger" type="weapon">
+      <keyword>WEAPON_DRAGONBONE</keyword>
+    </item>
+    <item EDID="IWDragonsteelTanto" type="weapon">
+      <keyword>WEAPON_DRAGONBONE</keyword>
+    </item>
+  </mod>
+  <mod modName="Ket_WEAPONIZER.esp">
+    <item EDID="Ket_SwordRoyalThalmor" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="Ket_HalberdDaedric" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="Ket_BastardSteel" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="Ket_HalberdEbony" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="Ket_BastardDaedric" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="Ket_CompositeAxeIron" type="weapon">
+      <keyword>WEAPON_IRON</keyword>
+    </item>
+    <item EDID="Ket_CompositeAxeSteel" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="Ket_CompositeAxeOrcish" type="weapon">
+      <keyword>WEAPON_ORCISH</keyword>
+    </item>
+    <item EDID="Ket_CompositeAxeDwarven" type="weapon">
+      <keyword>WEAPON_DWARVEN</keyword>
+    </item>
+    <item EDID="Ket_CompositeAxeElven" type="weapon">
+      <keyword>WEAPON_ELVEN</keyword>
+    </item>
+    <item EDID="Ket_CompositeAxeGlass" type="weapon">
+      <keyword>WEAPON_GLASS</keyword>
+    </item>
+    <item EDID="Ket_CompositeAxeEbony" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="Ket_HalberdGlass" type="weapon">
+      <keyword>WEAPON_GLASS</keyword>
+    </item>
+    <item EDID="Ket_BastardDwarven" type="weapon">
+      <keyword>WEAPON_DWARVEN</keyword>
+    </item>
+    <item EDID="Ket_HalberdElven" type="weapon">
+      <keyword>WEAPON_ELVEN</keyword>
+    </item>
+    <item EDID="Ket_BastardEbony" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="Ket_HalberdDwarven" type="weapon">
+      <keyword>WEAPON_DWARVEN</keyword>
+    </item>
+    <item EDID="Ket_BastardOrcish" type="weapon">
+      <keyword>WEAPON_ORCISH</keyword>
+    </item>
+    <item EDID="Ket_HalberdOrcish" type="weapon">
+      <keyword>WEAPON_ORCISH</keyword>
+    </item>
+    <item EDID="Ket_BastardSilver" type="weapon">
+      <keyword>WEAPON_SILVER</keyword>
+    </item>
+    <item EDID="Ket_HalberdSteel" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="Ket_UniqueSwordCuhlecain" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="Ket_UniqueSwordLegate" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="Ket_ShortSwordIron" type="weapon">
+      <keyword>WEAPON_IRON</keyword>
+    </item>
+    <item EDID="Ket_ShortSwordSteel" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="Ket_ShortSwordOrcish" type="weapon">
+      <keyword>WEAPON_ORCISH</keyword>
+    </item>
+    <item EDID="Ket_ShortSwordDwarven" type="weapon">
+      <keyword>WEAPON_DWARVEN</keyword>
+    </item>
+    <item EDID="Ket_ShortSwordElven" type="weapon">
+      <keyword>WEAPON_ELVEN</keyword>
+    </item>
+    <item EDID="Ket_ShortSwordGlass" type="weapon">
+      <keyword>WEAPON_GLASS</keyword>
+    </item>
+    <item EDID="Ket_ShortSwordEbony" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="Ket_ShortSwordDaedric" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="Ket_SwordWindhelmGuard" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="Ket_SwordFalkreathGuard" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="Ket_GladiusImperial" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="Ket_SwordWhiterunGuard" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="Ket_SwordWinterholdGuard" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="Ket_SwordMarkarthGuard" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="Ket_HexMaceIron" type="weapon">
+      <keyword>WEAPON_IRON</keyword>
+    </item>
+    <item EDID="Ket_HalberdIron" type="weapon">
+      <keyword>WEAPON_IRON</keyword>
+    </item>
+    <item EDID="Ket_SwordDawnstarGuard" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="Ket_DualBattleaxeIron" type="weapon">
+      <keyword>WEAPON_IRON</keyword>
+    </item>
+    <item EDID="Ket_DualBattleaxeOrcish" type="weapon">
+      <keyword>WEAPON_ORCISH</keyword>
+    </item>
+    <item EDID="Ket_DualBattleaxeDwarven" type="weapon">
+      <keyword>WEAPON_DWARVEN</keyword>
+    </item>
+    <item EDID="Ket_DualBattleaxeElven" type="weapon">
+      <keyword>WEAPON_ELVEN</keyword>
+    </item>
+    <item EDID="Ket_DualBattleaxeGlass" type="weapon">
+      <keyword>WEAPON_GLASS</keyword>
+    </item>
+    <item EDID="Ket_DualBattleaxeEbony" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="Ket_DualBattleaxeDaedric" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="Ket_HexMaceOrcish" type="weapon">
+      <keyword>WEAPON_ORCISH</keyword>
+    </item>
+    <item EDID="Ket_HexMaceElven" type="weapon">
+      <keyword>WEAPON_ELVEN</keyword>
+    </item>
+    <item EDID="Ket_HexMaceGlass" type="weapon">
+      <keyword>WEAPON_GLASS</keyword>
+    </item>
+    <item EDID="Ket_HexMaceEbony" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="Ket_HexMaceDaedric" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="Ket_HexMaceSteel" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="Ket_ClubIron" type="weapon">
+      <keyword>WEAPON_IRON</keyword>
+    </item>
+    <item EDID="Ket_ClubSteel" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="Ket_ClubOrcish" type="weapon">
+      <keyword>WEAPON_ORCISH</keyword>
+    </item>
+    <item EDID="Ket_ClubDaedric" type="weapon">
+      <keyword>WEAPON_DAEDRIC</keyword>
+    </item>
+    <item EDID="Ket_SwordRiftenGuard" type="weapon">
+      <keyword>WEAPON_STEEL</keyword>
+    </item>
+  </mod>
+  <mod modName="skyforgedWeapons.esp">
+    <item EDID="SkyforgeDwemerDagger" type="weapon">
+      <keyword>WEAPON_DWARVEN</keyword>
+    </item>
+    <item EDID="SkyforgeDwemerGreatsword" type="weapon">
+      <keyword>WEAPON_DWARVEN</keyword>
+    </item>
+    <item EDID="SkyforgeDwemerWarAxe" type="weapon">
+      <keyword>WEAPON_DWARVEN</keyword>
+    </item>
+    <item EDID="SkyforgeOrcishGreatsword" type="weapon">
+      <keyword>WEAPON_ORCISH</keyword>
+    </item>
+    <item EDID="SkyforgeEbonySword" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="SkyforgeMoonstoneDagger" type="weapon">
+      <keyword>WEAPON_ELVEN</keyword>
+    </item>
+    <item EDID="SkyforgeMoonstoneSword" type="weapon">
+      <keyword>WEAPON_ELVEN</keyword>
+    </item>
+    <item EDID="SkyforgeOrcWarAxe" type="weapon">
+      <keyword>WEAPON_ORCISH</keyword>
+    </item>
+    <item EDID="SkyforgeMoonstoneWarAxe" type="weapon">
+      <keyword>WEAPON_ELVEN</keyword>
+    </item>
+    <item EDID="SkyforgeMoonstoneGreatsword" type="weapon">
+      <keyword>WEAPON_ELVEN</keyword>
+    </item>
+    <item EDID="SkyforgeDwemerBattleaxe" type="weapon">
+      <keyword>WEAPON_DWARVEN</keyword>
+    </item>
+    <item EDID="SkyforgeOrcBattleaxe" type="weapon">
+      <keyword>WEAPON_ORCISH</keyword>
+    </item>
+    <item EDID="SkyforgeOrcSword" type="weapon">
+      <keyword>WEAPON_ORCISH</keyword>
+    </item>
+    <item EDID="SkyforgeDwemerSword" type="weapon">
+      <keyword>WEAPON_DWARVEN</keyword>
+    </item>
+    <item EDID="SkyforgeMoonstoneBattleaxe" type="weapon">
+      <keyword>WEAPON_ELVEN</keyword>
+    </item>
+    <item EDID="SkyforgeEbonyDagger" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="SkyforgeOrcDagger" type="weapon">
+      <keyword>WEAPON_ORCISH</keyword>
+    </item>
+    <item EDID="SkyforgeEbonyWarAxe" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="SkyforgeEbonyGreatsword" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="SkyforgeEbonyBattleaxe" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+  </mod>
+  <mod modName="Third Era - Dwemer.esp">
+    <item EDID="aaIS3EDwemerShortsword" type="weapon">
+      <keyword>WEAPON_DWARVEN</keyword>
+      <keyword>WEAPON_FORSWORN</keyword>
+    </item>
+    <item EDID="aaIS3EDwemerClaymore" type="weapon">
+      <keyword>WEAPON_DWARVEN</keyword>
+      <keyword>WEAPON_FORSWORN</keyword>
+    </item>
+    <item EDID="aaIS3EDwemerMace" type="weapon">
+      <keyword>WEAPON_DWARVEN</keyword>
+      <keyword>WEAPON_FORSWORN</keyword>
+    </item>
+    <item EDID="aaIS3EDwemerWarAxe" type="weapon">
+      <keyword>WEAPON_DWARVEN</keyword>
+      <keyword>WEAPON_FORSWORN</keyword>
+    </item>
+    <item EDID="aaIS3EDwemerBattleAxe" type="weapon">
+      <keyword>WEAPON_DWARVEN</keyword>
+      <keyword>WEAPON_FORSWORN</keyword>
+    </item>
+    <item EDID="aaIS3EDwemerWarhammer" type="weapon">
+      <keyword>WEAPON_DWARVEN</keyword>
+      <keyword>WEAPON_FORSWORN</keyword>
+    </item>
+  </mod>
+  <mod modName="SkyRe Light Weaponry Fillout.esp">
+    <item EDID="74wNodachiGlassMoS" type="weapon">
+      <keyword>WEAPON_GLASS</keyword>
+    </item>
+    <item EDID="74wNodachiElvenMoS" type="weapon">
+      <keyword>WEAPON_ELVEN</keyword>
+    </item>
+    <item EDID="74wTantoElvenMoS" type="weapon">
+      <keyword>WEAPON_ELVEN</keyword>
+    </item>
+    <item EDID="74wWakizashiElvenMoS" type="weapon">
+      <keyword>WEAPON_ELVEN</keyword>
+    </item>
+    <item EDID="74wKatanaElvenMoS" type="weapon">
+      <keyword>WEAPON_ELVEN</keyword>
+    </item>
+    <item EDID="74wKatanaGlassMoS" type="weapon">
+      <keyword>WEAPON_GLASS</keyword>
+    </item>
+    <item EDID="74wKatanaEbonyMoS" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="74wWakizashiEbonyMoS" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="74wWakizashiGlassMoS" type="weapon">
+      <keyword>WEAPON_GLASS</keyword>
+    </item>
+    <item EDID="74wTantoEbonyMoS" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="74wTantoGlassMoS" type="weapon">
+      <keyword>WEAPON_GLASS</keyword>
+    </item>
+    <item EDID="74wNodachiEbonyMoS" type="weapon">
+      <keyword>WEAPON_EBONY</keyword>
+    </item>
+    <item EDID="DragonboneNodachi" type="weapon">
+      <keyword>WEAPON_DRAGONBONE</keyword>
+    </item>
+    <item EDID="DragonboneWakizashi" type="weapon">
+      <keyword>WEAPON_DRAGONBONE</keyword>
+    </item>
+    <item EDID="DragonboneShortsword" type="weapon">
+      <keyword>WEAPON_DRAGONBONE</keyword>
+    </item>
+    <item EDID="DragonboneKatana" type="weapon">
+      <keyword>WEAPON_DRAGONBONE</keyword>
+    </item>
+    <item EDID="DragonboneTanto" type="weapon">
+      <keyword>WEAPON_DRAGONBONE</keyword>
+    </item>
+  </mod>
+  <mod modName="OBIS.esp">
+    <item EDID="ArmorDragonscaleGauntletsBone" type="armor">
+      <keyword>ARMOR_DRAGONSCALE</keyword>
+      <keyword>dienes_outfit_OBIS_BanditArmorBoneLight</keyword>
+      <keyword>BanditLight_Tier_15</keyword>
+    </item>
+    <item EDID="ArmorDragonscaleHelmetBone" type="armor">
+      <keyword>ARMOR_DRAGONSCALE</keyword>
+      <keyword>dienes_outfit_OBIS_BanditArmorBoneLight</keyword>
+      <keyword>BanditLight_Tier_15</keyword>
+    </item>
+    <item EDID="ArmorDragonscaleShieldBone" type="armor">
+      <keyword>ARMOR_DRAGONSCALE</keyword>
+      <keyword>dienes_outfit_OBIS_BanditArmorBoneLight</keyword>
+      <keyword>BanditLight_Tier_15</keyword>
+    </item>
+    <item EDID="ArmorEbonyShieldZeran" type="armor">
+      <keyword>ARMOR_EBONY</keyword>
+      <keyword>dienes_outfit_OBIS_Zeran</keyword>
+      <keyword>BanditHeavy_Tier_11</keyword>
+      <keyword>BanditBoss_Tier_10</keyword>
+    </item>
+    <item EDID="ArmorDragonscaleCuirassBone" type="armor">
+      <keyword>ARMOR_DRAGONSCALE</keyword>
+      <keyword>dienes_outfit_OBIS_BanditArmorBoneLight</keyword>
+      <keyword>BanditLight_Tier_15</keyword>
+    </item>
+    <item EDID="ArmorEbonyHelmetZeran" type="armor">
+      <keyword>ARMOR_EBONY</keyword>
+      <keyword>dienes_outfit_OBIS_Zeran</keyword>
+      <keyword>BanditHeavy_Tier_11</keyword>
+      <keyword>BanditBoss_Tier_10</keyword>
+    </item>
+    <item EDID="ButcherHood" type="armor">
+      <keyword>ARMOR_STUDDED</keyword>
+      <keyword>dienes_outfit_OBIS_Butcher</keyword>
+      <keyword>BanditLight_Tier_1</keyword>
+    </item>
+    <item EDID="ExecutionHoodButcher" type="armor">
+      <keyword>ARMOR_STUDDED</keyword>
+      <keyword>dienes_outfit_OBIS_Butcher</keyword>
+      <keyword>BanditLight_Tier_1</keyword>
+    </item>
+    <item EDID="ArmorEbonyGauntletsZeran" type="armor">
+      <keyword>ARMOR_EBONY</keyword>
+      <keyword>dienes_outfit_OBIS_Zeran</keyword>
+      <keyword>BanditHeavy_Tier_11</keyword>
+      <keyword>BanditBoss_Tier_10</keyword>
+    </item>
+    <item EDID="ArmorHiddenHelmet" type="armor">
+      <keyword>ARMOR_LEATHER</keyword>
+    </item>
+    <item EDID="ArmorEbonyBootsZeran" type="armor">
+      <keyword>ARMOR_EBONY</keyword>
+      <keyword>dienes_outfit_OBIS_Zeran</keyword>
+      <keyword>BanditHeavy_Tier_11</keyword>
+      <keyword>BanditBoss_Tier_10</keyword>
+    </item>
+    <item EDID="ArmorEbonyCuirassZeran" type="armor">
+      <keyword>ARMOR_EBONY</keyword>
+      <keyword>dienes_outfit_OBIS_Zeran</keyword>
+      <keyword>BanditHeavy_Tier_11</keyword>
+      <keyword>BanditBoss_Tier_10</keyword>
+    </item>
+    <item EDID="ArmorDragonplateShieldBone" type="armor">
+      <keyword>DRAGONPLATE</keyword>
+      <keyword>dienes_outfit_OBIS_BanditArmorBoneHeavy</keyword>
+      <keyword>BanditHeavy_Tier_13</keyword>
+      <keyword>BanditBoss_Tier_12</keyword>
+    </item>
+    <item EDID="ArmorDragonplateHelmetBone" type="armor">
+      <keyword>DRAGONPLATE</keyword>
+      <keyword>dienes_outfit_OBIS_BanditArmorBoneHeavy</keyword>
+      <keyword>BanditHeavy_Tier_13</keyword>
+      <keyword>BanditBoss_Tier_12</keyword>
+    </item>
+    <item EDID="ArmorDragonplateGauntletsBone" type="armor">
+      <keyword>DRAGONPLATE</keyword>
+      <keyword>dienes_outfit_OBIS_BanditArmorBoneHeavy</keyword>
+      <keyword>BanditHeavy_Tier_13</keyword>
+      <keyword>BanditBoss_Tier_12</keyword>
+    </item>
+    <item EDID="ArmorShieldBlindeyes" type="armor">
+      <keyword>ARMOR_IRON</keyword>
+    </item>
+    <item EDID="ArmorShieldBlueSkull" type="armor">
+      <keyword>ARMOR_IRON</keyword>
+      <keyword>dienes_outfit_OBIS_Blueskull</keyword>
+      <keyword>BanditBoss_Tier_0</keyword>
+      <keyword>BanditHeavy_Tier_1</keyword>
+    </item>
+    <item EDID="ArmorShieldButcher" type="armor">
+      <keyword>ARMOR_IRON</keyword>
+      <keyword>dienes_outfit_OBIS_Butcher</keyword>
+      <keyword>BanditLight_Tier_1</keyword>
+    </item>
+    <item EDID="ArmorShieldDigger" type="armor">
+      <keyword>ARMOR_IRON</keyword>
+    </item>
+    <item EDID="ArmorShieldDuskDealer" type="armor">
+      <keyword>ARMOR_IRON</keyword>
+    </item>
+    <item EDID="ArmorShieldIronBlood" type="armor">
+      <keyword>ARMOR_IRON</keyword>
+    </item>
+    <item EDID="ArmorShieldLightningWolf" type="armor">
+      <keyword>ARMOR_IRON</keyword>
+    </item>
+    <item EDID="ArmorShieldUnloyal" type="armor">
+      <keyword>ARMOR_IRON</keyword>
+    </item>
+    <item EDID="ArmorShieldVermin" type="armor">
+      <keyword>ARMOR_IRON</keyword>
+    </item>
+    <item EDID="ArmorShieldWomen" type="armor">
+      <keyword>ARMOR_IRON</keyword>
+    </item>
+    <item EDID="ArmorGuardShieldEastmarchDUPLICATE001" type="armor">
+      <keyword>ARMOR_STORMCLOAK</keyword>
+    </item>
+    <item EDID="ArmorDragonplateCuirassBone" type="armor">
+      <keyword>DRAGONPLATE</keyword>
+      <keyword>dienes_outfit_OBIS_BanditArmorBoneHeavy</keyword>
+      <keyword>BanditHeavy_Tier_13</keyword>
+      <keyword>BanditBoss_Tier_12</keyword>
+    </item>
+    <item EDID="ArmorDragonplateBootsBone" type="armor">
+      <keyword>DRAGONPLATE</keyword>
+      <keyword>dienes_outfit_OBIS_BanditArmorBoneHeavy</keyword>
+      <keyword>BanditHeavy_Tier_13</keyword>
+      <keyword>BanditBoss_Tier_12</keyword>
+    </item>
+    <item EDID="ArmorDragonscaleBootsBone" type="armor">
+      <keyword>ARMOR_DRAGONSCALE</keyword>
+      <keyword>dienes_outfit_OBIS_BanditArmorBoneLight</keyword>
+      <keyword>BanditLight_Tier_15</keyword>
+    </item>
+    <item EDID="ArmorBanditSkullCuirass" type="armor">
+      <keyword>ARMOR_STEEL</keyword>
+      <keyword>dienes_outfit_OBIS_Blueskull</keyword>
+      <keyword>BanditBoss_Tier_0</keyword>
+      <keyword>BanditHeavy_Tier_1</keyword>
+    </item>
+  </mod>
+  <mod modName="DragonBoneEbonsteel.esp">
+    <item EDID="ArmorDragonplateEbonyGloves" type="armor">
+      <keyword>ARMOR_DAEDRIC</keyword>
+      <keyword>dienes_outfit_DBE_ArmorDragonplateEbony</keyword>
+    </item>
+    <item EDID="ArmorDragonplateEbonyBoots" type="armor">
+      <keyword>ARMOR_DAEDRIC</keyword>
+      <keyword>dienes_outfit_DBE_ArmorDragonplateEbony</keyword>
+    </item>
+    <item EDID="ArmorDragonplateEbonyCuirass" type="armor">
+      <keyword>ARMOR_DAEDRIC</keyword>
+      <keyword>dienes_outfit_DBE_ArmorDragonplateEbony</keyword>
+    </item>
+    <item EDID="ArmorDragonplateEbonyHelmDVeil" type="armor">
+      <keyword>ARMOR_DAEDRIC</keyword>
+      <keyword>dienes_outfit_DBE_ArmorDragonplateEbony</keyword>
+    </item>
+    <item EDID="ArmorDragonplateEbonyShield" type="armor">
+      <keyword>ARMOR_DAEDRIC</keyword>
+      <keyword>dienes_outfit_DBE_ArmorDragonplateEbony</keyword>
+    </item>
+    <item EDID="ArmorDragonplateEbonyHood" type="armor">
+      <keyword>ARMOR_DAEDRIC</keyword>
+      <keyword>dienes_outfit_DBE_ArmorDragonplateEbony</keyword>
+    </item>
+    <item EDID="ArmorDragonplateEbonyHelmC" type="armor">
+      <keyword>ARMOR_DAEDRIC</keyword>
+      <keyword>dienes_outfit_DBE_ArmorDragonplateEbony</keyword>
+    </item>
+    <item EDID="ArmorDragonplateEbonyHelmCVeil" type="armor">
+      <keyword>ARMOR_DAEDRIC</keyword>
+      <keyword>dienes_outfit_DBE_ArmorDragonplateEbony</keyword>
+    </item>
+    <item EDID="ArmorDragonplateEbonyBootsB" type="armor">
+      <keyword>ARMOR_DAEDRIC</keyword>
+      <keyword>dienes_outfit_DBE_ArmorDragonplateEbony</keyword>
+    </item>
+    <item EDID="ArmorDragonboneEbonyBreastplate" type="armor">
+      <keyword>ARMOR_DAEDRIC</keyword>
+      <keyword>dienes_outfit_DBE_ArmorDragonplateEbony</keyword>
+    </item>
+    <item EDID="ArmorDragonplateEbonyHelm" type="armor">
+      <keyword>ARMOR_DAEDRIC</keyword>
+      <keyword>dienes_outfit_DBE_ArmorDragonplateEbony</keyword>
+    </item>
+    <item EDID="ArmorDragonplateEbonyGauntlets" type="armor">
+      <keyword>ARMOR_DAEDRIC</keyword>
+      <keyword>dienes_outfit_DBE_ArmorDragonplateEbony</keyword>
+    </item>
+    <item EDID="ArmorDragonplateEbonyHelmAVeiled" type="armor">
+      <keyword>ARMOR_DAEDRIC</keyword>
+      <keyword>dienes_outfit_DBE_ArmorDragonplateEbony</keyword>
+    </item>
+    <item EDID="ArmorDragonplateEbonyHelmB" type="armor">
+      <keyword>ARMOR_DAEDRIC</keyword>
+      <keyword>dienes_outfit_DBE_ArmorDragonplateEbony</keyword>
+    </item>
+    <item EDID="ArmorDragonplateEbonyHelmD" type="armor">
+      <keyword>ARMOR_DAEDRIC</keyword>
+      <keyword>dienes_outfit_DBE_ArmorDragonplateEbony</keyword>
+    </item>
+    <item EDID="ArmorDragonplateEbonyHelmBVeil" type="armor">
+      <keyword>ARMOR_DAEDRIC</keyword>
+      <keyword>dienes_outfit_DBE_ArmorDragonplateEbony</keyword>
+    </item>
+    <item EDID="ArmorDragonplateEbonyHelmE" type="armor">
+      <keyword>ARMOR_DAEDRIC</keyword>
+      <keyword>dienes_outfit_DBE_ArmorDragonplateEbony</keyword>
+    </item>
+    <item EDID="ArmorDragonplateEbonyHelmEVeil" type="armor">
+      <keyword>ARMOR_DAEDRIC</keyword>
+      <keyword>dienes_outfit_DBE_ArmorDragonplateEbony</keyword>
+    </item>
+  </mod>
+  <mod modName="HammerfellBanditsV2.0.esp">
+    <item EDID="HammerfellWarriorHood" type="armor">
+      <keyword>ARMOR_STEEL</keyword>
+      <keyword>dienes_outfit_HBV2.0_Warrior</keyword>
+      <keyword>BanditHeavy_Tier_2</keyword>
+      <keyword>BanditBoss_Tier_0</keyword>
+    </item>
+    <item EDID="HammerfellWarriorCuirass" type="armor">
+      <keyword>ARMOR_STEEL</keyword>
+      <keyword>dienes_outfit_HBV2.0_Warrior</keyword>
+      <keyword>BanditHeavy_Tier_2</keyword>
+      <keyword>BanditBoss_Tier_0</keyword>
+    </item>
+    <item EDID="HammerfellHighwayHoodLeader" type="armor">
+      <keyword>ARMOR_STEEL</keyword>
+      <keyword>dienes_outfit_HBV2.0_Leader</keyword>
+      <keyword>BanditBoss_Tier_0</keyword>
+    </item>
+    <item EDID="HammerfellHighwayCuirassLeader" type="armor">
+      <keyword>ARMOR_STEEL</keyword>
+      <keyword>dienes_outfit_HBV2.0_ Leader </keyword>
+      <keyword>BanditBoss_Tier_0</keyword>
+    </item>
+    <item EDID="HammerfellWarriorGauntlets" type="armor">
+      <keyword>ARMOR_STEEL</keyword>
+      <keyword>dienes_outfit_HBV2.0_Warrior</keyword>
+      <keyword>dienes_outfit_HBV2.0_Leader</keyword>
+      <keyword>BanditHeavy_Tier_2</keyword>
+      <keyword>BanditBoss_Tier_0</keyword>
+    </item>
+    <item EDID="HammerfellWarriorBoots" type="armor">
+      <keyword>ARMOR_STEEL</keyword>
+      <keyword>dienes_outfit_HBV2.0_Warrior</keyword>
+      <keyword>dienes_outfit_HBV2.0_Leader</keyword>
+      <keyword>BanditHeavy_Tier_2</keyword>
+      <keyword>BanditBoss_Tier_0</keyword>
+    </item>
+    <item EDID="HammerfellMarksmanCuirass" type="armor">
+      <keyword>ARMOR_LEATHER</keyword>
+      <keyword>dienes_outfit_HBV2.0_Marksman</keyword>
+      <keyword>BanditLight_Tier_3</keyword>
+    </item>
+    <item EDID="HammerfellMarksmanHood" type="armor">
+      <keyword>ARMOR_LEATHER</keyword>
+      <keyword>dienes_outfit_HBV2.0_Marksman</keyword>
+      <keyword>BanditLight_Tier_3</keyword>
+    </item>
+    <item EDID="HammerfellMageBoots" type="armor">
+      <keyword>ROBES_MAGE_ARMOR</keyword>
+      <keyword>dienes_outfit_HBV2.0_Mage</keyword>
+      <keyword>Warlock_Tier_0</keyword>
+    </item>
+    <item EDID="HammerfellMageHood" type="armor">
+      <keyword>ROBES_MAGE_ARMOR</keyword>
+      <keyword>dienes_outfit_HBV2.0_Mage</keyword>
+      <keyword>Warlock_Tier_0</keyword>
+    </item>
+    <item EDID="HammerfellMageCuirass" type="armor">
+      <keyword>ROBES_MAGE_ARMOR</keyword>
+      <keyword>dienes_outfit_HBV2.0_Mage</keyword>
+      <keyword>Warlock_Tier_0</keyword>
+    </item>
+    <item EDID="HammerfellHighwayCuirass03" type="armor">
+      <keyword>ARMOR_LEATHER</keyword>
+      <keyword>dienes_outfit_HBV2.0_Highwayman</keyword>
+      <keyword>BanditLight_Tier_2</keyword>
+    </item>
+    <item EDID="HammerfellHighwayCuirass02" type="armor">
+      <keyword>ARMOR_LEATHER</keyword>
+      <keyword>dienes_outfit_HBV2.0_Highwayman</keyword>
+      <keyword>BanditLight_Tier_2</keyword>
+    </item>
+    <item EDID="HammerfellHighwayGauntlets" type="armor">
+      <keyword>ARMOR_LEATHER</keyword>
+      <keyword>dienes_outfit_HBV2.0_Highwayman</keyword>
+      <keyword>BanditLight_Tier_2</keyword>
+      <keyword>dienes_outfit_HBV2.0_Mage</keyword>
+      <keyword>Warlock_Tier_0</keyword>
+    </item>
+    <item EDID="HammerfellHighwayBoots" type="armor">
+      <keyword>ARMOR_LEATHER</keyword>
+      <keyword>dienes_outfit_HBV2.0_Highwayman</keyword>
+      <keyword>BanditLight_Tier_2</keyword>
+    </item>
+    <item EDID="HammerfellHighwayHood" type="armor">
+      <keyword>ARMOR_LEATHER</keyword>
+      <keyword>dienes_outfit_HBV2.0_Highwayman</keyword>
+      <keyword>BanditLight_Tier_2</keyword>
+    </item>
+    <item EDID="HammerfellHighwayCuirass" type="armor">
+      <keyword>ARMOR_LEATHER</keyword>
+      <keyword>dienes_outfit_HBV2.0_Highwayman</keyword>
+      <keyword>BanditLight_Tier_2</keyword>
+    </item>
+    <item EDID="HammerfellHighwayHood2" type="armor">
+      <keyword>ARMOR_LEATHER</keyword>
+      <keyword>dienes_outfit_HBV2.0_Highwayman</keyword>
+      <keyword>BanditLight_Tier_2</keyword>
+    </item>
+    <item EDID="HammerfellScimitar" type="weapon">
+      <keyword>LLI_BASE_WEAPON_REDGUARD</keyword>
+    </item>
+    <item EDID="HammerfellSteelDagger" type="weapon">
+      <keyword>LLI_BASE_WEAPON_STEEL</keyword>
+    </item>
+    <item EDID="HammerfellGreatsword" type="weapon">
+      <keyword>LLI_BASE_WEAPON_SILVER</keyword>
+    </item>
+  </mod>
+  <mod modName="Cloaks.esp">
+    <item EDID="CloakDwemer" type="armor">
+      <keyword>ARMOR_DWARVEN</keyword>
+    </item>
+    <item EDID="CloakDwemerAlt" type="armor">
+      <keyword>ARMOR_DWARVEN</keyword>
+    </item>
+    <item EDID="CloakBlue" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="CloakCrimson" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="CloakGreen" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="CloakStormcloak" type="armor">
+      <keyword>ARMOR_STORMCLOAK</keyword>
+    </item>
+    <item EDID="CloakBlack" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="CloakBrown" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="CloakGrey" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="CloakWhite" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="CloakStormcloakLinen" type="armor">
+      <keyword>ARMOR_STORMCLOAK</keyword>
+    </item>
+    <item EDID="CloakImperialSilver" type="armor">
+      <keyword>ARMOR_IMPERIAL_LIGHT</keyword>
+    </item>
+    <item EDID="CloakShortStormcloak" type="armor">
+      <keyword>ARMOR_STORMCLOAK</keyword>
+    </item>
+    <item EDID="CloakDwemerPurpleAlt" type="armor">
+      <keyword>ARMOR_DWARVEN</keyword>
+    </item>
+    <item EDID="CloakDaedric" type="armor">
+      <keyword>ARMOR_DAEDRIC</keyword>
+    </item>
+    <item EDID="CloakNecroAlt" type="armor">
+      <keyword>ROBES_NECRO_ARMOR</keyword>
+    </item>
+    <item EDID="CloakShortImperial" type="armor">
+      <keyword>ARMOR_IMPERIAL_LIGHT</keyword>
+    </item>
+    <item EDID="CloakThalmorAlt" type="armor">
+      <keyword>ARMOR_ELVEN_LIGHT</keyword>
+    </item>
+    <item EDID="CloakThalmor" type="armor">
+      <keyword>ARMOR_ELVEN_LIGHT</keyword>
+    </item>
+    <item EDID="CloakBrownLinen" type="armor">
+      <keyword>ARMOR_JEWELRY</keyword>
+    </item>
+    <item EDID="CloakCrimsonLinen" type="armor">
+      <keyword>ARMOR_JEWELRY</keyword>
+    </item>
+    <item EDID="CloakGreenLinen" type="armor">
+      <keyword>ARMOR_JEWELRY</keyword>
+    </item>
+    <item EDID="CloakGreyLinen" type="armor">
+      <keyword>ARMOR_JEWELRY</keyword>
+    </item>
+    <item EDID="CloakWhiteLinen" type="armor">
+      <keyword>ARMOR_JEWELRY</keyword>
+    </item>
+    <item EDID="CloakBlackLinen" type="armor">
+      <keyword>ARMOR_JEWELRY</keyword>
+    </item>
+    <item EDID="CloakBlueLinen" type="armor">
+      <keyword>ARMOR_JEWELRY</keyword>
+    </item>
+    <item EDID="CloakWildHunt" type="armor">
+      <keyword>ARMOR_ELVEN_GILDED</keyword>
+      <keyword>dienes_outfit_BA_ArmorBosmerHunt</keyword>
+      <keyword>dienes_outfit_BA_ArmorBosmerHuntLight</keyword>
+    </item>
+    <item EDID="CloakNecro" type="armor">
+      <keyword>ROBES_NECRO_ARMOR</keyword>
+    </item>
+    <item EDID="CloakBlueBurlap" type="armor">
+      <keyword>ROBES_MAGE_ARMOR</keyword>
+    </item>
+    <item EDID="CloakBrownBurlap" type="armor">
+      <keyword>ROBES_MAGE_ARMOR</keyword>
+    </item>
+    <item EDID="CloakCrimsonBurlap" type="armor">
+      <keyword>ROBES_MAGE_ARMOR</keyword>
+    </item>
+    <item EDID="CloakGreenBurlap" type="armor">
+      <keyword>ROBES_MAGE_ARMOR</keyword>
+    </item>
+    <item EDID="CloakGreyBurlap" type="armor">
+      <keyword>ROBES_MAGE_ARMOR</keyword>
+    </item>
+    <item EDID="CloakWhiteBurlap" type="armor">
+      <keyword>ROBES_MAGE_ARMOR</keyword>
+    </item>
+    <item EDID="CloakShortBlack" type="armor">
+      <keyword>ARMOR_JEWELRY</keyword>
+    </item>
+    <item EDID="CloakShortBlueBurlap" type="armor">
+      <keyword>ROBES_MAGE_ARMOR</keyword>
+    </item>
+    <item EDID="CloakShortBlackBurlap" type="armor">
+      <keyword>ROBES_MAGE_ARMOR</keyword>
+    </item>
+    <item EDID="CloakShortBlue" type="armor">
+      <keyword>ARMOR_JEWELRY</keyword>
+    </item>
+    <item EDID="CloakShortBrown" type="armor">
+      <keyword>ARMOR_JEWELRY</keyword>
+    </item>
+    <item EDID="CloakShortBrownBurlap" type="armor">
+      <keyword>ROBES_MAGE_ARMOR</keyword>
+    </item>
+    <item EDID="CloakShortCrimson" type="armor">
+      <keyword>ARMOR_JEWELRY</keyword>
+    </item>
+    <item EDID="CloakShortCrimsonBurlap" type="armor">
+      <keyword>ROBES_MAGE_ARMOR</keyword>
+    </item>
+    <item EDID="CloakShortGreen" type="armor">
+      <keyword>ARMOR_JEWELRY</keyword>
+    </item>
+    <item EDID="CloakShortGreenBurlap" type="armor">
+      <keyword>ROBES_MAGE_ARMOR</keyword>
+    </item>
+    <item EDID="CloakShortGrey" type="armor">
+      <keyword>ARMOR_JEWELRY</keyword>
+    </item>
+    <item EDID="CloakShortGreyBurlap" type="armor">
+      <keyword>ROBES_MAGE_ARMOR</keyword>
+    </item>
+    <item EDID="CloakShortWhite" type="armor">
+      <keyword>ARMOR_JEWELRY</keyword>
+    </item>
+    <item EDID="CloakShortWhiteBurlap" type="armor">
+      <keyword>ROBES_MAGE_ARMOR</keyword>
+    </item>
+    <item EDID="CloakShortBlackTalos" type="armor">
+      <keyword>ARMOR_STORMCLOAK</keyword>
+    </item>
+    <item EDID="CloakDwemerPurple" type="armor">
+      <keyword>ARMOR_DWARVEN</keyword>
+    </item>
+    <item EDID="CloakBlackBurlap" type="armor">
+      <keyword>ROBES_MAGE_ARMOR</keyword>
+    </item>
+    <item EDID="CloakImperialGold" type="armor">
+      <keyword>ARMOR_IMPERIAL</keyword>
+    </item>
+    <item EDID="CloakScale" type="armor">
+      <keyword>ARMOR_SCALED</keyword>
+    </item>
+    <item EDID="CloakDwemerCeremonial" type="armor">
+      <keyword>ARMOR_DWARVEN</keyword>
+    </item>
+  </mod>
+  <mod modName="1nivWICCloaks.esp">
+    <item EDID="1nivCloakBearClawComSnow" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="1nivCloakBearClawTrimSnow" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="1nivCloakBearClawTrimCave" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="1nivCloakBearClawComCave" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="1nivCloakWolfSkinTrimBTimber" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="1nivCloakWolfSkinTrimBBlack" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="1nivCloakBearClawComBrown" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="1nivHoodBearComBrown" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="1nivCloakWolfSkinTrimBWhite" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="1nivCloakWolfSkinRareWhite" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="1nivCloakWolfSkinRareBlack" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="1nivCloakWolfSkinRareTimber" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="1nivCloakWolfSkinTrimWWhite" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="1nivCloakWolfSkinTrimWBlack" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="1nivCloakWolfSkinTrimWTimber" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="1nivHoodBearOrnateSnow" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="1nivHoodBearOrnateCave" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="1nivHoodBearComStuddedSnow" type="armor">
+      <keyword>ARMOR_LEATHER</keyword>
+    </item>
+    <item EDID="1nivHoodBearComStuddedCave" type="armor">
+      <keyword>ARMOR_LEATHER</keyword>
+    </item>
+    <item EDID="1nivHoodBearComStuddedBrown" type="armor">
+      <keyword>ARMOR_LEATHER</keyword>
+    </item>
+    <item EDID="1nivHoodBearOrnateBrown" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="1nivHoodBearTrimStuddedSnow" type="armor">
+      <keyword>ARMOR_LEATHER</keyword>
+    </item>
+    <item EDID="1nivHoodBearTrimStuddedCave" type="armor">
+      <keyword>ARMOR_LEATHER</keyword>
+    </item>
+    <item EDID="1nivHoodBearTrimStuddedBrown" type="armor">
+      <keyword>ARMOR_LEATHER</keyword>
+    </item>
+    <item EDID="1nivHoodBearOrnateStuddedSnow" type="armor">
+      <keyword>ARMOR_LEATHER</keyword>
+    </item>
+    <item EDID="1nivHoodBearOrnateStuddedCave" type="armor">
+      <keyword>ARMOR_LEATHER</keyword>
+    </item>
+    <item EDID="1nivHoodBearOrnateStuddedBrown" type="armor">
+      <keyword>ARMOR_LEATHER</keyword>
+    </item>
+    <item EDID="1nivHoodBearTrimSnow" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="1nivHoodBearTrimCave" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="1nivHoodWolfSkinTrimWStuddedWhite" type="armor">
+      <keyword>ARMOR_LEATHER</keyword>
+    </item>
+    <item EDID="1nivHoodWolfSkinTrimWStuddedTimber" type="armor">
+      <keyword>ARMOR_LEATHER</keyword>
+    </item>
+    <item EDID="1nivHoodWolfSkinTrimWStuddedBlack" type="armor">
+      <keyword>ARMOR_LEATHER</keyword>
+    </item>
+    <item EDID="1nivHoodWolfSkinTrimBStuddedWhite" type="armor">
+      <keyword>ARMOR_LEATHER</keyword>
+    </item>
+    <item EDID="1nivHoodWolfSkinTrimBStuddedTimber" type="armor">
+      <keyword>ARMOR_LEATHER</keyword>
+    </item>
+    <item EDID="1nivHoodWolfSkinTrimBStuddedBlack" type="armor">
+      <keyword>ARMOR_LEATHER</keyword>
+    </item>
+    <item EDID="1nivHoodWolfSkinComStuddedWhite" type="armor">
+      <keyword>ARMOR_LEATHER</keyword>
+    </item>
+    <item EDID="1nivHoodWolfSkinComStuddedTimber" type="armor">
+      <keyword>ARMOR_LEATHER</keyword>
+    </item>
+    <item EDID="1nivHoodWolfSkinComStuddedBlack" type="armor">
+      <keyword>ARMOR_LEATHER</keyword>
+    </item>
+    <item EDID="1nivHoodBearTrimBrown" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="1nivHoodBearComSnow" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="1nivHoodBearComCave" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="1nivCloakWolfSkinComWhite" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="1nivHoodWolfSkinTrimWTimber" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="1nivHoodWolfSkinTrimBWhite" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="1nivHoodWolfSkinTrimWWhite" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="1nivHoodWolfSkinTrimWBlack" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="1nivHoodWolfSkinRareStuddedWhite" type="armor">
+      <keyword>ARMOR_LEATHER</keyword>
+    </item>
+    <item EDID="1nivHoodWolfSkinRareStuddedBlack" type="armor">
+      <keyword>ARMOR_LEATHER</keyword>
+    </item>
+    <item EDID="1nivHoodWolfSkinRareStuddedTimber" type="armor">
+      <keyword>ARMOR_LEATHER</keyword>
+    </item>
+    <item EDID="1nivHoodWolfSkinRareWhite" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="1nivHoodWolfSkinRareBlack" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="1nivHoodWolfSkinTrimBBlack" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="1nivHoodWolfSkinTrimRareTimber" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="1nivHoodWolfSkinRareTimber" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="1nivHoodWolfSkinTrimBTimber" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="1nivHoodWolfSkinTrimRareStuddedWhite" type="armor">
+      <keyword>ARMOR_LEATHER</keyword>
+    </item>
+    <item EDID="1nivHoodWolfSkinTrimRareStuddedTimber" type="armor">
+      <keyword>ARMOR_LEATHER</keyword>
+    </item>
+    <item EDID="1nivHoodWolfSkinTrimRareStuddedBlack" type="armor">
+      <keyword>ARMOR_LEATHER</keyword>
+    </item>
+    <item EDID="1nivHoodWolfSkinTrimRareWhite" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="1nivHoodWolfSkinTrimRareBlack" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="1nivHoodWolfSkinComWhite" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="1nivHoodWolfSkinComBlack" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="1nivHoodWolfSkinComTimber" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="1nivHoodBearTrimSteelSnow" type="armor">
+      <keyword>ARMOR_STEEL</keyword>
+    </item>
+    <item EDID="1nivHoodBearTrimSteelCave" type="armor">
+      <keyword>ARMOR_STEEL</keyword>
+    </item>
+    <item EDID="1nivHoodBearTrimSteelBrown" type="armor">
+      <keyword>ARMOR_STEEL</keyword>
+    </item>
+    <item EDID="1nivHoodBearOrnateSteelSnow" type="armor">
+      <keyword>ARMOR_STEEL</keyword>
+    </item>
+    <item EDID="1nivHoodBearOrnateSteelCave" type="armor">
+      <keyword>ARMOR_STEEL</keyword>
+    </item>
+    <item EDID="1nivHoodBearOrnateSteelBrown" type="armor">
+      <keyword>ARMOR_STEEL</keyword>
+    </item>
+    <item EDID="1nivHoodBearComSteelSnow" type="armor">
+      <keyword>ARMOR_STEEL</keyword>
+    </item>
+    <item EDID="1nivHoodBearComSteelCave" type="armor">
+      <keyword>ARMOR_STEEL</keyword>
+    </item>
+    <item EDID="1nivHoodBearComSteelBrown" type="armor">
+      <keyword>ARMOR_STEEL</keyword>
+    </item>
+    <item EDID="1nivHoodWolfSkinTrimWSteelWhite" type="armor">
+      <keyword>ARMOR_STEEL</keyword>
+    </item>
+    <item EDID="1nivHoodWolfSkinTrimWSteelBlack" type="armor">
+      <keyword>ARMOR_STEEL</keyword>
+    </item>
+    <item EDID="1nivHoodWolfSkinTrimWSteelTimber" type="armor">
+      <keyword>ARMOR_STEEL</keyword>
+    </item>
+    <item EDID="1nivHoodWolfSkinTrimBSteelWhite" type="armor">
+      <keyword>ARMOR_STEEL</keyword>
+    </item>
+    <item EDID="1nivHoodWolfSkinTrimBSteelBlack" type="armor">
+      <keyword>ARMOR_STEEL</keyword>
+    </item>
+    <item EDID="1nivHoodWolfSkinTrimBSteelTimber" type="armor">
+      <keyword>ARMOR_STEEL</keyword>
+    </item>
+    <item EDID="1nivHoodWolfSkinComSteelWhite" type="armor">
+      <keyword>ARMOR_STEEL</keyword>
+    </item>
+    <item EDID="1nivHoodWolfSkinComSteelBlack" type="armor">
+      <keyword>ARMOR_STEEL</keyword>
+    </item>
+    <item EDID="1nivHoodWolfSkinComSteelTimber" type="armor">
+      <keyword>ARMOR_STEEL</keyword>
+    </item>
+    <item EDID="1nivHoodWolfSkinRareSteelWhite" type="armor">
+      <keyword>ARMOR_STEEL</keyword>
+    </item>
+    <item EDID="1nivHoodWolfSkinRareSteelBlack" type="armor">
+      <keyword>ARMOR_STEEL</keyword>
+    </item>
+    <item EDID="1nivHoodWolfSkinRareSteelTimber" type="armor">
+      <keyword>ARMOR_STEEL</keyword>
+    </item>
+    <item EDID="1nivHoodWolfSkinTrimRareSteelWhite" type="armor">
+      <keyword>ARMOR_STEEL</keyword>
+    </item>
+    <item EDID="1nivHoodWolfSkinTrimRareSteelBlack" type="armor">
+      <keyword>ARMOR_STEEL</keyword>
+    </item>
+    <item EDID="1nivHoodWolfSkinTrimRareSteelTimber" type="armor">
+      <keyword>ARMOR_STEEL</keyword>
+    </item>
+    <item EDID="1nivCloakWolfSkinComBlack" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="1nivCloakWolfSkinComTimber" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="1nivCloakBearClawOrnateSnow" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="1nivCloakBearClawOrnateCave" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="1nivCloakBearClawOrnateBrown" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+    <item EDID="1nivCloakBearClawTrimBrown" type="armor">
+      <keyword>ARMOR_HIDE</keyword>
+    </item>
+  </mod>
+  <mod modName="Falskaar.esm">
+    <item EDID="FSArmorGuardBoots" type="armor">
+      <keyword>LLI_BASE_ARMOR_STORMCLOAK</keyword>
+      <keyword>dienes_outfit_FalskaarFittedGuard</keyword>
+    </item>
+    <item EDID="FSArmorGuardGauntlets" type="armor">
+      <keyword>LLI_BASE_ARMOR_STORMCLOAK</keyword>
+      <keyword>dienes_outfit_FalskaarFittedGuard</keyword>
+    </item>
+    <item EDID="FSArmorGuardCuirass" type="armor">
+      <keyword>dienes_outfit_FalskaarFittedGuard</keyword>
+    </item>
+    <item EDID="FSArmorGuardHelmetFull" type="armor">
+      <keyword>LLI_BASE_ARMOR_STORMCLOAK</keyword>
+      <keyword>dienes_outfit_FalskaarFittedGuard</keyword>
+    </item>
+    <item EDID="FSArmorStaalgardeShield" type="armor">
+      <keyword>dienes_outfit_FalskaarStaalgarde</keyword>
+    </item>
+    <item EDID="FSArmorStaalgardeGauntlets" type="armor">
+      <keyword>LLI_BASE_ARMOR_IMPERIAL_LIGHT</keyword>
+      <keyword>dienes_outfit_FalskaarStaalgarde</keyword>
+    </item>
+    <item EDID="FSArmorStaalgardeBoots" type="armor">
+      <keyword>LLI_BASE_ARMOR_IMPERIAL_LIGHT</keyword>
+      <keyword>dienes_outfit_FalskaarStaalgarde</keyword>
+    </item>
+    <item EDID="FSArmorStaalgardeHelmet" type="armor">
+      <keyword>LLI_BASE_ARMOR_IMPERIAL_LIGHT</keyword>
+      <keyword>dienes_outfit_FalskaarStaalgarde</keyword>
+    </item>
+    <item EDID="FSArmorStaalgardeCuirass" type="armor">
+      <keyword>dienes_outfit_FalskaarStaalgarde</keyword>
+    </item>
+    <item EDID="FSArmorReinforcedGuardCuirass" type="armor">
+      <keyword>dienes_outfit_FalskaarReinforcedGuard</keyword>
+    </item>
+    <item EDID="FSArmorReinforcedGuardBoots" type="armor">
+      <keyword>ARMOR_STORMCLOAK</keyword>
+      <keyword>dienes_outfit_FalskaarReinforcedGuard</keyword>
+    </item>
+    <item EDID="FSArmorReinforcedGuardGauntlets" type="armor">
+      <keyword>ARMOR_STORMCLOAK</keyword>
+      <keyword>dienes_outfit_FalskaarReinforcedGuard</keyword>
+    </item>
+    <item EDID="FSArmorReinforcedGuardHelmet" type="armor">
+      <keyword>ARMOR_STORMCLOAK</keyword>
+      <keyword>dienes_outfit_FalskaarReinforcedGuard</keyword>
+    </item>
+  </mod>
+  <mod modName="LB_MuchAdoSnowElves.esm">
+    <item EDID="LB_SE_Greatsword" type="weapon">
+      <keyword>WEAPON_FALMERHONED</keyword>
+    </item>
+    <item EDID="LB_SE_Waraxe" type="weapon">
+      <keyword>WEAPON_FALMERHONED</keyword>
+    </item>
+    <item EDID="LB_SE_Battleaxe" type="weapon">
+      <keyword>WEAPON_FALMERHONED</keyword>
+    </item>
+    <item EDID="LB_SE_Mace" type="weapon">
+      <keyword>WEAPON_FALMERHONED</keyword>
+    </item>
+    <item EDID="LB_SE_WarHammer" type="weapon">
+      <keyword>WEAPON_FALMERHONED</keyword>
+    </item>
+    <item EDID="LB_SE_Sword" type="weapon">
+      <keyword>WEAPON_FALMERHONED</keyword>
+    </item>
+    <item EDID="LB_SE_Bow" type="weapon">
+      <keyword>WEAPON_FALMERHONED</keyword>
+    </item>
+    <item EDID="LB_SE_Dagger" type="weapon">
+      <keyword>WEAPON_FALMERHONED</keyword>
+    </item>
+  </mod>
+  <mod modName="Ket_ARMONIZER_LListsNPC.esp">
+    <item EDID="ArmorElvenGildedGauntlets" type="armor">
+      <keyword>ARMOR_ELVEN_GILDED</keyword>
+      <keyword>dienes_outfit_elvengilded</keyword>
+      <keyword>BanditLight_Tier_7</keyword>
+    </item>
+    <item EDID="ArmorElvenGildedBoots" type="armor">
+      <keyword>ARMOR_ELVEN_GILDED</keyword>
+      <keyword>dienes_outfit_elvengilded</keyword>
+      <keyword>BanditLight_Tier_7</keyword>
+    </item>
+    <item EDID="ArmorElvenGildedHelmet" type="armor">
+      <keyword>ARMOR_ELVEN_GILDED</keyword>
+      <keyword>dienes_outfit_elvengilded</keyword>
+      <keyword>BanditLight_Tier_7</keyword>
+    </item>
+  </mod>
+  <mod modName="Revelation Robes Standalone.esp">
+    <item EDID="ArmorRevelationHood" type="armor">
+      <keyword>ARMOR_SCALED</keyword>
+      <keyword> dienes_outfit_redguard</keyword>
+      <keyword>dienes_outfit_HBV2.0_Highwayman</keyword>
+      <keyword>dienes_outfit_RRS_RevelationArmor</keyword>
+      <keyword>BanditLight_Tier_7</keyword>
+    </item>
+    <item EDID="ArmorRevelationGloves" type="armor">
+      <keyword>ARMOR_SCALED</keyword>
+      <keyword> dienes_outfit_redguard</keyword>
+      <keyword>dienes_outfit_HBV2.0_Highwayman</keyword>
+      <keyword>dienes_outfit_RRS_RevelationArmor</keyword>
+      <keyword>BanditLight_Tier_7</keyword>
+    </item>
+    <item EDID="ArmorRevelationBoots" type="armor">
+      <keyword>ARMOR_SCALED</keyword>
+      <keyword> dienes_outfit_redguard</keyword>
+      <keyword>dienes_outfit_HBV2.0_Highwayman</keyword>
+      <keyword>dienes_outfit_RRS_RevelationArmor</keyword>
+      <keyword>BanditLight_Tier_7</keyword>
+    </item>
+    <item EDID="ArmorRevelationCuirass" type="armor">
+      <keyword>ARMOR_SCALED</keyword>
+      <keyword> dienes_outfit_redguard</keyword>
+      <keyword>dienes_outfit_HBV2.0_Highwayman</keyword>
+      <keyword>dienes_outfit_RRS_RevelationArmor</keyword>
+      <keyword>BanditLight_Tier_7</keyword>
+    </item>
+    <item EDID="ClothingRevelationRobes" type="armor">
+      <keyword>ROBES_MAGE_ARMOR</keyword>
+      <keyword> dienes_outfit_redguard</keyword>
+      <keyword>dienes_outfit_RRS_RevelationRobes</keyword>
+      <keyword>Warlock_Tier_0</keyword>
+    </item>
+    <item EDID="ClothingRevelationGloves" type="armor">
+      <keyword>ROBES_MAGE_ARMOR</keyword>
+      <keyword> dienes_outfit_redguard</keyword>
+      <keyword>dienes_outfit_RRS_RevelationRobes</keyword>
+      <keyword>Warlock_Tier_0</keyword>
+    </item>
+    <item EDID="ClothingRevelationBoots" type="armor">
+      <keyword>ROBES_MAGE_ARMOR</keyword>
+      <keyword> dienes_outfit_redguard</keyword>
+      <keyword>dienes_outfit_RRS_RevelationRobes</keyword>
+      <keyword>Warlock_Tier_0</keyword>
+    </item>
+    <item EDID="ClothingRevelationHood" type="armor">
+      <keyword>ROBES_MAGE_ARMOR</keyword>
+      <keyword> dienes_outfit_redguard</keyword>
+      <keyword>dienes_outfit_RRS_RevelationRobes</keyword>
+      <keyword>Warlock_Tier_0</keyword>
+    </item>
+  </mod>
+</lootification>
