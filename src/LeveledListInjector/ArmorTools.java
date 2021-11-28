@@ -5293,6 +5293,7 @@ class DraugrTier0 extends TierBase {
     Map<String, String[]> FormIDList() {
         Map<String, String[]> m = new HashMap<>();
         m.put("Lootification.esm", new String[] {
+            /*
             "0021C7", // OutftDienesDraugr02Helmet01Beard02Outfit
             "0021C8", // OutftDienesDraugr02Helmet01Outfit
             "0021C9", // OutftDienesDraugr04Helmet02Beard01Outfit
@@ -5309,6 +5310,7 @@ class DraugrTier0 extends TierBase {
             "0021D4", // OutftDienesDraugrHair02Beard01
             "0021D5", // OutftDienesDraugrHair02Beard02
             "0021D6", // OutftDienesDraugrHair02Outfit
+            */
             "00C47F", // DraugrOutfit
         });
         return m;
