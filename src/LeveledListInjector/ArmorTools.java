@@ -14,6 +14,7 @@ import java.util.Map;
 //import java.util.logging.Logger;
 import skyproc.*;
 import skyproc.exceptions.BadParameter;
+import skyproc.genenums.FirstPersonFlags;
 
 /**
  *
@@ -2618,7 +2619,8 @@ FX01 = _
 //            if (passed == false) {
 //                ret = false;
 //            }
-        }
+        }       
+        
         //--------------------------------------------------------------------------------------------
 
         if (bits.contains("L")) {
@@ -2914,369 +2916,416 @@ FX01 = _
         return passed;
     }
 //asdf
-    static String getBitsFromArray(ArrayList<ARMO> a, Mod merger) {
+    
+    static String getBitsFromArray(ArrayList<ARMO> ar, Mod merger) {        
         String ret = "";
-        //KYWD helm = (KYWD) merger.getMajor("ArmorHelmet", GRUP_TYPE.KYWD);
-        boolean h = false;
-        for (ARMO arm : a) {
-            if (       arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.CIRCLET)
-                    || arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.HEAD)
-                    || arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.HAIR)) {
-                h = true;
-                break;
+        
+        Map<String, FirstPersonFlags[]> bitsInfo = BitsInfo.Get();
+        for (String sBit : bitsInfo.keySet()){
+            for (ARMO a : ar) {
+                boolean bitAdded = false;
+                for (FirstPersonFlags flag : bitsInfo.get(sBit)){
+                    if (a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, flag)){
+                        ret += sBit;
+                        
+                        bitAdded = true;
+                        break;
+                    }
+                }
+                if(bitAdded){
+                    break;
+                }
             }
+            //if (bits.contains(sBit)){
+//                boolean isShield = false;
+//                if ("S".equals(sBit)){
+//                    isShield = true;
+//                }
+//                for (ARMO a : ar) {
+//                    boolean isSet = false;
+//                    if (isShield){
+//                        KYWD k = hasKeyStartsWith(a, "ArmorShield", merger);
+//                        if (k != null) {
+//                            isSet = true;
+//                        }
+//                    }
+//                    else{
+//                        for (FirstPersonFlags flag : bitsInfo.get(sBit)){
+//                            if (a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, flag)){
+//                                isSet = true;
+//                                break;
+//                            }
+//                        }
+//                    }
+//                    
+//                    if (isSet){
+//                        ret += sBit;
+//                    }
+//                }                
+            //}
         }
-        //KYWD cuirass = (KYWD) merger.getMajor("ArmorCuirass", GRUP_TYPE.KYWD);
-        boolean c = false;
-        for (ARMO arm : a) {
-            if (       arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BODY)) {
-                c = true;
-                break;
-            }
-        }
-        //KYWD gauntlets = (KYWD) merger.getMajor("ArmorGauntlets", GRUP_TYPE.KYWD);
-        boolean g = false;
-        for (ARMO arm : a) {
-            if (       arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.HANDS)) {
-                g = true;
-                break;
-            }
-        }
-        //KYWD boots = (KYWD) merger.getMajor("ArmorBoots", GRUP_TYPE.KYWD);
-        boolean b = false;
-        for (ARMO arm : a) {
-            if (       arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.FEET)) {
-                b = true;
-                break;
-            }
-        }
-        KYWD shield = (KYWD) merger.getMajor("ArmorShield", GRUP_TYPE.KYWD);
-        boolean s = false;
-        for (ARMO arm : a) {
-            if (armorHasKeyword(arm, shield, merger)) {
-                s = true;
-                break;
-            }
-        }
-
-//--------------------------------------------------------------------------------------------
-        boolean l = false;
-        for (ARMO arm : a)
-		{
-            if        (	    arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.LONG_HAIR))
-		    {
-                l = true;
-                break;
-            }
-        }
-        boolean r = false;
-        for (ARMO arm : a)
-		{
-            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.EARS))
-		    {
-                r = true;
-                break;
-            }
-        }
-        boolean w = false;
-        for (ARMO arm : a)
-		{
-            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.DecapitateHead))
-		    {
-                w = true;
-                break;
-            }
-        }
-        boolean d = false;
-        for (ARMO arm : a)
-		{
-            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.Decapitate))
-		    {
-                d = true;
-                break;
-            }
-        }
-//--------------------------------------------------------------------------------------------
-        boolean f = false;
-        for (ARMO arm : a)
-		{
-            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.FOREARMS))
-		    {
-                f = true;
-                break;
-            }
-        }
-//--------------------------------------------------------------------------------------------
-        boolean v = false;
-        for (ARMO arm : a)
-		{
-            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.CALVES))
-		    {
-                v = true;
-                break;
-            }
-        }
-//--------------------------------------------------------------------------------------------
-        boolean t = false;
-        for (ARMO arm : a)
-		{
-            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.TAIL))
-		    {
-                t = true;
-                break;
-            }
-        }
-
-        boolean z3 = false;
-        for (ARMO arm : a)
-		{
-            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn3))
-		    {
-                z3 = true;
-                break;
-            }
-        }
-
-        boolean z4 = false;
-        for (ARMO arm : a)
-		{
-            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn4))
-		    {
-                z4 = true;
-                break;
-            }
-        }
-
-        boolean z5 = false;
-        for (ARMO arm : a)
-		{
-            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn5))
-		    {
-                z5 = true;
-                break;
-            }
-        }
-
-        boolean z6 = false;
-        for (ARMO arm : a)
-		{
-            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn6))
-		    {
-                z6 = true;
-                break;
-            }
-        }
-
-        boolean z7 = false;
-        for (ARMO arm : a)
-		{
-            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn7))
-		    {
-                z7 = true;
-                break;
-            }
-        }
-
-        boolean z8 = false;
-        for (ARMO arm : a)
-		{
-            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn8))
-		    {
-                z8 = true;
-                break;
-            }
-        }
-
-        boolean z9 = false;
-        /*KYWD z9k = (KYWD) merger.getMajor("BodyAddOn9", GRUP_TYPE.KYWD);*/
-        for (ARMO arm : a)
-		{
-            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn9)
-                            /*|| armorHasKeyword(arm, z9k, merger)*/)
-		    {
-                z9 = true;
-                break;
-            }
-        }
-
-        boolean z10 = false;
-        for (ARMO arm : a)
-		{
-            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn10))
-		    {
-                z10 = true;
-                break;
-            }
-        }
-
-        boolean z11 = false;
-        for (ARMO arm : a)
-		{
-            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn11))
-		    {
-                z11 = true;
-                break;
-            }
-        }
-
-        boolean z12 = false;
-        for (ARMO arm : a)
-		{
-            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn12))
-		    {
-                z12 = true;
-                break;
-            }
-        }
-
-        boolean z13 = false;
-        for (ARMO arm : a)
-		{
-            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn13))
-		    {
-                z13 = true;
-                break;
-            }
-        }
-
-        boolean z14 = false;
-        for (ARMO arm : a)
-		{
-            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn14))
-		    {
-                z14 = true;
-                break;
-            }
-        }
-
-        boolean z15 = false;
-        for (ARMO arm : a)
-		{
-            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn15))
-		    {
-                z15 = true;
-                break;
-            }
-        }
-
-        boolean z16 = false;
-        for (ARMO arm : a)
-		{
-            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn16))
-		    {
-                z16 = true;
-                break;
-            }
-        }
-
-        boolean z17 = false;
-        for (ARMO arm : a)
-		{
-            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn17))
-		    {
-                z17 = true;
-                break;
-            }
-        }
-
-        boolean fx01 = false;
-        for (ARMO arm : a)
-		{
-            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.FX01))
-		    {
-                fx01 = true;
-                break;
-            }
-        }
-//------------------------------------------------------------
-
-
-        if (h) {
-            ret = ret + "H";
-        }
-        if (c) {
-            ret = ret + "C";
-        }
-        if (g) {
-            ret = ret + "G";
-        }
-        if (b) {
-            ret = ret + "B";
-        }
-        if (s) {
-            ret = ret + "S";
-        }
-
-//---------------------------------
-        if (f) {
-            ret = ret + "F";
-        }
-        if (v) {
-            ret = ret + "V";
-        }
-        if (t) {
-            ret = ret + "T";
-        }
-        if (l) {
-            ret = ret + "L";
-        }
-        if (r) {
-            ret = ret + "R";
-        }
-        if (z3) {
-            ret = ret + "A";
-        }
-        if (z4) {
-            ret = ret + "E";
-        }
-        if (z5) {
-            ret = ret + "I";
-        }
-        if (z6) {
-            ret = ret + "J";
-        }
-        if (z7) {
-            ret = ret + "K";
-        }
-        if (z8) {
-            ret = ret + "M";
-        }
-        if (w) {
-            ret = ret + "W";
-        }
-        if (d) {
-            ret = ret + "D";
-        }
-        if (z9) {
-            ret = ret + "N";
-        }
-        if (z10) {
-            ret = ret + "O";
-        }
-        if (z11) {
-            ret = ret + "P";
-        }
-        if (z12) {
-            ret = ret + "Q";
-        }
-        if (z13) {
-            ret = ret + "U";
-        }
-        if (z14) {
-            ret = ret + "X";
-        }
-        if (z15) {
-            ret = ret + "Y";
-        }
-        if (z16) {
-            ret = ret + "Z";
-        }
-        if (z17) {
-            ret = ret + "-";
-        }
-        if (fx01) {
-            ret = ret + "_";
-        }
+        
+        
+//        //KYWD helm = (KYWD) merger.getMajor("ArmorHelmet", GRUP_TYPE.KYWD);
+//        boolean h = false;
+//        for (ARMO arm : a) {
+//            if (       arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.CIRCLET)
+//                    || arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.HEAD)
+//                    || arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.HAIR)) {
+//                h = true;
+//                break;
+//            }
+//        }
+//        //KYWD cuirass = (KYWD) merger.getMajor("ArmorCuirass", GRUP_TYPE.KYWD);
+//        boolean c = false;
+//        for (ARMO arm : a) {
+//            if (       arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BODY)) {
+//                c = true;
+//                break;
+//            }
+//        }
+//        //KYWD gauntlets = (KYWD) merger.getMajor("ArmorGauntlets", GRUP_TYPE.KYWD);
+//        boolean g = false;
+//        for (ARMO arm : a) {
+//            if (       arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.HANDS)) {
+//                g = true;
+//                break;
+//            }
+//        }
+//        //KYWD boots = (KYWD) merger.getMajor("ArmorBoots", GRUP_TYPE.KYWD);
+//        boolean b = false;
+//        for (ARMO arm : a) {
+//            if (       arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.FEET)) {
+//                b = true;
+//                break;
+//            }
+//        }
+//        KYWD shield = (KYWD) merger.getMajor("ArmorShield", GRUP_TYPE.KYWD);
+//        boolean s = false;
+//        for (ARMO arm : a) {
+//            if (armorHasKeyword(arm, shield, merger)) {
+//                s = true;
+//                break;
+//            }
+//        }
+//
+////--------------------------------------------------------------------------------------------
+//        boolean l = false;
+//        for (ARMO arm : a)
+//		{
+//            if        (	    arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.LONG_HAIR))
+//		    {
+//                l = true;
+//                break;
+//            }
+//        }
+//        boolean r = false;
+//        for (ARMO arm : a)
+//		{
+//            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.EARS))
+//		    {
+//                r = true;
+//                break;
+//            }
+//        }
+//        boolean w = false;
+//        for (ARMO arm : a)
+//		{
+//            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.DecapitateHead))
+//		    {
+//                w = true;
+//                break;
+//            }
+//        }
+//        boolean d = false;
+//        for (ARMO arm : a)
+//		{
+//            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.Decapitate))
+//		    {
+//                d = true;
+//                break;
+//            }
+//        }
+////--------------------------------------------------------------------------------------------
+//        boolean f = false;
+//        for (ARMO arm : a)
+//		{
+//            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.FOREARMS))
+//		    {
+//                f = true;
+//                break;
+//            }
+//        }
+////--------------------------------------------------------------------------------------------
+//        boolean v = false;
+//        for (ARMO arm : a)
+//		{
+//            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.CALVES))
+//		    {
+//                v = true;
+//                break;
+//            }
+//        }
+////--------------------------------------------------------------------------------------------
+//        boolean t = false;
+//        for (ARMO arm : a)
+//		{
+//            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.TAIL))
+//		    {
+//                t = true;
+//                break;
+//            }
+//        }
+//
+//        boolean z3 = false;
+//        for (ARMO arm : a)
+//		{
+//            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn3))
+//		    {
+//                z3 = true;
+//                break;
+//            }
+//        }
+//
+//        boolean z4 = false;
+//        for (ARMO arm : a)
+//		{
+//            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn4))
+//		    {
+//                z4 = true;
+//                break;
+//            }
+//        }
+//
+//        boolean z5 = false;
+//        for (ARMO arm : a)
+//		{
+//            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn5))
+//		    {
+//                z5 = true;
+//                break;
+//            }
+//        }
+//
+//        boolean z6 = false;
+//        for (ARMO arm : a)
+//		{
+//            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn6))
+//		    {
+//                z6 = true;
+//                break;
+//            }
+//        }
+//
+//        boolean z7 = false;
+//        for (ARMO arm : a)
+//		{
+//            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn7))
+//		    {
+//                z7 = true;
+//                break;
+//            }
+//        }
+//
+//        boolean z8 = false;
+//        for (ARMO arm : a)
+//		{
+//            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn8))
+//		    {
+//                z8 = true;
+//                break;
+//            }
+//        }
+//
+//        boolean z9 = false;
+//        /*KYWD z9k = (KYWD) merger.getMajor("BodyAddOn9", GRUP_TYPE.KYWD);*/
+//        for (ARMO arm : a)
+//		{
+//            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn9)
+//                            /*|| armorHasKeyword(arm, z9k, merger)*/)
+//		    {
+//                z9 = true;
+//                break;
+//            }
+//        }
+//
+//        boolean z10 = false;
+//        for (ARMO arm : a)
+//		{
+//            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn10))
+//		    {
+//                z10 = true;
+//                break;
+//            }
+//        }
+//
+//        boolean z11 = false;
+//        for (ARMO arm : a)
+//		{
+//            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn11))
+//		    {
+//                z11 = true;
+//                break;
+//            }
+//        }
+//
+//        boolean z12 = false;
+//        for (ARMO arm : a)
+//		{
+//            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn12))
+//		    {
+//                z12 = true;
+//                break;
+//            }
+//        }
+//
+//        boolean z13 = false;
+//        for (ARMO arm : a)
+//		{
+//            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn13))
+//		    {
+//                z13 = true;
+//                break;
+//            }
+//        }
+//
+//        boolean z14 = false;
+//        for (ARMO arm : a)
+//		{
+//            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn14))
+//		    {
+//                z14 = true;
+//                break;
+//            }
+//        }
+//
+//        boolean z15 = false;
+//        for (ARMO arm : a)
+//		{
+//            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn15))
+//		    {
+//                z15 = true;
+//                break;
+//            }
+//        }
+//
+//        boolean z16 = false;
+//        for (ARMO arm : a)
+//		{
+//            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn16))
+//		    {
+//                z16 = true;
+//                break;
+//            }
+//        }
+//
+//        boolean z17 = false;
+//        for (ARMO arm : a)
+//		{
+//            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn17))
+//		    {
+//                z17 = true;
+//                break;
+//            }
+//        }
+//
+//        boolean fx01 = false;
+//        for (ARMO arm : a)
+//		{
+//            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.FX01))
+//		    {
+//                fx01 = true;
+//                break;
+//            }
+//        }
+////------------------------------------------------------------
+//
+//        if (h) {
+//            ret = ret + "H";
+//        }
+//        if (c) {
+//            ret = ret + "C";
+//        }
+//        if (g) {
+//            ret = ret + "G";
+//        }
+//        if (b) {
+//            ret = ret + "B";
+//        }
+//        if (s) {
+//            ret = ret + "S";
+//        }
+//
+////---------------------------------
+//        if (f) {
+//            ret = ret + "F";
+//        }
+//        if (v) {
+//            ret = ret + "V";
+//        }
+//        if (t) {
+//            ret = ret + "T";
+//        }
+//        if (l) {
+//            ret = ret + "L";
+//        }
+//        if (r) {
+//            ret = ret + "R";
+//        }
+//        if (z3) {
+//            ret = ret + "A";
+//        }
+//        if (z4) {
+//            ret = ret + "E";
+//        }
+//        if (z5) {
+//            ret = ret + "I";
+//        }
+//        if (z6) {
+//            ret = ret + "J";
+//        }
+//        if (z7) {
+//            ret = ret + "K";
+//        }
+//        if (z8) {
+//            ret = ret + "M";
+//        }
+//        if (w) {
+//            ret = ret + "W";
+//        }
+//        if (d) {
+//            ret = ret + "D";
+//        }
+//        if (z9) {
+//            ret = ret + "N";
+//        }
+//        if (z10) {
+//            ret = ret + "O";
+//        }
+//        if (z11) {
+//            ret = ret + "P";
+//        }
+//        if (z12) {
+//            ret = ret + "Q";
+//        }
+//        if (z13) {
+//            ret = ret + "U";
+//        }
+//        if (z14) {
+//            ret = ret + "X";
+//        }
+//        if (z15) {
+//            ret = ret + "Y";
+//        }
+//        if (z16) {
+//            ret = ret + "Z";
+//        }
+//        if (z17) {
+//            ret = ret + "-";
+//        }
+//        if (fx01) {
+//            ret = ret + "_";
+//        }
 //---------------------------------
 
         return ret;
@@ -3301,349 +3350,389 @@ FX01 = _
     }
 
     static void addArmorByBit(LVLI set, ArrayList<ARMO> ar, String bits, Mod merger) {
-
-        //asdf
-        //SPGlobal.log("line 2876 set="+set, "ar="+ar,"bits="+bits);
-        //int s = 0;//для отладки
-//---code start
-        if (bits.contains("H")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.HEAD)
-                        || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.CIRCLET)
-                        || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.HAIR)/*
-                        || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.LONG_HAIR)
-                        || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.EARS)
-                        || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.DecapitateHead)
-                        || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.Decapitate)*/) {
-                    if (!set.contains(a)){
-                        set.addEntry(a.getForm(), 1, 1);
+        
+        Map<String, FirstPersonFlags[]> bitsInfo = BitsInfo.Get();
+        for (String sBit : bitsInfo.keySet()){
+            if (bits.contains(sBit)){
+                for (ARMO a : ar) {
+                    for (FirstPersonFlags flag : bitsInfo.get(sBit)){
+                        if (a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, flag)){
+                            if (!set.contains(a)){
+                                set.addEntry(a.getForm(), 1, 1);
+                            }
+                            break;
+                        }
                     }
-                    //s++;
                 }
-            }
-        }
-        //asdfe Bipeds
-        if (bits.contains("C")) {
-            for (ARMO a : ar) {
-                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BODY)/*
-                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.TAIL)
-                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn3)
-                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn4)
-                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn5)
-                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn6)
-                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn7)
-                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn8)
-                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn9)
-                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn10)
-                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn11)
-                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn12)
-                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn13)
-                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn14)
-                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn15)
-                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn16)
-                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn17)*/) {
-                    if (!set.contains(a)){
-                        set.addEntry(a.getForm(), 1, 1);
-                    }
-                    //s++;
-                }
-            }
-        }
-        if (bits.contains("G")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.HANDS)/*
-                        || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.FOREARMS)*/) {
-                    if (!set.contains(a)){
-                        set.addEntry(a.getForm(), 1, 1);
-                    }
-                    //s++;
-                }
-            }
-        }
-        if (bits.contains("B")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.FEET)/*
-                        || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.CALVES)*/) {
-                    if (!set.contains(a)){
-                        set.addEntry(a.getForm(), 1, 1);
-                    }
-                    //s++;
-                }
-            }
-        }
-        if (bits.contains("S")) {
-            for (ARMO a : ar) {
-                KYWD k = hasKeyStartsWith(a, "ArmorShield", merger);
-                if (k != null) {
-                    if (!set.contains(a)){
-                        set.addEntry(a.getForm(), 1, 1);
-                    }
-                    //s++;
-                }
+//                boolean isShield = false;
+//                if ("S".equals(sBit)){
+//                    isShield = true;
+//                }
+//                for (ARMO a : ar) {
+//                    boolean isSet = false;
+//                    if (isShield){
+//                        KYWD k = hasKeyStartsWith(a, "ArmorShield", merger);
+//                        if (k != null) {
+//                            isSet = true;
+//                        }
+//                    }
+//                    else{
+//                        for (FirstPersonFlags flag : bitsInfo.get(sBit)){
+//                            if (a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, flag)){
+//                                isSet = true;
+//                                break;
+//                            }
+//                        }
+//                    }
+//                    if (isSet && !set.contains(a)){
+//                        set.addEntry(a.getForm(), 1, 1);
+//                    }
+//                }
             }
         }
 
-
-//------------------------------------------------------------
-
-        if (bits.contains("F")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.FOREARMS)) {
-                    if (!set.contains(a)){
-                        set.addEntry(a.getForm(), 1, 1);
-                    }
-                    //s++;
-                }
-            }
-        }
-
-//------------------------------------------------------------
-
-        if (bits.contains("V")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.CALVES)) {
-                    if (!set.contains(a)){
-                        set.addEntry(a.getForm(), 1, 1);
-                    }
-                    //s++;
-                }
-            }
-        }
-
-        //------------------------------------------------------------
-
-        if (bits.contains("L")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.LONG_HAIR)) {
-                    if (!set.contains(a)){
-                        set.addEntry(a.getForm(), 1, 1);
-                    }
-                    //s++;
-                }
-            }
-        }
-
-        if (bits.contains("R")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.EARS)) {
-                    if (!set.contains(a)){
-                        set.addEntry(a.getForm(), 1, 1);
-                    }
-                    //s++;
-                }
-            }
-        }
-
-        if (bits.contains("W")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.DecapitateHead)) {
-                    if (!set.contains(a)){
-                        set.addEntry(a.getForm(), 1, 1);
-                    }
-                    //s++;
-                }
-            }
-        }
-
-        if (bits.contains("D")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.Decapitate)) {
-                    if (!set.contains(a)){
-                        set.addEntry(a.getForm(), 1, 1);
-                    }
-                    //s++;
-                }
-            }
-        }
-
-//------------------------------------------------------------
-
-
-        if (bits.contains("T")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.TAIL)) {
-                    if (!set.contains(a)){
-                        set.addEntry(a.getForm(), 1, 1);
-                    }
-                    //s++;
-                }
-            }
-        }
-
-        if (bits.contains("A")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn3)) {
-                    if (!set.contains(a)){
-                        set.addEntry(a.getForm(), 1, 1);
-                    }
-                    //s++;
-                }
-            }
-        }
-
-        if (bits.contains("E")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn4)) {
-                    if (!set.contains(a)){
-                        set.addEntry(a.getForm(), 1, 1);
-                    }
-                    //s++;
-                }
-            }
-        }
-
-        if (bits.contains("I")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn5)) {
-                    if (!set.contains(a)){
-                        set.addEntry(a.getForm(), 1, 1);
-                    }
-                    //s++;
-                }
-            }
-        }
-
-        if (bits.contains("J")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn6)) {
-                    if (!set.contains(a)){
-                        set.addEntry(a.getForm(), 1, 1);
-                    }
-                    //s++;
-                }
-            }
-        }
-
-        if (bits.contains("K")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn7)) {
-                    if (!set.contains(a)){
-                        set.addEntry(a.getForm(), 1, 1);
-                    }
-                    //s++;
-                }
-            }
-        }
-
-        if (bits.contains("M")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn8)) {
-                    if (!set.contains(a)){
-                        set.addEntry(a.getForm(), 1, 1);
-                    }
-                    //s++;
-                }
-            }
-        }
-
-        if (bits.contains("N")) {
-            /*KYWD z9k = (KYWD) merger.getMajor("BodyAddOn9", GRUP_TYPE.KYWD);*/
-
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn9)
-                        /*|| armorHasKeyword(a, z9k, merger)*/) {
-                    if (!set.contains(a)){
-                        set.addEntry(a.getForm(), 1, 1);
-                    }
-                    //s++;
-                }
-            }
-        }
-
-        if (bits.contains("O")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn10)) {
-                    if (!set.contains(a)){
-                        set.addEntry(a.getForm(), 1, 1);
-                    }
-                    //s++;
-                }
-            }
-        }
-
-        if (bits.contains("P")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn11)) {
-                    if (!set.contains(a)){
-                        set.addEntry(a.getForm(), 1, 1);
-                    }
-                    //s++;
-                }
-            }
-        }
-
-        if (bits.contains("Q")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn12)) {
-                    if (!set.contains(a)){
-                        set.addEntry(a.getForm(), 1, 1);
-                    }
-                    //s++;
-                }
-            }
-        }
-
-        if (bits.contains("U")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn13)) {
-                    set.addEntry(a.getForm(), 1, 1);
-                    //s++;
-                }
-            }
-        }
-
-        if (bits.contains("X")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn14)) {
-                    if (!set.contains(a)){
-                        set.addEntry(a.getForm(), 1, 1);
-                    }
-                    //s++;
-                }
-            }
-        }
-
-        if (bits.contains("Y")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn15)) {
-                    if (!set.contains(a)){
-                        set.addEntry(a.getForm(), 1, 1);
-                    }
-                    //s++;
-                }
-            }
-        }
-
-        if (bits.contains("Z")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn16)) {
-                    set.addEntry(a.getForm(), 1, 1);
-                    //s++;
-                }
-            }
-        }
-
-        if (bits.contains("-")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn17)) {
-                    if (!set.contains(a)){
-                        set.addEntry(a.getForm(), 1, 1);
-                    }
-                    //s++;
-                }
-            }
-        }
-
-        if (bits.contains("_")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.FX01)) {
-                    if (!set.contains(a)){
-                        set.addEntry(a.getForm(), 1, 1);
-                    }
-                    //s++;
-                }
-            }
-        }
+//        //asdf
+//        //SPGlobal.log("line 2876 set="+set, "ar="+ar,"bits="+bits);
+//        //int s = 0;//для отладки
+////---code start
+//        if (bits.contains("H")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.HEAD)
+//                        || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.CIRCLET)
+//                        || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.HAIR)/*
+//                        || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.LONG_HAIR)
+//                        || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.EARS)
+//                        || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.DecapitateHead)
+//                        || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.Decapitate)*/) {
+//                    if (!set.contains(a)){
+//                        set.addEntry(a.getForm(), 1, 1);
+//                    }
+//                    //s++;
+//                }
+//            }
+//        }
+//        //asdfe Bipeds
+//        if (bits.contains("C")) {
+//            for (ARMO a : ar) {
+//                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BODY)/*
+//                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.TAIL)
+//                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn3)
+//                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn4)
+//                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn5)
+//                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn6)
+//                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn7)
+//                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn8)
+//                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn9)
+//                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn10)
+//                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn11)
+//                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn12)
+//                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn13)
+//                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn14)
+//                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn15)
+//                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn16)
+//                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn17)*/) {
+//                    if (!set.contains(a)){
+//                        set.addEntry(a.getForm(), 1, 1);
+//                    }
+//                    //s++;
+//                }
+//            }
+//        }
+//        if (bits.contains("G")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.HANDS)/*
+//                        || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.FOREARMS)*/) {
+//                    if (!set.contains(a)){
+//                        set.addEntry(a.getForm(), 1, 1);
+//                    }
+//                    //s++;
+//                }
+//            }
+//        }
+//        if (bits.contains("B")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.FEET)/*
+//                        || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.CALVES)*/) {
+//                    if (!set.contains(a)){
+//                        set.addEntry(a.getForm(), 1, 1);
+//                    }
+//                    //s++;
+//                }
+//            }
+//        }
+//        if (bits.contains("S")) {
+//            for (ARMO a : ar) {
+//                KYWD k = hasKeyStartsWith(a, "ArmorShield", merger);
+//                if (k != null) {
+//                    if (!set.contains(a)){
+//                        set.addEntry(a.getForm(), 1, 1);
+//                    }
+//                    //s++;
+//                }
+//            }
+//        }
+//
+//
+////------------------------------------------------------------
+//
+//        if (bits.contains("F")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.FOREARMS)) {
+//                    if (!set.contains(a)){
+//                        set.addEntry(a.getForm(), 1, 1);
+//                    }
+//                    //s++;
+//                }
+//            }
+//        }
+//
+////------------------------------------------------------------
+//
+//        if (bits.contains("V")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.CALVES)) {
+//                    if (!set.contains(a)){
+//                        set.addEntry(a.getForm(), 1, 1);
+//                    }
+//                    //s++;
+//                }
+//            }
+//        }
+//
+//        //------------------------------------------------------------
+//
+//        if (bits.contains("L")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.LONG_HAIR)) {
+//                    if (!set.contains(a)){
+//                        set.addEntry(a.getForm(), 1, 1);
+//                    }
+//                    //s++;
+//                }
+//            }
+//        }
+//
+//        if (bits.contains("R")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.EARS)) {
+//                    if (!set.contains(a)){
+//                        set.addEntry(a.getForm(), 1, 1);
+//                    }
+//                    //s++;
+//                }
+//            }
+//        }
+//
+//        if (bits.contains("W")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.DecapitateHead)) {
+//                    if (!set.contains(a)){
+//                        set.addEntry(a.getForm(), 1, 1);
+//                    }
+//                    //s++;
+//                }
+//            }
+//        }
+//
+//        if (bits.contains("D")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.Decapitate)) {
+//                    if (!set.contains(a)){
+//                        set.addEntry(a.getForm(), 1, 1);
+//                    }
+//                    //s++;
+//                }
+//            }
+//        }
+//
+////------------------------------------------------------------
+//
+//
+//        if (bits.contains("T")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.TAIL)) {
+//                    if (!set.contains(a)){
+//                        set.addEntry(a.getForm(), 1, 1);
+//                    }
+//                    //s++;
+//                }
+//            }
+//        }
+//
+//        if (bits.contains("A")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn3)) {
+//                    if (!set.contains(a)){
+//                        set.addEntry(a.getForm(), 1, 1);
+//                    }
+//                    //s++;
+//                }
+//            }
+//        }
+//
+//        if (bits.contains("E")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn4)) {
+//                    if (!set.contains(a)){
+//                        set.addEntry(a.getForm(), 1, 1);
+//                    }
+//                    //s++;
+//                }
+//            }
+//        }
+//
+//        if (bits.contains("I")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn5)) {
+//                    if (!set.contains(a)){
+//                        set.addEntry(a.getForm(), 1, 1);
+//                    }
+//                    //s++;
+//                }
+//            }
+//        }
+//
+//        if (bits.contains("J")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn6)) {
+//                    if (!set.contains(a)){
+//                        set.addEntry(a.getForm(), 1, 1);
+//                    }
+//                    //s++;
+//                }
+//            }
+//        }
+//
+//        if (bits.contains("K")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn7)) {
+//                    if (!set.contains(a)){
+//                        set.addEntry(a.getForm(), 1, 1);
+//                    }
+//                    //s++;
+//                }
+//            }
+//        }
+//
+//        if (bits.contains("M")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn8)) {
+//                    if (!set.contains(a)){
+//                        set.addEntry(a.getForm(), 1, 1);
+//                    }
+//                    //s++;
+//                }
+//            }
+//        }
+//
+//        if (bits.contains("N")) {
+//            /*KYWD z9k = (KYWD) merger.getMajor("BodyAddOn9", GRUP_TYPE.KYWD);*/
+//
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn9)
+//                        /*|| armorHasKeyword(a, z9k, merger)*/) {
+//                    if (!set.contains(a)){
+//                        set.addEntry(a.getForm(), 1, 1);
+//                    }
+//                    //s++;
+//                }
+//            }
+//        }
+//
+//        if (bits.contains("O")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn10)) {
+//                    if (!set.contains(a)){
+//                        set.addEntry(a.getForm(), 1, 1);
+//                    }
+//                    //s++;
+//                }
+//            }
+//        }
+//
+//        if (bits.contains("P")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn11)) {
+//                    if (!set.contains(a)){
+//                        set.addEntry(a.getForm(), 1, 1);
+//                    }
+//                    //s++;
+//                }
+//            }
+//        }
+//
+//        if (bits.contains("Q")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn12)) {
+//                    if (!set.contains(a)){
+//                        set.addEntry(a.getForm(), 1, 1);
+//                    }
+//                    //s++;
+//                }
+//            }
+//        }
+//
+//        if (bits.contains("U")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn13)) {
+//                    set.addEntry(a.getForm(), 1, 1);
+//                    //s++;
+//                }
+//            }
+//        }
+//
+//        if (bits.contains("X")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn14)) {
+//                    if (!set.contains(a)){
+//                        set.addEntry(a.getForm(), 1, 1);
+//                    }
+//                    //s++;
+//                }
+//            }
+//        }
+//
+//        if (bits.contains("Y")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn15)) {
+//                    if (!set.contains(a)){
+//                        set.addEntry(a.getForm(), 1, 1);
+//                    }
+//                    //s++;
+//                }
+//            }
+//        }
+//
+//        if (bits.contains("Z")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn16)) {
+//                    set.addEntry(a.getForm(), 1, 1);
+//                    //s++;
+//                }
+//            }
+//        }
+//
+//        if (bits.contains("-")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn17)) {
+//                    if (!set.contains(a)){
+//                        set.addEntry(a.getForm(), 1, 1);
+//                    }
+//                    //s++;
+//                }
+//            }
+//        }
+//
+//        if (bits.contains("_")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.FX01)) {
+//                    if (!set.contains(a)){
+//                        set.addEntry(a.getForm(), 1, 1);
+//                    }
+//                    //s++;
+//                }
+//            }
+//        }
 
         //SPGlobal.log("line 3025 set.toString()="+set,"s="+s);
 
@@ -3654,322 +3743,364 @@ FX01 = _
 
     static ArrayList<ARMO> addArmorByBitToArray(ArrayList<ARMO> ar, String bits, Mod merger) {
         ArrayList<ARMO> ret = new ArrayList<>(0);
+        
+        Map<String, FirstPersonFlags[]> bitsInfo = BitsInfo.Get();
+        for (String sBit : bitsInfo.keySet()){
+            if (bits.contains(sBit)){
+                for (ARMO a : ar) {
+                    for (FirstPersonFlags flag : bitsInfo.get(sBit)){
+                        if (a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, flag)){
+                            if (!ret.contains(a)){
+                                ret.add(a);
+                            }
+                            break;
+                        }
+                    }
+                }
+//                boolean isShield = false;
+//                if ("S".equals(sBit)){
+//                    isShield = true;
+//                }
+//                for (ARMO a : ar) {
+//                    boolean isSet = false;
+//                    if (isShield){
+//                        KYWD k = hasKeyStartsWith(a, "ArmorShield", merger);
+//                        if (k != null) {
+//                            isSet = true;
+//                        }
+//                    }
+//                    else{
+//                        for (FirstPersonFlags flag : bitsInfo.get(sBit)){
+//                            if (a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, flag)){
+//                                isSet = true;
+//                                break;
+//                            }
+//                        }
+//                    }
+//                    
+//                    if (isSet && !ret.contains(a)){
+//                        ret.add(a);
+//                    }
+//                }
+            }
+        }
+        
 
        //SPGlobal.log("line 3033 addArmorByBitToArray bits=",bits);
-        if (bits.contains("H")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.HEAD)
-                        || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.CIRCLET)
-                        || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.HAIR)/*
-                        || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.LONG_HAIR)
-                        || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.EARS)
-                        || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.DecapitateHead)
-                        || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.Decapitate)*/) {
-                    if (!ret.contains(a)){
-                        ret.add(a);
-                    }
-                }
-            }
-        }
-        if (bits.contains("C")) {
-            for (ARMO a : ar) {
-                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BODY)/*
-                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.TAIL)
-                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn3)
-                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn4)
-                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn5)
-                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn6)
-                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn7)
-                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn8)
-                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn9)
-                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn10)
-                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn11)
-                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn12)
-                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn13)
-                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn14)
-                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn15)
-                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn16)
-                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn17)*/) {
-                    if (!ret.contains(a)){
-                        ret.add(a);
-                    }
-                }
-            }
-        }
-        if (bits.contains("G")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.HANDS)/*
-                        || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.FOREARMS)*/) {
-                    if (!ret.contains(a)){
-                        ret.add(a);
-                    }
-                }
-            }
-        }
-        if (bits.contains("B")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.FEET)/*
-                        || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.CALVES)*/) {
-                    if (!ret.contains(a)){
-                        ret.add(a);
-                    }
-                }
-            }
-        }
-        if (bits.contains("S")) {
-            for (ARMO a : ar) {
-                KYWD k = hasKeyStartsWith(a, "ArmorShield", merger);
-                if (k != null) {
-                    if (!ret.contains(a)){
-                        ret.add(a);
-                    }
-                }
-            }
-        }
-
-
-        //------------------------------------------------------------
-
-        if (bits.contains("L")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.LONG_HAIR)) {
-                    if (!ret.contains(a)){
-                        ret.add(a);
-                    }
-                }
-            }
-        }
-
-        if (bits.contains("R")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.EARS)) {
-                    if (!ret.contains(a)){
-                        ret.add(a);
-                    }
-                }
-            }
-        }
-
-        if (bits.contains("W")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.DecapitateHead)) {
-                    if (!ret.contains(a)){
-                        ret.add(a);
-                    }
-                }
-            }
-        }
-
-        if (bits.contains("D")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.Decapitate)) {
-                    if (!ret.contains(a)){
-                        ret.add(a);
-                    }
-                }
-            }
-        }
-
-
-//------------------------------------------------------------
-
-        if (bits.contains("F")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.FOREARMS)) {
-                    if (!ret.contains(a)){
-                        ret.add(a);
-                    }
-                }
-            }
-        }
-
-//------------------------------------------------------------
-
-        if (bits.contains("V")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.CALVES)) {
-                    if (!ret.contains(a)){
-                        ret.add(a);
-                    }
-                }
-            }
-        }
-
-//------------------------------------------------------------
-
-
-        if (bits.contains("T")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.TAIL)) {
-                    if (!ret.contains(a)){
-                        ret.add(a);
-                    }
-                }
-            }
-        }
-
-        if (bits.contains("A")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn3)) {
-                    if (!ret.contains(a)){
-                        ret.add(a);
-                    }
-                }
-            }
-        }
-
-        if (bits.contains("E")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn4)) {
-                    if (!ret.contains(a)){
-                        ret.add(a);
-                    }
-                }
-            }
-        }
-
-        if (bits.contains("I")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn5)) {
-                    if (!ret.contains(a)){
-                        ret.add(a);
-                    }
-                }
-            }
-        }
-
-        if (bits.contains("J")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn6)) {
-                    if (!ret.contains(a)){
-                        ret.add(a);
-                    }
-                }
-            }
-        }
-
-        if (bits.contains("K")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn7)) {
-                    if (!ret.contains(a)){
-                        ret.add(a);
-                    }
-                }
-            }
-        }
-
-        if (bits.contains("M")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn8)) {
-                    if (!ret.contains(a)){
-                        ret.add(a);
-                    }
-                }
-            }
-        }
-
-        if (bits.contains("N")) {
-            /*KYWD z9k = (KYWD) merger.getMajor("BodyAddOn9", GRUP_TYPE.KYWD);*/
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn9)
-                        /*|| armorHasKeyword(a, z9k, merger)*/
-                        ) {
-                    if (!ret.contains(a)){
-                        ret.add(a);
-                    }
-                }
-            }
-        }
-
-        if (bits.contains("O")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn10)) {
-                    if (!ret.contains(a)){
-                        ret.add(a);
-                    }
-                }
-            }
-        }
-
-        if (bits.contains("P")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn11)) {
-                    if (!ret.contains(a)){
-                        ret.add(a);
-                    }
-                }
-            }
-        }
-
-        if (bits.contains("Q")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn12)) {
-                    if (!ret.contains(a)){
-                        ret.add(a);
-                    }
-                }
-            }
-        }
-
-        if (bits.contains("U")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn13)) {
-                    if (!ret.contains(a)){
-                        ret.add(a);
-                    }
-                }
-            }
-        }
-
-        if (bits.contains("X")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn14)) {
-                    if (!ret.contains(a)){
-                        ret.add(a);
-                    }
-                }
-            }
-        }
-
-        if (bits.contains("Y")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn15)) {
-                    if (!ret.contains(a)){
-                        ret.add(a);
-                    }
-                }
-            }
-        }
-
-        if (bits.contains("Z")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn16)) {
-                    if (!ret.contains(a)){
-                        ret.add(a);
-                    }
-                }
-            }
-        }
-
-        if (bits.contains("-")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn17)) {
-                    if (!ret.contains(a)){
-                        ret.add(a);
-                    }
-                }
-            }
-        }
-
-        if (bits.contains("_")) {
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.FX01)) {
-                    if (!ret.contains(a)){
-                        ret.add(a);
-                    }
-                }
-            }
-        }
+//        if (bits.contains("H")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.HEAD)
+//                        || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.CIRCLET)
+//                        || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.HAIR)/*
+//                        || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.LONG_HAIR)
+//                        || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.EARS)
+//                        || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.DecapitateHead)
+//                        || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.Decapitate)*/) {
+//                    if (!ret.contains(a)){
+//                        ret.add(a);
+//                    }
+//                }
+//            }
+//        }
+//        if (bits.contains("C")) {
+//            for (ARMO a : ar) {
+//                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BODY)/*
+//                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.TAIL)
+//                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn3)
+//                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn4)
+//                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn5)
+//                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn6)
+//                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn7)
+//                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn8)
+//                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn9)
+//                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn10)
+//                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn11)
+//                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn12)
+//                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn13)
+//                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn14)
+//                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn15)
+//                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn16)
+//                    || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn17)*/) {
+//                    if (!ret.contains(a)){
+//                        ret.add(a);
+//                    }
+//                }
+//            }
+//        }
+//        if (bits.contains("G")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.HANDS)/*
+//                        || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.FOREARMS)*/) {
+//                    if (!ret.contains(a)){
+//                        ret.add(a);
+//                    }
+//                }
+//            }
+//        }
+//        if (bits.contains("B")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.FEET)/*
+//                        || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.CALVES)*/) {
+//                    if (!ret.contains(a)){
+//                        ret.add(a);
+//                    }
+//                }
+//            }
+//        }
+//        if (bits.contains("S")) {
+//            for (ARMO a : ar) {
+//                KYWD k = hasKeyStartsWith(a, "ArmorShield", merger);
+//                if (k != null) {
+//                    if (!ret.contains(a)){
+//                        ret.add(a);
+//                    }
+//                }
+//            }
+//        }
+//
+//
+//        //------------------------------------------------------------
+//
+//        if (bits.contains("L")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.LONG_HAIR)) {
+//                    if (!ret.contains(a)){
+//                        ret.add(a);
+//                    }
+//                }
+//            }
+//        }
+//
+//        if (bits.contains("R")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.EARS)) {
+//                    if (!ret.contains(a)){
+//                        ret.add(a);
+//                    }
+//                }
+//            }
+//        }
+//
+//        if (bits.contains("W")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.DecapitateHead)) {
+//                    if (!ret.contains(a)){
+//                        ret.add(a);
+//                    }
+//                }
+//            }
+//        }
+//
+//        if (bits.contains("D")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.Decapitate)) {
+//                    if (!ret.contains(a)){
+//                        ret.add(a);
+//                    }
+//                }
+//            }
+//        }
+//
+//
+////------------------------------------------------------------
+//
+//        if (bits.contains("F")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.FOREARMS)) {
+//                    if (!ret.contains(a)){
+//                        ret.add(a);
+//                    }
+//                }
+//            }
+//        }
+//
+////------------------------------------------------------------
+//
+//        if (bits.contains("V")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.CALVES)) {
+//                    if (!ret.contains(a)){
+//                        ret.add(a);
+//                    }
+//                }
+//            }
+//        }
+//
+////------------------------------------------------------------
+//
+//
+//        if (bits.contains("T")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.TAIL)) {
+//                    if (!ret.contains(a)){
+//                        ret.add(a);
+//                    }
+//                }
+//            }
+//        }
+//
+//        if (bits.contains("A")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn3)) {
+//                    if (!ret.contains(a)){
+//                        ret.add(a);
+//                    }
+//                }
+//            }
+//        }
+//
+//        if (bits.contains("E")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn4)) {
+//                    if (!ret.contains(a)){
+//                        ret.add(a);
+//                    }
+//                }
+//            }
+//        }
+//
+//        if (bits.contains("I")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn5)) {
+//                    if (!ret.contains(a)){
+//                        ret.add(a);
+//                    }
+//                }
+//            }
+//        }
+//
+//        if (bits.contains("J")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn6)) {
+//                    if (!ret.contains(a)){
+//                        ret.add(a);
+//                    }
+//                }
+//            }
+//        }
+//
+//        if (bits.contains("K")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn7)) {
+//                    if (!ret.contains(a)){
+//                        ret.add(a);
+//                    }
+//                }
+//            }
+//        }
+//
+//        if (bits.contains("M")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn8)) {
+//                    if (!ret.contains(a)){
+//                        ret.add(a);
+//                    }
+//                }
+//            }
+//        }
+//
+//        if (bits.contains("N")) {
+//            /*KYWD z9k = (KYWD) merger.getMajor("BodyAddOn9", GRUP_TYPE.KYWD);*/
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn9)
+//                        /*|| armorHasKeyword(a, z9k, merger)*/
+//                        ) {
+//                    if (!ret.contains(a)){
+//                        ret.add(a);
+//                    }
+//                }
+//            }
+//        }
+//
+//        if (bits.contains("O")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn10)) {
+//                    if (!ret.contains(a)){
+//                        ret.add(a);
+//                    }
+//                }
+//            }
+//        }
+//
+//        if (bits.contains("P")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn11)) {
+//                    if (!ret.contains(a)){
+//                        ret.add(a);
+//                    }
+//                }
+//            }
+//        }
+//
+//        if (bits.contains("Q")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn12)) {
+//                    if (!ret.contains(a)){
+//                        ret.add(a);
+//                    }
+//                }
+//            }
+//        }
+//
+//        if (bits.contains("U")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn13)) {
+//                    if (!ret.contains(a)){
+//                        ret.add(a);
+//                    }
+//                }
+//            }
+//        }
+//
+//        if (bits.contains("X")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn14)) {
+//                    if (!ret.contains(a)){
+//                        ret.add(a);
+//                    }
+//                }
+//            }
+//        }
+//
+//        if (bits.contains("Y")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn15)) {
+//                    if (!ret.contains(a)){
+//                        ret.add(a);
+//                    }
+//                }
+//            }
+//        }
+//
+//        if (bits.contains("Z")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn16)) {
+//                    if (!ret.contains(a)){
+//                        ret.add(a);
+//                    }
+//                }
+//            }
+//        }
+//
+//        if (bits.contains("-")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn17)) {
+//                    if (!ret.contains(a)){
+//                        ret.add(a);
+//                    }
+//                }
+//            }
+//        }
+//
+//        if (bits.contains("_")) {
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.FX01)) {
+//                    if (!ret.contains(a)){
+//                        ret.add(a);
+//                    }
+//                }
+//            }
+//        }
 //---code finish
 
 
@@ -3982,644 +4113,730 @@ FX01 = _
     }
 
     static boolean isTiered(String name) {
-        boolean ret = false;
-        ArrayList<String> names = new ArrayList<>();
-        names.add("BanditArmorMeleeHeavyOutfit");
-        names.add("BanditArmorMeleeHeavyNoShieldOutfit");
-        names.add("BanditArmorHeavyBossOutfit");
-        names.add("BanditArmorHeavyBossNoShieldOutfit");
-        names.add("BanditArmorMeleeShield20Outfit");
-        names.add("BanditArmorMeleeNoShieldOutfit");
-        names.add("ThalmorArmorWithHelmetOutfit");
-        names.add("WarlockOutfitLeveled");
-        names.add("NecromancerOutfit");
-        names.add("NecromancerOutfitHood50");
-        names.add("ArmorImperialHeavyOutfit");
-        names.add("ArmorImperialHeavyOutfitNoHelmet");
-        names.add("ArmorImperialHeavyOutfitOfficer");
-        names.add("ArmorImperialLightOutfit");
-        names.add("ArmorImperialLightOutfitNoHelmet");
-        names.add("ArmorStormcloakOutfit");
-        names.add("ArmorStormcloakOutfitNoHelmet");
-        names.add("SonsOfSkyrimCommanderOutfit");
-        names.add("SonsOfSkyrimForelhostGrifter");
-        names.add("vampireOutfit");
-        names.add("DLC1vampireOutfit");
-        names.add("VampireArmorBossOutfit");/*
-        names.add("ArmorDwarvenAllOutfit");
-        names.add("ArmorDwarvenNoHelmetOutfit");
-        names.add("ArmorDwarvenSimpleOutfit");
-        names.add("ArmorEbonyAllOutfit");
-        names.add("ArmorEbonyNoHelmetOutfit");
-        names.add("ArmorEbonySimpleOutfit");
-        names.add("ArmorElvenAllOutfit");
-        names.add("ArmorElvenNoHelmetOutfit");
-        names.add("ArmorElvenSimpleOutfit");
-        names.add("ArmorGlassAllOutfit");
-        names.add("ArmorHideAllOutfit");
-        names.add("ArmorIronAllOutfit");
-        names.add("ArmorLeatherAllOutfit");
-        names.add("ArmorLeatherNoHelmetOutfit");
-        names.add("ArmorLeatherSimpleOutfit");
-        names.add("ArmorOrcishAllOutfit");
-        names.add("ArmorOrcishNoHelmetOutfit");
-        names.add("ArmorOrcStrongholdOutfit");
-        names.add("ArmorOrcStrongholdNoHelmetOutfit");
-        names.add("ArmorScaledAllOutfit");
-        names.add("ArmorScaledNoHelmetOutfit");
-        names.add("ArmorScaledSimpleOutfit");
-        names.add("ArmorScaledBAllOutfit");
-        names.add("ArmorScaledBNoHelmetOutfit");
-        names.add("ArmorScaledBSimpleOutfit");
-        names.add("ArmorSteelAllOutfit");
-        names.add("ArmorSteelNoHelmetOutfit");
-        names.add("ArmorSteelPlateAllOutfit");
-        names.add("ArmorSteelPlateNoHelmetOutfit");
-        names.add("ArmorStuddedSimpleOutfit");
-        names.add("BanditMageOutfit");*/
-        //Child
-        names.add("ChildOutfit01");
-        names.add("ChildOutfit02");
-        names.add("ChildOutfit03");
-        names.add("ChildOutfit04");
-        names.add("ChildOutfit05");
-        names.add("DLC2SkaalOutfitChild");/*
-        names.add("ArmorCompanionsAllOutfit");
-        names.add("ArmorCompanionsOutfitNoHelmet");
-        names.add("ArmorCompanionsOutfitNoHelmetNoGloves");*/
-        //Farm
-        names.add("FarmClothesOutfit01");
-        names.add("FarmClothesOutfit01WithHat");
-        names.add("FarmClothesOutfit02");
-        names.add("FarmClothesOutfit02Variant");
-        names.add("FarmClothesOutfit02WithHat");
-        names.add("FarmClothesOutfit03");
-        names.add("FarmClothesOutfit03Variant");
-        names.add("FarmClothesOutfit03withextras");
-        names.add("FarmClothesOutfit03withHat");
-        names.add("FarmClothesOutfit03withHat01");
-        names.add("FarmClothesOutfit03withHat02");
-        names.add("FarmClothesOutfit03withHat02withHat03");
-        names.add("FarmClothesOutfit03withHideBootsandBracers");
-        names.add("FarmClothesOutfit04");
-        names.add("FarmClothesOutfit04Variant");
-        names.add("FarmClothesRandom");
-        //Noble
-        names.add("FineClothesOutfit01");
-        names.add("FineClothesOutfit01Variant");
-        names.add("FineClothesOutfit01WithHat");
-        names.add("FineClothesOutfit02");
-        names.add("FineClothesOutfit02Variant");
-        names.add("FineClothesOutfit02VariantWithHat");
-        names.add("FineClothesOutfit02withGloves");
-        names.add("FineClothesOutfit02WithHat");
-        //Jarl
-        names.add("JarlClothesOutfit01");
-        names.add("JarlClothesOutfit02");
-        names.add("JarlClothesOutfit03");
-        names.add("JarlClothesBalgruuf");
-        names.add("JarlClothesBryling");
-        names.add("JarlClothesElisif");
-        names.add("JarlClothesIgmund");
-        names.add("JarlClothesKraldar");
-        names.add("JarlClothesLaila");
-        names.add("JarlClothesSiddgeir");
-        names.add("JarlClothesSkaldTheElder");
-        names.add("JarlClothesTorygg");
-        //Refguard
-        names.add("RedguardClothesOutfit01");
-        names.add("RedguardClothesOutfitDB01");
-        names.add("RedguardClothesOutfitNoHat");
-        //Draugr
-        names.add("DraugrHair01Outfit");
-        names.add("DraugrHair02Outfit");
-        names.add("DraugrBeard01Outfit");
-        names.add("DraugrBeard02Outfit");
-        names.add("DraugrHair01Beard01");
-        names.add("DraugrHair01Beard02");
-        names.add("DraugrHair02Beard01");
-        names.add("DraugrHair02Beard02");
-        names.add("Draugr02Helmet01Beard01Outfit");
-        names.add("Draugr02Helmet01Beard02Outfit");
-        names.add("Draugr04Helmet02Beard01Outfit");
-        names.add("Draugr04Helmet02Beard02Outfit");
-        names.add("Draugr05Helmet03Beard01Outfit");
-        names.add("Draugr05Helmet03Beard02Outfit");
-        names.add("Draugr02Helmet01Outfit");
-        names.add("Draugr04Helmet02Outfit");
-        names.add("Draugr05Helmet03Outfit");
-        //VigilantOfStendarr
-        names.add("VigilantOfStendarrOutfit");
-        names.add("VigilantOfStendarrOutfitHood");
-        names.add("VigilantOfStendarrOutfitNoHood");
-        //Dawnguard
-        names.add("DLC1OutfitDawnguard01Heavy");
-        names.add("DLC1OutfitDawnguard02Heavy");
-        names.add("DLC1OutfitDawnguard03");
-        names.add("DLC1OutfitDawnguard04");
-        names.add("DLC1OutfitDawnguard05");
-        names.add("DLC1OutfitDawnguardAll");
-        names.add("DawnguardArmorMelee");
-        //Skaal
-        names.add("DLC2SkaalOutfitChanceHat");
-        names.add("DLC2SkaalOutfitHat");
-        names.add("DLC2SkaalOutfitNoHat");
-        //Hunter
-        names.add("HunterClothesRND");
-        names.add("HunterOutfit01");
-        names.add("HunterOutfit01Hooded");
-        names.add("HunterOutfit02");
-        names.add("HunterOutfit02Hooded");
-        names.add("HunterOutfit03");
-        names.add("HunterOutfit04");
-        names.add("HunterOutfit04Hooded");
-        //Wench
-        names.add("ClothesTavernWenchOutfit");
-        //Blades
-        names.add("ArmorBladesOutfitNoHelmet");
-        names.add("ArmorBladesOutfit");
-        //Forsworn
-        names.add("ForswornArmorBossOutfit");
-        names.add("ForswornArmorMeleeOutfit");
-        names.add("ForswornArmorMissileOutfit");
-        names.add("ForswornArmorMagicOutfit");
-        names.add("ForswornArmorBossOutfit");
-
-        for (String s : names) {
-            if (name.contentEquals(s)) {
-                ret = true;
-                break;
+        
+        for (OutfitBase outfit : OutfitList.Get()) {
+            if(outfit.BitsByEDIDEquals().containsKey(name)){
+                return true;
             }
         }
-
-        return ret;
+        
+        return false;
+        
+//        boolean ret = false;
+//        ArrayList<String> names = new ArrayList<>();
+//        //Bandit
+//        names.add("BanditArmorMeleeHeavyOutfit");
+//        names.add("BanditArmorMeleeHeavyNoShieldOutfit");
+//        names.add("BanditArmorHeavyBossOutfit");
+//        names.add("BanditArmorHeavyBossNoShieldOutfit");
+//        names.add("BanditArmorMeleeShield20Outfit");
+//        names.add("BanditArmorMeleeNoShieldOutfit");
+//        names.add("BanditMageOutfit");
+//        //Thalmor
+//        names.add("ThalmorArmorWithHelmetOutfit");
+//        //Warlock
+//        names.add("WarlockOutfitLeveled");
+//        //Necromancer
+//        names.add("NecromancerOutfit");
+//        names.add("NecromancerOutfitHood50");
+//        //Imperial
+//        names.add("ArmorImperialHeavyOutfit");
+//        names.add("ArmorImperialHeavyOutfitNoHelmet");
+//        names.add("ArmorImperialHeavyOutfitOfficer");
+//        names.add("ArmorImperialLightOutfit");
+//        names.add("ArmorImperialLightOutfitNoHelmet");
+//        //Stormcloak
+//        names.add("ArmorStormcloakOutfit");
+//        names.add("ArmorStormcloakOutfitNoHelmet");
+//        names.add("SonsOfSkyrimCommanderOutfit");
+//        names.add("SonsOfSkyrimForelhostGrifter");
+//        //Vampire
+//        names.add("vampireOutfit");
+//        names.add("DLC1vampireOutfit");
+//        names.add("VampireArmorBossOutfit");
+//        //ignore
+//        /*
+//        names.add("ArmorDwarvenAllOutfit");
+//        names.add("ArmorDwarvenNoHelmetOutfit");
+//        names.add("ArmorDwarvenSimpleOutfit");
+//        names.add("ArmorEbonyAllOutfit");
+//        names.add("ArmorEbonyNoHelmetOutfit");
+//        names.add("ArmorEbonySimpleOutfit");
+//        names.add("ArmorElvenAllOutfit");
+//        names.add("ArmorElvenNoHelmetOutfit");
+//        names.add("ArmorElvenSimpleOutfit");
+//        names.add("ArmorGlassAllOutfit");
+//        names.add("ArmorHideAllOutfit");
+//        names.add("ArmorIronAllOutfit");
+//        names.add("ArmorLeatherAllOutfit");
+//        names.add("ArmorLeatherNoHelmetOutfit");
+//        names.add("ArmorLeatherSimpleOutfit");
+//        names.add("ArmorOrcishAllOutfit");
+//        names.add("ArmorOrcishNoHelmetOutfit");
+//        names.add("ArmorOrcStrongholdOutfit");
+//        names.add("ArmorOrcStrongholdNoHelmetOutfit");
+//        names.add("ArmorScaledAllOutfit");
+//        names.add("ArmorScaledNoHelmetOutfit");
+//        names.add("ArmorScaledSimpleOutfit");
+//        names.add("ArmorScaledBAllOutfit");
+//        names.add("ArmorScaledBNoHelmetOutfit");
+//        names.add("ArmorScaledBSimpleOutfit");
+//        names.add("ArmorSteelAllOutfit");
+//        names.add("ArmorSteelNoHelmetOutfit");
+//        names.add("ArmorSteelPlateAllOutfit");
+//        names.add("ArmorSteelPlateNoHelmetOutfit");
+//        names.add("ArmorStuddedSimpleOutfit");
+//        names.add("BanditMageOutfit");
+//        */
+//        //Child
+//        names.add("ChildOutfit01");
+//        names.add("ChildOutfit02");
+//        names.add("ChildOutfit03");
+//        names.add("ChildOutfit04");
+//        names.add("ChildOutfit05");
+//        names.add("DLC2SkaalOutfitChild");/*
+//        //Companion
+//        names.add("ArmorCompanionsAllOutfit");
+//        names.add("ArmorCompanionsOutfitNoHelmet");
+//        names.add("ArmorCompanionsOutfitNoHelmetNoGloves");*/
+//        //Farm
+//        names.add("FarmClothesOutfit01");
+//        names.add("FarmClothesOutfit01WithHat");
+//        names.add("FarmClothesOutfit02");
+//        names.add("FarmClothesOutfit02Variant");
+//        names.add("FarmClothesOutfit02WithHat");
+//        names.add("FarmClothesOutfit03");
+//        names.add("FarmClothesOutfit03Variant");
+//        names.add("FarmClothesOutfit03withextras");
+//        names.add("FarmClothesOutfit03withHat");
+//        names.add("FarmClothesOutfit03withHat01");
+//        names.add("FarmClothesOutfit03withHat02");
+//        names.add("FarmClothesOutfit03withHat02withHat03");
+//        names.add("FarmClothesOutfit03withHideBootsandBracers");
+//        names.add("FarmClothesOutfit04");
+//        names.add("FarmClothesOutfit04Variant");
+//        names.add("FarmClothesRandom");
+//        //Noble
+//        names.add("FineClothesOutfit01");
+//        names.add("FineClothesOutfit01Variant");
+//        names.add("FineClothesOutfit01WithHat");
+//        names.add("FineClothesOutfit02");
+//        names.add("FineClothesOutfit02Variant");
+//        names.add("FineClothesOutfit02VariantWithHat");
+//        names.add("FineClothesOutfit02withGloves");
+//        names.add("FineClothesOutfit02WithHat");
+//        //Jarl
+//        names.add("JarlClothesOutfit01");
+//        names.add("JarlClothesOutfit02");
+//        names.add("JarlClothesOutfit03");
+//        names.add("JarlClothesBalgruuf");
+//        names.add("JarlClothesBryling");
+//        names.add("JarlClothesElisif");
+//        names.add("JarlClothesIgmund");
+//        names.add("JarlClothesKraldar");
+//        names.add("JarlClothesLaila");
+//        names.add("JarlClothesSiddgeir");
+//        names.add("JarlClothesSkaldTheElder");
+//        names.add("JarlClothesTorygg");
+//        //Redguard
+//        names.add("RedguardClothesOutfit01");
+//        names.add("RedguardClothesOutfitDB01");
+//        names.add("RedguardClothesOutfitNoHat");
+//        //Draugr
+//        names.add("DraugrHair01Outfit");
+//        names.add("DraugrHair02Outfit");
+//        names.add("DraugrBeard01Outfit");
+//        names.add("DraugrBeard02Outfit");
+//        names.add("DraugrHair01Beard01");
+//        names.add("DraugrHair01Beard02");
+//        names.add("DraugrHair02Beard01");
+//        names.add("DraugrHair02Beard02");
+//        names.add("Draugr02Helmet01Beard01Outfit");
+//        names.add("Draugr02Helmet01Beard02Outfit");
+//        names.add("Draugr04Helmet02Beard01Outfit");
+//        names.add("Draugr04Helmet02Beard02Outfit");
+//        names.add("Draugr05Helmet03Beard01Outfit");
+//        names.add("Draugr05Helmet03Beard02Outfit");
+//        names.add("Draugr02Helmet01Outfit");
+//        names.add("Draugr04Helmet02Outfit");
+//        names.add("Draugr05Helmet03Outfit");
+//        //Vigilant
+//        names.add("VigilantOfStendarrOutfit");
+//        names.add("VigilantOfStendarrOutfitHood");
+//        names.add("VigilantOfStendarrOutfitNoHood");
+//        //Dawnguard
+//        names.add("DLC1OutfitDawnguard01Heavy");
+//        names.add("DLC1OutfitDawnguard02Heavy");
+//        names.add("DLC1OutfitDawnguard03");
+//        names.add("DLC1OutfitDawnguard04");
+//        names.add("DLC1OutfitDawnguard05");
+//        names.add("DLC1OutfitDawnguardAll");
+//        names.add("DawnguardArmorMelee");
+//        //Skaal
+//        names.add("DLC2SkaalOutfitChanceHat");
+//        names.add("DLC2SkaalOutfitHat");
+//        names.add("DLC2SkaalOutfitNoHat");
+//        //Hunter
+//        names.add("HunterClothesRND");
+//        names.add("HunterOutfit01");
+//        names.add("HunterOutfit01Hooded");
+//        names.add("HunterOutfit02");
+//        names.add("HunterOutfit02Hooded");
+//        names.add("HunterOutfit03");
+//        names.add("HunterOutfit04");
+//        names.add("HunterOutfit04Hooded");
+//        //Wench
+//        names.add("ClothesTavernWenchOutfit");
+//        //Blades
+//        names.add("ArmorBladesOutfitNoHelmet");
+//        names.add("ArmorBladesOutfit");
+//        //Forsworn
+//        names.add("ForswornArmorBossOutfit");
+//        names.add("ForswornArmorMeleeOutfit");
+//        names.add("ForswornArmorMissileOutfit");
+//        names.add("ForswornArmorMagicOutfit");
+//        names.add("ForswornArmorBossOutfit");
+//
+//        for (String s : names) {
+//            if (name.contentEquals(s)) {
+//                ret = true;
+//                break;
+//            }
+//        }
+//
+//        return ret;
     }
 
     static String getTierKey(String name) {
-        String ret = null;
-
-        if (name.startsWith("BanditArmorMeleeHeavyOutfit") || name.startsWith("BanditArmorMeleeHeavyNoShieldOutfit")) {
-            ret = "BanditHeavy_Tier_";
+        
+        for (OutfitBase outfit : OutfitList.Get()) {
+            String tierKey = outfit.GetTierKey(name);
+            if(!tierKey.isEmpty()){
+                return tierKey;
+            }
         }
-        else if (name.startsWith("BanditArmorMeleeShield20Outfit") || name.startsWith("BanditArmorMeleeNoShieldOutfit")) {
-            ret = "BanditLight_Tier_";
-        }
-        else if (name.startsWith("BanditArmorHeavyBossOutfit") || name.startsWith("BanditArmorHeavyBossNoShieldOutfit")) {
-            ret = "BanditBoss_Tier_";
-        }
-        else if (name.startsWith("ThalmorArmorWithHelmetOutfit")) {
-            ret = "Thalmor_Tier_";
-        }
-        else if (name.startsWith("WarlockOutfitLeveled")) {
-            ret = "Warlock_Tier_";
-        }
-        else if (name.startsWith("NecromancerOutfit")) {
-            ret = "Necromancer_Tier_";
-        }
-        else if (name.startsWith("ArmorImperialHeavyOutfit")) {
-            ret = "ImperialHeavy_Tier_";
-        }
-        else if (name.startsWith("ArmorImperialHeavyOutfitOfficer")) {
-            ret = "ImperialBoss_Tier_";
-        }
-        else if (name.startsWith("ArmorImperialLightOutfit")) {
-            ret = "ImperialLight_Tier_";
-        }
-        else if (name.startsWith("ArmorStormcloakOutfit")) {
-            ret = "Stormcloak_Tier_";
-        }
-        else if (name.contentEquals("SonsOfSkyrimCommanderOutfit") || name.contentEquals("SonsOfSkyrimForelhostGrifter")) {
-            ret = "StormcloakBoss_Tier_";
-        }
-        else if ( name.startsWith("VampireArmorBossOutfit") ) {
-            ret = "VampireBoss_Tier_";
-        }
-        else if (name.contentEquals("vampireOutfit") || name.contentEquals("DLC1vampireOutfit")) {
-            ret = "Vampire_Tier_";
-        }/*
-        else if (name.contentEquals("ArmorDwarvenAllOutfit")) {
-            ret = "Dwarven_Tier_";
-        }
-        else if (name.contentEquals("ArmorDwarvenNoHelmetOutfit")) {
-            ret = "Dwarven_Tier_";
-        }
-        else if (name.contentEquals("ArmorDwarvenSimpleOutfit")) {
-            ret = "Dwarven_Tier_";
-        }
-        else if (name.contentEquals("ArmorEbonyAllOutfit")) {
-            ret = "Ebony_Tier_";
-        }
-        else if (name.contentEquals("ArmorEbonyNoHelmetOutfit")) {
-            ret = "Ebony_Tier_";
-        }
-        else if (name.contentEquals("ArmorEbonySimpleOutfit")) {
-            ret = "Ebony_Tier_";
-        }
-        else if (name.contentEquals("ArmorElvenAllOutfit")) {
-            ret = "Elven_Tier_";
-        }
-        else if (name.contentEquals("ArmorElvenNoHelmetOutfit")) {
-            ret = "Elven_Tier_";
-        }
-        else if (name.contentEquals("ArmorElvenSimpleOutfit")) {
-            ret = "Elven_Tier_";
-        }
-        else if (name.contentEquals("ArmorGlassAllOutfit")) {
-            ret = "Glass_Tier_";
-        }
-        else if (name.contentEquals("ArmorHideAllOutfit")) {
-            ret = "Hide_Tier_";
-        }
-        else if (name.contentEquals("ArmorIronAllOutfit")) {
-            ret = "Iron_Tier_";
-        }
-        else if (name.contentEquals("ArmorLeatherAllOutfit")) {
-            ret = "Leather_Tier_";
-        }
-        else if (name.contentEquals("ArmorLeatherNoHelmetOutfit")) {
-            ret = "Leather_Tier_";
-        }
-        else if (name.contentEquals("ArmorLeatherSimpleOutfit")) {
-            ret = "Leather_Tier_";
-        }
-        else if (name.contentEquals("ArmorOrcishAllOutfit")) {
-            ret = "Orcish_Tier_";
-        }
-        else if (name.contentEquals("ArmorOrcishNoHelmetOutfit")) {
-            ret = "Orcish_Tier_";
-        }
-        else if (name.contentEquals("ArmorOrcStrongholdOutfit")) {
-            ret = "Orcish_Tier_";
-        }
-        else if (name.contentEquals("ArmorOrcStrongholdNoHelmetOutfit")) {
-            ret = "Orcish_Tier_";
-        }
-        else if (name.contentEquals("ArmorScaledAllOutfit")) {
-            ret = "Scaled_Tier_";
-        }
-        else if (name.contentEquals("ArmorScaledNoHelmetOutfit")) {
-            ret = "Scaled_Tier_";
-        }
-        else if (name.contentEquals("ArmorScaledSimpleOutfit")) {
-            ret = "Scaled_Tier_";
-        }
-        else if (name.contentEquals("ArmorScaledBAllOutfit")) {
-            ret = "ScaledHorned_Tier_";
-        }
-        else if (name.contentEquals("ArmorScaledBNoHelmetOutfit")) {
-            ret = "ScaledHorned_Tier_";
-        }
-        else if (name.contentEquals("ArmorScaledBSimpleOutfit")) {
-            ret = "ScaledHorned_Tier_";
-        }
-        else if (name.contentEquals("ArmorSteelAllOutfit")) {
-            ret = "Steel_Tier_";
-        }
-        else if (name.contentEquals("ArmorSteelNoHelmetOutfit")) {
-            ret = "Steel_Tier_";
-        }
-        else if (name.contentEquals("ArmorSteelPlateAllOutfit")) {
-            ret = "SteelPlate_Tier_";
-        }
-        else if (name.contentEquals("ArmorSteelPlateNoHelmetOutfit")) {
-            ret = "SteelPlate_Tier_";
-        }
-        else if (name.contentEquals("ArmorStuddedSimpleOutfit")) {
-            ret = "StuddedPlate_Tier_";
-        }
-        else if (name.contentEquals("BanditMageOutfit")) {
-            ret = "BanditMage_Tier_";
-        }*/
-        else if ( name.startsWith("ChildOutfit") || name.contentEquals("DLC2SkaalOutfitChild") ) {
-            ret = "Child_Tier_";
-        }/*
-        else if (name.contentEquals("ArmorCompanionsAllOutfit")) {
-            ret = "Companions_Tier_";
-        }
-        else if (name.contentEquals("ArmorCompanionsOutfitNoHelmet")) {
-            ret = "Companions_Tier_";
-        }
-        else if (name.contentEquals("ArmorCompanionsOutfitNoHelmetNoGloves")) {
-            ret = "Companions_Tier_";
-        }*/
-        else if (name.startsWith("FarmClothes")) {
-            ret = "Farm_Tier_";
-        }
-        else if (name.startsWith("FineClothesOutfit")) {
-            ret = "Noble_Tier_";
-        }
-        else if (name.startsWith("JarlClothes")) {
-            ret = "Jarl_Tier_";
-        }
-        else if (name.startsWith("RedguardClothesOutfit")) {
-            ret = "Redguard_Tier_";
-        }
-        else if ( name.startsWith("DraugrHair") || name.startsWith("DraugrBeard") || name.startsWith("Draugr01Helmet") || name.startsWith("Draugr02Helmet") || name.startsWith("Draugr03Helmet") || name.startsWith("Draugr04Helmet") || name.startsWith("Draugr05Helmet") ) {
-            ret = "Draugr_Tier_";
-        }
-        else if (name.startsWith("VigilantOfStendarrOutfit")) {
-            ret = "Vigilant_Tier_";
-        }
-        else if ( name.contentEquals("DLC1OutfitDawnguardAll") || name.contentEquals("DawnguardArmorMelee") ) {
-            ret = "Dawnguard_Tier_";
-        }
-        else if ( name.contentEquals("DLC1OutfitDawnguard01Heavy") || name.contentEquals("DLC1OutfitDawnguard02Heavy") ) {
-            ret = "DawnguardHeavy_Tier_";
-        }
-        else if (name.startsWith("DLC1OutfitDawnguard") || name.startsWith("DawnguardOutfit")) {
-            ret = "DawnguardLight_Tier_";
-        }
-        else if (name.contentEquals("DLC2SkaalOutfitChanceHat") || name.contentEquals("DLC2SkaalOutfitHat") || name.contentEquals("DLC2SkaalOutfitNoHat") ) {
-            ret = "Skaal_Tier_";
-        }
-        else if (name.contentEquals("HunterClothesRND") || name.startsWith("HunterOutfit")) {
-            ret = "Hunter_Tier_";
-        }
-        else if (name.contentEquals("ClothesTavernWenchOutfit")) {
-            ret = "Wench_Tier_";
-        }
-        else if (name.startsWith("ArmorBladesOutfit")) {
-            ret = "Blades_Tier_";
-        }
-        //Forsworn
-        else if (name.contentEquals("ForswornArmorBossOutfit")) {
-            ret = "ForswornBoss_Tier_";
-        }
-        else if (name.startsWith("ForswornArmor")) {
-            ret = "Forsworn_Tier_";
-        }
-
-        return ret;
+        return null;        
+        
+//        String ret = null;
+//        //Bandit
+//        if (name.startsWith("BanditArmorMeleeHeavyOutfit") || name.startsWith("BanditArmorMeleeHeavyNoShieldOutfit")) {
+//            ret = "BanditHeavy_Tier_";
+//        }
+//        else if (name.startsWith("BanditArmorMeleeShield20Outfit") || name.startsWith("BanditArmorMeleeNoShieldOutfit")) {
+//            ret = "BanditLight_Tier_";
+//        }
+//        else if (name.startsWith("BanditArmorHeavyBossOutfit") || name.startsWith("BanditArmorHeavyBossNoShieldOutfit")) {
+//            ret = "BanditBoss_Tier_";
+//        }
+//        //Thalmor
+//        else if (name.startsWith("ThalmorArmorWithHelmetOutfit")) {
+//            ret = "Thalmor_Tier_";
+//        }
+//        //Warlock
+//        else if (name.startsWith("WarlockOutfitLeveled")) {
+//            ret = "Warlock_Tier_";
+//        }
+//        //Necromancer
+//        else if (name.startsWith("NecromancerOutfit")) {
+//            ret = "Necromancer_Tier_";
+//        }
+//        //Imperial
+//        else if (name.startsWith("ArmorImperialHeavyOutfit")) {
+//            ret = "ImperialHeavy_Tier_";
+//        }
+//        else if (name.startsWith("ArmorImperialHeavyOutfitOfficer")) {
+//            ret = "ImperialBoss_Tier_";
+//        }
+//        else if (name.startsWith("ArmorImperialLightOutfit")) {
+//            ret = "ImperialLight_Tier_";
+//        }
+//        //Stormcloak
+//        else if (name.startsWith("ArmorStormcloakOutfit")) {
+//            ret = "Stormcloak_Tier_";
+//        }
+//        else if (name.contentEquals("SonsOfSkyrimCommanderOutfit") || name.contentEquals("SonsOfSkyrimForelhostGrifter")) {
+//            ret = "StormcloakBoss_Tier_";
+//        }
+//        //Vampire
+//        else if ( name.startsWith("VampireArmorBossOutfit") ) {
+//            ret = "VampireBoss_Tier_";
+//        }
+//        else if (name.contentEquals("vampireOutfit") || name.contentEquals("DLC1vampireOutfit")) {
+//            ret = "Vampire_Tier_";
+//        }
+//        //Ignore
+//        /*
+//        else if (name.contentEquals("ArmorDwarvenAllOutfit")) {
+//            ret = "Dwarven_Tier_";
+//        }
+//        else if (name.contentEquals("ArmorDwarvenNoHelmetOutfit")) {
+//            ret = "Dwarven_Tier_";
+//        }
+//        else if (name.contentEquals("ArmorDwarvenSimpleOutfit")) {
+//            ret = "Dwarven_Tier_";
+//        }
+//        else if (name.contentEquals("ArmorEbonyAllOutfit")) {
+//            ret = "Ebony_Tier_";
+//        }
+//        else if (name.contentEquals("ArmorEbonyNoHelmetOutfit")) {
+//            ret = "Ebony_Tier_";
+//        }
+//        else if (name.contentEquals("ArmorEbonySimpleOutfit")) {
+//            ret = "Ebony_Tier_";
+//        }
+//        else if (name.contentEquals("ArmorElvenAllOutfit")) {
+//            ret = "Elven_Tier_";
+//        }
+//        else if (name.contentEquals("ArmorElvenNoHelmetOutfit")) {
+//            ret = "Elven_Tier_";
+//        }
+//        else if (name.contentEquals("ArmorElvenSimpleOutfit")) {
+//            ret = "Elven_Tier_";
+//        }
+//        else if (name.contentEquals("ArmorGlassAllOutfit")) {
+//            ret = "Glass_Tier_";
+//        }
+//        else if (name.contentEquals("ArmorHideAllOutfit")) {
+//            ret = "Hide_Tier_";
+//        }
+//        else if (name.contentEquals("ArmorIronAllOutfit")) {
+//            ret = "Iron_Tier_";
+//        }
+//        else if (name.contentEquals("ArmorLeatherAllOutfit")) {
+//            ret = "Leather_Tier_";
+//        }
+//        else if (name.contentEquals("ArmorLeatherNoHelmetOutfit")) {
+//            ret = "Leather_Tier_";
+//        }
+//        else if (name.contentEquals("ArmorLeatherSimpleOutfit")) {
+//            ret = "Leather_Tier_";
+//        }
+//        else if (name.contentEquals("ArmorOrcishAllOutfit")) {
+//            ret = "Orcish_Tier_";
+//        }
+//        else if (name.contentEquals("ArmorOrcishNoHelmetOutfit")) {
+//            ret = "Orcish_Tier_";
+//        }
+//        else if (name.contentEquals("ArmorOrcStrongholdOutfit")) {
+//            ret = "Orcish_Tier_";
+//        }
+//        else if (name.contentEquals("ArmorOrcStrongholdNoHelmetOutfit")) {
+//            ret = "Orcish_Tier_";
+//        }
+//        else if (name.contentEquals("ArmorScaledAllOutfit")) {
+//            ret = "Scaled_Tier_";
+//        }
+//        else if (name.contentEquals("ArmorScaledNoHelmetOutfit")) {
+//            ret = "Scaled_Tier_";
+//        }
+//        else if (name.contentEquals("ArmorScaledSimpleOutfit")) {
+//            ret = "Scaled_Tier_";
+//        }
+//        else if (name.contentEquals("ArmorScaledBAllOutfit")) {
+//            ret = "ScaledHorned_Tier_";
+//        }
+//        else if (name.contentEquals("ArmorScaledBNoHelmetOutfit")) {
+//            ret = "ScaledHorned_Tier_";
+//        }
+//        else if (name.contentEquals("ArmorScaledBSimpleOutfit")) {
+//            ret = "ScaledHorned_Tier_";
+//        }
+//        else if (name.contentEquals("ArmorSteelAllOutfit")) {
+//            ret = "Steel_Tier_";
+//        }
+//        else if (name.contentEquals("ArmorSteelNoHelmetOutfit")) {
+//            ret = "Steel_Tier_";
+//        }
+//        else if (name.contentEquals("ArmorSteelPlateAllOutfit")) {
+//            ret = "SteelPlate_Tier_";
+//        }
+//        else if (name.contentEquals("ArmorSteelPlateNoHelmetOutfit")) {
+//            ret = "SteelPlate_Tier_";
+//        }
+//        else if (name.contentEquals("ArmorStuddedSimpleOutfit")) {
+//            ret = "StuddedPlate_Tier_";
+//        }
+//        else if (name.contentEquals("BanditMageOutfit")) {
+//            ret = "BanditMage_Tier_";
+//        }*/
+//        //Child
+//        else if ( name.startsWith("ChildOutfit") || name.contentEquals("DLC2SkaalOutfitChild") ) {
+//            ret = "Child_Tier_";
+//        }
+//        //Ignore
+//        /*
+//        else if (name.contentEquals("ArmorCompanionsAllOutfit")) {
+//            ret = "Companions_Tier_";
+//        }
+//        else if (name.contentEquals("ArmorCompanionsOutfitNoHelmet")) {
+//            ret = "Companions_Tier_";
+//        }
+//        else if (name.contentEquals("ArmorCompanionsOutfitNoHelmetNoGloves")) {
+//            ret = "Companions_Tier_";
+//        }*/
+//        //Farm
+//        else if (name.startsWith("FarmClothes")) {
+//            ret = "Farm_Tier_";
+//        }
+//        //Noble
+//        else if (name.startsWith("FineClothesOutfit")) {
+//            ret = "Noble_Tier_";
+//        }
+//        //Jarl
+//        else if (name.startsWith("JarlClothes")) {
+//            ret = "Jarl_Tier_";
+//        }
+//        //Redguard
+//        else if (name.startsWith("RedguardClothesOutfit")) {
+//            ret = "Redguard_Tier_";
+//        }
+//        //Draugr
+//        else if ( name.startsWith("DraugrHair") || name.startsWith("DraugrBeard") || name.startsWith("Draugr01Helmet") || name.startsWith("Draugr02Helmet") || name.startsWith("Draugr03Helmet") || name.startsWith("Draugr04Helmet") || name.startsWith("Draugr05Helmet") ) {
+//            ret = "Draugr_Tier_";
+//        }
+//        //Vigilant
+//        else if (name.startsWith("VigilantOfStendarrOutfit")) {
+//            ret = "Vigilant_Tier_";
+//        }
+//        //Dawnguard
+//        else if ( name.contentEquals("DLC1OutfitDawnguardAll") || name.contentEquals("DawnguardArmorMelee") ) {
+//            ret = "Dawnguard_Tier_";
+//        }
+//        else if ( name.contentEquals("DLC1OutfitDawnguard01Heavy") || name.contentEquals("DLC1OutfitDawnguard02Heavy") ) {
+//            ret = "DawnguardHeavy_Tier_";
+//        }
+//        else if (name.startsWith("DLC1OutfitDawnguard") || name.startsWith("DawnguardOutfit")) {
+//            ret = "DawnguardLight_Tier_";
+//        }
+//        //Skaal
+//        else if (name.contentEquals("DLC2SkaalOutfitChanceHat") || name.contentEquals("DLC2SkaalOutfitHat") || name.contentEquals("DLC2SkaalOutfitNoHat") ) {
+//            ret = "Skaal_Tier_";
+//        }
+//        //Hunter
+//        else if (name.contentEquals("HunterClothesRND") || name.startsWith("HunterOutfit")) {
+//            ret = "Hunter_Tier_";
+//        }
+//        //Wench
+//        else if (name.contentEquals("ClothesTavernWenchOutfit")) {
+//            ret = "Wench_Tier_";
+//        }
+//        //Blades
+//        else if (name.startsWith("ArmorBladesOutfit")) {
+//            ret = "Blades_Tier_";
+//        }
+//        //Forsworn
+//        else if (name.contentEquals("ForswornArmorBossOutfit")) {
+//            ret = "ForswornBoss_Tier_";
+//        }
+//        else if (name.startsWith("ForswornArmor")) {
+//            ret = "Forsworn_Tier_";
+//        }
+//
+//        return ret;
     }
 
     static String getBits(String name) {
-        String ret = null;
-        if (name.startsWith("BanditArmorMeleeHeavyOutfit")) {
-            //ret = "HCGB";
-            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.startsWith("BanditArmorMeleeHeavyNoShieldOutfit")) {
-            //ret = "HCGB";
-            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.startsWith("BanditArmorHeavyBossOutfit")) {
-            //ret = "HCGB";
-            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.startsWith("BanditArmorHeavyBossNoShieldOutfit")) {
-            //ret = "HCGB";
-            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.startsWith("BanditArmorMeleeShield20Outfit")) {
-            //ret = "HCBG";
-            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.startsWith("BanditArmorMeleeNoShieldOutfit")) {
-            //ret = "CBG";
-            ret = "CGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.startsWith("ThalmorArmorWithHelmetOutfit")) {
-            //ret = "HCBG";
-            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.startsWith("WarlockOutfitLeveled")) {
-            //ret = "HCBG";
-            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("NecromancerOutfit")) {
-            //ret = "HCGB";
-            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("NecromancerOutfitHood50")) {
-            //ret = "HCGB";
-            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("ArmorImperialHeavyOutfit")) {
-            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("ArmorImperialHeavyOutfitNoHelmet")) {
-            ret = "CGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("ArmorImperialHeavyOutfitOfficer")) {
-            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("ArmorImperialLightOutfit")) {
-            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("ArmorImperialLightOutfitNoHelmet")) {
-            ret = "CGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("ArmorStormcloakOutfit")) {
-            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("ArmorStormcloakOutfitNoHelmet")) {
-            ret = "CGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("SonsOfSkyrimCommanderOutfit") || name.contentEquals("SonsOfSkyrimForelhostGrifter")) {
-            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("vampireOutfit") || name.contentEquals("DLC1vampireOutfit")) {
-            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("VampireArmorBossOutfit")) {
-            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }/*
-        else if (name.contentEquals("ArmorDwarvenAllOutfit")) {
-            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("ArmorDwarvenNoHelmetOutfit")) {
-            ret = "CGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("ArmorDwarvenSimpleOutfit")) {
-            ret = "CBVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("ArmorEbonyAllOutfit")) {
-            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("ArmorEbonyNoHelmetOutfit")) {
-            ret = "CGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("ArmorEbonySimpleOutfit")) {
-            ret = "CBVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("ArmorElvenAllOutfit")) {
-            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("ArmorElvenNoHelmetOutfit")) {
-            ret = "CGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("ArmorElvenSimpleOutfit")) {
-            ret = "CBVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("ArmorGlassAllOutfit")) {
-            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("ArmorHideAllOutfit")) {
-            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("ArmorIronAllOutfit")) {
-            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("ArmorLeatherAllOutfit")) {
-            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("ArmorLeatherNoHelmetOutfit")) {
-            ret = "CGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("ArmorLeatherSimpleOutfit")) {
-            ret = "CBVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("ArmorOrcishAllOutfit")) {
-            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("ArmorOrcishNoHelmetOutfit")) {
-            ret = "CGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("ArmorOrcStrongholdOutfit")) {
-            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("ArmorOrcStrongholdNoHelmetOutfit")) {
-            ret = "CGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("ArmorScaledAllOutfit")) {
-            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("ArmorScaledNoHelmetOutfit")) {
-            ret = "CGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("ArmorScaledSimpleOutfit")) {
-            ret = "CBVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("ArmorScaledBAllOutfit")) {
-            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("ArmorScaledBNoHelmetOutfit")) {
-            ret = "CGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("ArmorScaledBSimpleOutfit")) {
-            ret = "CBVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("ArmorSteelAllOutfit")) {
-            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("ArmorSteelNoHelmetOutfit")) {
-            ret = "CGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("ArmorSteelPlateAllOutfit")) {
-            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("ArmorSteelPlateNoHelmetOutfit")) {
-            ret = "CGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("ArmorStuddedSimpleOutfit")) {
-            ret = "CGBVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("BanditMageOutfit")) {
-            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }*/
-        else if ( name.startsWith("ChildOutfit") || name.contentEquals("DLC2SkaalOutfitChild") ) {
-            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }/*
-        else if (name.contentEquals("ArmorCompanionsAllOutfit")) {
-            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("ArmorCompanionsOutfitNoHelmet")) {
-            ret = "CGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("ArmorCompanionsOutfitNoHelmetNoGloves")) {
-            ret = "CBVTLRAEIJKMWDNOPQUXYZ-_";
-        }*/
-        else if (name.startsWith("FarmClothes")) {
-            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.startsWith("FineClothesOutfit")) {
-            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.startsWith("JarlClothes")) {
-            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }/*варианты
-        else if (name.contentEquals("FineClothesOutfit01")) {
-            ret = "CBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("FineClothesOutfit01Variant")) {
-            ret = "CBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("FineClothesOutfit01WithHat")) {
-            ret = "HCBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("FineClothesOutfit02")) {
-            ret = "CBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("FineClothesOutfit02Variant")) {
-            ret = "CBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("FineClothesOutfit02VariantWithHat")) {
-            ret = "HCBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("FineClothesOutfit02withGloves")) {
-            ret = "CGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("FineClothesOutfit02WithHat")) {
-            ret = "HCBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }*/
-        else if (name.contentEquals("RedguardClothesOutfitNoHat")) {
-            ret = "CGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.startsWith("RedguardClothesOutfit")) {
-            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if ( name.startsWith("DraugrHair") || name.startsWith("DraugrBeard")) {
-            ret = "CGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if ( name.startsWith("Draugr01Helmet") || name.startsWith("Draugr02Helmet") || name.startsWith("Draugr03Helmet") || name.startsWith("Draugr04Helmet") || name.startsWith("Draugr05Helmet") ) {
-            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.startsWith("VigilantOfStendarrOutfitNoHood")) {
-            ret = "CGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.startsWith("VigilantOfStendarrOutfit")) {
-            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if ( name.contentEquals("DLC1OutfitDawnguardAll") || name.contentEquals("DawnguardArmorMelee") ) {
-            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if ( name.contentEquals("DLC1OutfitDawnguard01Heavy") || name.contentEquals("DLC1OutfitDawnguard02Heavy") ) {
-            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.startsWith("DLC1OutfitDawnguard") || name.startsWith("DawnguardOutfit")) {
-            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("DLC2SkaalOutfitChanceHat") || name.contentEquals("DLC2SkaalOutfitHat") ) {
-            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("DLC2SkaalOutfitNoHat") ) {
-            ret = "CGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("HunterClothesRND") || name.contentEquals("HunterOutfit01Hooded") || name.contentEquals("HunterOutfit02Hooded") || name.contentEquals("HunterOutfit03Hooded") || name.contentEquals("HunterOutfit04Hooded") ) {
-            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.startsWith("HunterOutfit") ) {
-            ret = "CGBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("ClothesTavernWenchOutfit") ) {
-            ret = "CBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        //Blades
-        else if (name.contentEquals("ArmorBladesOutfit") ) {
-            ret = "HCBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.contentEquals("ArmorBladesOutfitNoHelmet") ) {
-            ret = "CBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        //Forsworn
-        else if (name.contentEquals("AForswornArmorBossOutfit") ) {
-            ret = "HCBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-        else if (name.startsWith("ForswornArmor") ) {
-            ret = "HCBFVTLRAEIJKMWDNOPQUXYZ-_";
-        }
-
-        return ret;
+        
+        for (OutfitBase outfit : OutfitList.Get()) {
+            String bits = outfit.GetBits(name);
+            if(!bits.isEmpty()){
+                return bits;
+            }
+        }
+        
+        return null;
+        
+//        String ret = null;
+//        //Bandit
+//        if (name.startsWith("BanditArmorMeleeHeavyOutfit")) {
+//            //ret = "HCGB";
+//            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.startsWith("BanditArmorMeleeHeavyNoShieldOutfit")) {
+//            //ret = "HCGB";
+//            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.startsWith("BanditArmorHeavyBossOutfit")) {
+//            //ret = "HCGB";
+//            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.startsWith("BanditArmorHeavyBossNoShieldOutfit")) {
+//            //ret = "HCGB";
+//            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.startsWith("BanditArmorMeleeShield20Outfit")) {
+//            //ret = "HCBG";
+//            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.startsWith("BanditArmorMeleeNoShieldOutfit")) {
+//            //ret = "CBG";
+//            ret = "CGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        //Thalmor
+//        else if (name.startsWith("ThalmorArmorWithHelmetOutfit")) {
+//            //ret = "HCBG";
+//            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        //Warlock
+//        else if (name.startsWith("WarlockOutfitLeveled")) {
+//            //ret = "HCBG";
+//            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        //Necromancer
+//        else if (name.contentEquals("NecromancerOutfit")) {
+//            //ret = "HCGB";
+//            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("NecromancerOutfitHood50")) {
+//            //ret = "HCGB";
+//            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        //Imperial
+//        else if (name.contentEquals("ArmorImperialHeavyOutfit")) {
+//            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("ArmorImperialHeavyOutfitNoHelmet")) {
+//            ret = "CGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("ArmorImperialHeavyOutfitOfficer")) {
+//            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("ArmorImperialLightOutfit")) {
+//            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("ArmorImperialLightOutfitNoHelmet")) {
+//            ret = "CGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        //Stormcloak
+//        else if (name.contentEquals("ArmorStormcloakOutfit")) {
+//            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("ArmorStormcloakOutfitNoHelmet")) {
+//            ret = "CGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("SonsOfSkyrimCommanderOutfit") || name.contentEquals("SonsOfSkyrimForelhostGrifter")) {
+//            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        //Vampire
+//        else if (name.contentEquals("vampireOutfit") || name.contentEquals("DLC1vampireOutfit")) {
+//            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("VampireArmorBossOutfit")) {
+//            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        //Ignore
+//        /*
+//        else if (name.contentEquals("ArmorDwarvenAllOutfit")) {
+//            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("ArmorDwarvenNoHelmetOutfit")) {
+//            ret = "CGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("ArmorDwarvenSimpleOutfit")) {
+//            ret = "CBVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("ArmorEbonyAllOutfit")) {
+//            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("ArmorEbonyNoHelmetOutfit")) {
+//            ret = "CGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("ArmorEbonySimpleOutfit")) {
+//            ret = "CBVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("ArmorElvenAllOutfit")) {
+//            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("ArmorElvenNoHelmetOutfit")) {
+//            ret = "CGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("ArmorElvenSimpleOutfit")) {
+//            ret = "CBVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("ArmorGlassAllOutfit")) {
+//            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("ArmorHideAllOutfit")) {
+//            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("ArmorIronAllOutfit")) {
+//            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("ArmorLeatherAllOutfit")) {
+//            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("ArmorLeatherNoHelmetOutfit")) {
+//            ret = "CGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("ArmorLeatherSimpleOutfit")) {
+//            ret = "CBVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("ArmorOrcishAllOutfit")) {
+//            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("ArmorOrcishNoHelmetOutfit")) {
+//            ret = "CGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("ArmorOrcStrongholdOutfit")) {
+//            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("ArmorOrcStrongholdNoHelmetOutfit")) {
+//            ret = "CGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("ArmorScaledAllOutfit")) {
+//            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("ArmorScaledNoHelmetOutfit")) {
+//            ret = "CGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("ArmorScaledSimpleOutfit")) {
+//            ret = "CBVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("ArmorScaledBAllOutfit")) {
+//            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("ArmorScaledBNoHelmetOutfit")) {
+//            ret = "CGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("ArmorScaledBSimpleOutfit")) {
+//            ret = "CBVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("ArmorSteelAllOutfit")) {
+//            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("ArmorSteelNoHelmetOutfit")) {
+//            ret = "CGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("ArmorSteelPlateAllOutfit")) {
+//            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("ArmorSteelPlateNoHelmetOutfit")) {
+//            ret = "CGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("ArmorStuddedSimpleOutfit")) {
+//            ret = "CGBVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("BanditMageOutfit")) {
+//            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }*/
+//        //Child
+//        else if ( name.startsWith("ChildOutfit") || name.contentEquals("DLC2SkaalOutfitChild") ) {
+//            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        //Ignore
+//        /*        
+//        else if (name.contentEquals("ArmorCompanionsAllOutfit")) {
+//            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("ArmorCompanionsOutfitNoHelmet")) {
+//            ret = "CGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("ArmorCompanionsOutfitNoHelmetNoGloves")) {
+//            ret = "CBVTLRAEIJKMWDNOPQUXYZ-_";
+//        }*/
+//        //Farm
+//        else if (name.startsWith("FarmClothes")) {
+//            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        //Noble
+//        else if (name.startsWith("FineClothesOutfit")) {
+//            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        //Jarl
+//        else if (name.startsWith("JarlClothes")) {
+//            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        //Ignore
+//        /*варианты
+//        else if (name.contentEquals("FineClothesOutfit01")) {
+//            ret = "CBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("FineClothesOutfit01Variant")) {
+//            ret = "CBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("FineClothesOutfit01WithHat")) {
+//            ret = "HCBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("FineClothesOutfit02")) {
+//            ret = "CBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("FineClothesOutfit02Variant")) {
+//            ret = "CBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("FineClothesOutfit02VariantWithHat")) {
+//            ret = "HCBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("FineClothesOutfit02withGloves")) {
+//            ret = "CGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("FineClothesOutfit02WithHat")) {
+//            ret = "HCBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }*/
+//        //Redguard
+//        else if (name.contentEquals("RedguardClothesOutfitNoHat")) {
+//            ret = "CGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.startsWith("RedguardClothesOutfit")) {
+//            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        //Draugr
+//        else if ( name.startsWith("DraugrHair") || name.startsWith("DraugrBeard")) {
+//            ret = "CGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if ( name.startsWith("Draugr01Helmet") || name.startsWith("Draugr02Helmet") || name.startsWith("Draugr03Helmet") || name.startsWith("Draugr04Helmet") || name.startsWith("Draugr05Helmet") ) {
+//            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        //Vigilant
+//        else if (name.startsWith("VigilantOfStendarrOutfitNoHood")) {
+//            ret = "CGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.startsWith("VigilantOfStendarrOutfit")) {
+//            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        //Dawnguard
+//        else if ( name.contentEquals("DLC1OutfitDawnguardAll") || name.contentEquals("DawnguardArmorMelee") ) {
+//            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if ( name.contentEquals("DLC1OutfitDawnguard01Heavy") || name.contentEquals("DLC1OutfitDawnguard02Heavy") ) {
+//            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.startsWith("DLC1OutfitDawnguard") || name.startsWith("DawnguardOutfit")) {
+//            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        //Skaal
+//        else if (name.contentEquals("DLC2SkaalOutfitChanceHat") || name.contentEquals("DLC2SkaalOutfitHat") ) {
+//            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("DLC2SkaalOutfitNoHat") ) {
+//            ret = "CGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        //Hunter
+//        else if (name.contentEquals("HunterClothesRND") || name.contentEquals("HunterOutfit01Hooded") || name.contentEquals("HunterOutfit02Hooded") || name.contentEquals("HunterOutfit03Hooded") || name.contentEquals("HunterOutfit04Hooded") ) {
+//            ret = "HCGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.startsWith("HunterOutfit") ) {
+//            ret = "CGBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        //Wench
+//        else if (name.contentEquals("ClothesTavernWenchOutfit") ) {
+//            ret = "CBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        //Blades
+//        else if (name.contentEquals("ArmorBladesOutfit") ) {
+//            ret = "HCBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.contentEquals("ArmorBladesOutfitNoHelmet") ) {
+//            ret = "CBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        //Forsworn
+//        else if (name.contentEquals("AForswornArmorBossOutfit") ) {
+//            ret = "HCBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//        else if (name.startsWith("ForswornArmor") ) {
+//            ret = "HCBFVTLRAEIJKMWDNOPQUXYZ-_";
+//        }
+//
+//        return ret;
     }
 
     static boolean needsShield(String name) {
@@ -4852,791 +5069,3 @@ FX01 = _
         return ret;
     }
 }
-
-
-// TIERS INFO ------------------------------------------------------------------
-abstract class TierBase {
-    // tier identifier
-    abstract String EDID();
-    // in each array zero element is esp name and after formid list
-    abstract Map<String, String[]> FormIDList();
-    // UseAll flag
-    boolean UseAll(){
-        return false;
-    }
-    // CalcAllLevelsEqualOrBelowPC flag
-    boolean CalcAllLevelsEqualOrBelowPC(){
-        return false;
-    }
-    // CalcForEachItemInCount flag
-    boolean CalcForEachItemInCount(){
-        return false;
-    }
-}
-
-class ThalmorTier9 extends TierBase {
-    @Override
-    String EDID() {
-        return "DienesLVLI_Thalmor_Tier_9";
-    }
-    @Override
-    Map<String, String[]> FormIDList() {
-        Map<String, String[]> m = new HashMap<>();
-        m.put("Skyrim.esm", new String[] {
-            "01391a", // boots
-            "01391d", // helm
-            "01392a", // cuirass
-            "01391c", // gloves
-        });
-        return m;
-    }
-    @Override
-    boolean UseAll() {
-        return true;
-    }
-    @Override
-    boolean CalcAllLevelsEqualOrBelowPC() {
-        return false;
-    }
-    @Override
-    boolean CalcForEachItemInCount() {
-        return false;
-    }
-}
-
-class NecromancerTier0 extends TierBase {
-    @Override
-    String EDID() {
-        return "DienesLVLI_Necromancer_Tier_0";
-    }
-    @Override
-    Map<String, String[]> FormIDList() {
-        Map<String, String[]> m = new HashMap<>();
-        m.put("Skyrim.esm", new String[] {
-            "0c36e8", // boots
-            "105251", // robesList
-        });
-        return m;
-    }
-    @Override
-    boolean UseAll() {
-        return true;
-    }
-    @Override
-    boolean CalcAllLevelsEqualOrBelowPC() {
-        return false;
-    }
-    @Override
-    boolean CalcForEachItemInCount() {
-        return false;
-    }
-}
-
-class WarlockTier0 extends TierBase {
-    @Override
-    String EDID() {
-        return "DienesLVLI_Warlock_Tier_0";
-    }
-    @Override
-    Map<String, String[]> FormIDList() {
-        Map<String, String[]> m = new HashMap<>();
-        m.put("Skyrim.esm", new String[] {
-            "0c5d12", // boots
-            "105ef9", // robesList
-        });
-        return m;
-    }
-    @Override
-    boolean UseAll() {
-        return true;
-    }
-    @Override
-    boolean CalcAllLevelsEqualOrBelowPC() {
-        return false;
-    }
-    @Override
-    boolean CalcForEachItemInCount() {
-        return false;
-    }
-}
-
-class ImperialHeavyTier0 extends TierBase {
-    @Override
-    String EDID() {
-        return "DienesLVLI_ImperialHeavy_Tier_0";
-    }
-    @Override
-    Map<String, String[]> FormIDList() {
-        Map<String, String[]> m = new HashMap<>();
-        m.put("Lootification.esm", new String[] {
-            "0115B0", // LLOutfitL
-        });
-        return m;
-    }
-    @Override
-    boolean UseAll() {
-        return false;
-    }
-    @Override
-    boolean CalcAllLevelsEqualOrBelowPC() {
-        return true;
-    }
-    @Override
-    boolean CalcForEachItemInCount() {
-        return false;
-    }
-}
-
-class ImperialLightTier0 extends TierBase {
-    @Override
-    String EDID() {
-        return "DienesLVLI_ImperialLight_Tier_0";
-    }
-    @Override
-    Map<String, String[]> FormIDList() {
-        Map<String, String[]> m = new HashMap<>();
-        m.put("Lootification.esm", new String[] {
-            "0115AF", // LLOutfitL
-        });
-        return m;
-    }
-    @Override
-    boolean UseAll() {
-        return false;
-    }
-    @Override
-    boolean CalcAllLevelsEqualOrBelowPC() {
-        return true;
-    }
-    @Override
-    boolean CalcForEachItemInCount() {
-        return false;
-    }
-}
-
-class ImperialBossTier0 extends TierBase {
-    @Override
-    String EDID() {
-        return "DienesLVLI_ImperialBoss_Tier_0";
-    }
-    @Override
-    Map<String, String[]> FormIDList() {
-        Map<String, String[]> m = new HashMap<>();
-        m.put("Lootification.esm", new String[] {
-            "0115B1", // LLOutfitL
-        });
-        return m;
-    }
-    @Override
-    boolean UseAll() {
-        return false;
-    }
-    @Override
-    boolean CalcAllLevelsEqualOrBelowPC() {
-        return true;
-    }
-    @Override
-    boolean CalcForEachItemInCount() {
-        return false;
-    }
-}
-
-class StormcloakTier0 extends TierBase {
-    @Override
-    String EDID() {
-        return "DienesLVLI_Stormcloak_Tier_0";
-    }
-    @Override
-    Map<String, String[]> FormIDList() {
-        Map<String, String[]> m = new HashMap<>();
-        m.put("Lootification.esm", new String[] {
-            "0115AD", // LLOutfitL
-        });
-        return m;
-    }
-    @Override
-    boolean UseAll() {
-        return false;
-    }
-    @Override
-    boolean CalcAllLevelsEqualOrBelowPC() {
-        return true;
-    }
-    @Override
-    boolean CalcForEachItemInCount() {
-        return false;
-    }
-}
-
-class StormcloakBossTier0 extends TierBase {
-    @Override
-    String EDID() {
-        return "DienesLVLI_StormcloakBoss_Tier_0";
-    }
-    @Override
-    Map<String, String[]> FormIDList() {
-        Map<String, String[]> m = new HashMap<>();
-        m.put("Lootification.esm", new String[] {
-            "0115AE", // LLOutfitL
-        });
-        return m;
-    }
-    @Override
-    boolean UseAll() {
-        return false;
-    }
-    @Override
-    boolean CalcAllLevelsEqualOrBelowPC() {
-        return true;
-    }
-    @Override
-    boolean CalcForEachItemInCount() {
-        return false;
-    }
-}
-
-class VampireTier0 extends TierBase {
-    @Override
-    String EDID() {
-        return "DienesLVLI_Vampire_Tier_0";
-    }
-    @Override
-    Map<String, String[]> FormIDList() {
-        Map<String, String[]> m = new HashMap<>();
-        m.put("Lootification.esm", new String[] {
-            "00C48F", // LLOutfit
-        });
-        return m;
-    }
-    @Override
-    boolean UseAll() {
-        return false;
-    }
-    @Override
-    boolean CalcAllLevelsEqualOrBelowPC() {
-        return true;
-    }
-    @Override
-    boolean CalcForEachItemInCount() {
-        return false;
-    }
-}
-
-class VampireBossTier0 extends TierBase {
-    @Override
-    String EDID() {
-        return "DienesLVLI_VampireBoss_Tier_0";
-    }
-    @Override
-    Map<String, String[]> FormIDList() {
-        Map<String, String[]> m = new HashMap<>();
-        m.put("Lootification.esm", new String[] {
-            "00C490", // LLOutfit
-        });
-        return m;
-    }
-    @Override
-    boolean UseAll() {
-        return false;
-    }
-    @Override
-    boolean CalcAllLevelsEqualOrBelowPC() {
-        return true;
-    }
-    @Override
-    boolean CalcForEachItemInCount() {
-        return false;
-    }
-}
-
-class ChildTier0 extends TierBase {
-    @Override
-    String EDID() {
-        return "DienesLVLI_Child_Tier_0";
-    }
-    @Override
-    Map<String, String[]> FormIDList() {
-        Map<String, String[]> m = new HashMap<>();
-        m.put("Lootification.esm", new String[] {
-            "007376", // LLChildOutfit
-        });
-        return m;
-    }
-    @Override
-    boolean UseAll() {
-        return false;
-    }
-    @Override
-    boolean CalcAllLevelsEqualOrBelowPC() {
-        return true;
-    }
-    @Override
-    boolean CalcForEachItemInCount() {
-        return false;
-    }
-}
-
-class NobleTier0 extends TierBase {
-    @Override
-    String EDID() {
-        return "DienesLVLI_Noble_Tier_0";
-    }
-    @Override
-    Map<String, String[]> FormIDList() {
-        Map<String, String[]> m = new HashMap<>();
-        m.put("Lootification.esm", new String[] {
-            "01159A", // LLOutfitL
-        });
-        return m;
-    }
-    @Override
-    boolean UseAll() {
-        return false;
-    }
-    @Override
-    boolean CalcAllLevelsEqualOrBelowPC() {
-        return true;
-    }
-    @Override
-    boolean CalcForEachItemInCount() {
-        return false;
-    }
-}
-
-class JarlTier0 extends TierBase {
-    @Override
-    String EDID() {
-        return "DienesLVLI_Jarl_Tier_0";
-    }
-    @Override
-    Map<String, String[]> FormIDList() {
-        Map<String, String[]> m = new HashMap<>();
-        m.put("Lootification.esm", new String[] {
-            "01159F", // LLOutfitL
-        });
-        return m;
-    }
-    @Override
-    boolean UseAll() {
-        return false;
-    }
-    @Override
-    boolean CalcAllLevelsEqualOrBelowPC() {
-        return true;
-    }
-    @Override
-    boolean CalcForEachItemInCount() {
-        return false;
-    }
-}
-
-class RedguardTier0 extends TierBase {
-    @Override
-    String EDID() {
-        return "DienesLVLI_Redguard_Tier_0";
-    }
-    @Override
-    Map<String, String[]> FormIDList() {
-        Map<String, String[]> m = new HashMap<>();
-        m.put("Lootification.esm", new String[] {
-            "0115A3", // LLOutfitL
-        });
-        return m;
-    }
-    @Override
-    boolean UseAll() {
-        return false;
-    }
-    @Override
-    boolean CalcAllLevelsEqualOrBelowPC() {
-        return true;
-    }
-    @Override
-    boolean CalcForEachItemInCount() {
-        return false;
-    }
-}
-
-class FarmTier0 extends TierBase {
-    @Override
-    String EDID() {
-        return "DienesLVLI_Farm_Tier_0";
-    }
-    @Override
-    Map<String, String[]> FormIDList() {
-        Map<String, String[]> m = new HashMap<>();
-        m.put("Lootification.esm", new String[] {
-            "00C47A", // LLOutfit
-        });
-        return m;
-    }
-    @Override
-    boolean UseAll() {
-        return false;
-    }
-    @Override
-    boolean CalcAllLevelsEqualOrBelowPC() {
-        return true;
-    }
-    @Override
-    boolean CalcForEachItemInCount() {
-        return false;
-    }
-}
-
-class DraugrTier0 extends TierBase {
-    @Override
-    String EDID() {
-        return "DienesLVLI_Draugr_Tier_0";
-    }
-    @Override
-    Map<String, String[]> FormIDList() {
-        Map<String, String[]> m = new HashMap<>();
-        m.put("Lootification.esm", new String[] {
-            /*
-            "0021C7", // OutftDienesDraugr02Helmet01Beard02Outfit
-            "0021C8", // OutftDienesDraugr02Helmet01Outfit
-            "0021C9", // OutftDienesDraugr04Helmet02Beard01Outfit
-            "0021CA", // OutftDienesDraugr04Helmet02Beard02Outfit
-            "0021CB", // OutftDienesDraugr04Helmet02Outfit
-            "0021CC", // OutftDienesDraugr05Helmet03Beard01Outfit
-            "0021CD", // OutftDienesDraugr05Helmet03Beard02Outfit
-            "0021CE", // OutftDienesDraugr05Helmet03Outfit
-            "0021CF", // OutftDienesDraugrBeard01Outfit
-            "0021D0", // OutftDienesDraugrBeard02Outfit
-            "0021D1", // OutftDienesDraugrHair01Beard01
-            "0021D2", // OutftDienesDraugrHair01Beard02
-            "0021D3", // OutftDienesDraugrHair01Outfit
-            "0021D4", // OutftDienesDraugrHair02Beard01
-            "0021D5", // OutftDienesDraugrHair02Beard02
-            "0021D6", // OutftDienesDraugrHair02Outfit
-            */
-            "00C47F", // DraugrOutfit
-        });
-        return m;
-    }
-    @Override
-    boolean UseAll() {
-        return false;
-    }
-    @Override
-    boolean CalcAllLevelsEqualOrBelowPC() {
-        return true;
-    }
-    @Override
-    boolean CalcForEachItemInCount() {
-        return false;
-    }
-}
-
-class VigilantTier0 extends TierBase {
-    @Override
-    String EDID() {
-        return "DienesLVLI_Vigilant_Tier_0";
-    }
-    @Override
-    Map<String, String[]> FormIDList() {
-        Map<String, String[]> m = new HashMap<>();
-        m.put("Lootification.esm", new String[] {
-            "0166F9", // LLOutfit
-        });
-        return m;
-    }
-    @Override
-    boolean UseAll() {
-        return false;
-    }
-    @Override
-    boolean CalcAllLevelsEqualOrBelowPC() {
-        return true;
-    }
-    @Override
-    boolean CalcForEachItemInCount() {
-        return false;
-    }
-}
-
-class DawnguardTier0 extends TierBase {
-    @Override
-    String EDID() {
-        return "DienesLVLI_Dawnguard_Tier_0";
-    }
-    @Override
-    Map<String, String[]> FormIDList() {
-        Map<String, String[]> m = new HashMap<>();
-        m.put("Lootification.esm", new String[] {
-            "00C486", // LLOutfit
-        });
-        return m;
-    }
-    @Override
-    boolean UseAll() {
-        return false;
-    }
-    @Override
-    boolean CalcAllLevelsEqualOrBelowPC() {
-        return true;
-    }
-    @Override
-    boolean CalcForEachItemInCount() {
-        return false;
-    }
-}
-
-class DawnguardHeavyTier0 extends TierBase {
-    @Override
-    String EDID() {
-        return "DienesLVLI_DawnguardHeavy_Tier_0";
-    }
-    @Override
-    Map<String, String[]> FormIDList() {
-        Map<String, String[]> m = new HashMap<>();
-        m.put("Lootification.esm", new String[] {
-            "00C487", // LLOutfitH
-        });
-        return m;
-    }
-    @Override
-    boolean UseAll() {
-        return false;
-    }
-    @Override
-    boolean CalcAllLevelsEqualOrBelowPC() {
-        return true;
-    }
-    @Override
-    boolean CalcForEachItemInCount() {
-        return false;
-    }
-}
-
-class DawnguardLightTier0 extends TierBase {
-    @Override
-    String EDID() {
-        return "DienesLVLI_DawnguardLight_Tier_0";
-    }
-    @Override
-    Map<String, String[]> FormIDList() {
-        Map<String, String[]> m = new HashMap<>();
-        m.put("Lootification.esm", new String[] {
-            "00C488", // LLOutfitL
-        });
-        return m;
-    }
-    @Override
-    boolean UseAll() {
-        return false;
-    }
-    @Override
-    boolean CalcAllLevelsEqualOrBelowPC() {
-        return true;
-    }
-    @Override
-    boolean CalcForEachItemInCount() {
-        return false;
-    }
-}
-
-class SkaalTier0 extends TierBase {
-    @Override
-    String EDID() {
-        return "DienesLVLI_Skaal_Tier_0";
-    }
-    @Override
-    Map<String, String[]> FormIDList() {
-        Map<String, String[]> m = new HashMap<>();
-        m.put("Lootification.esm", new String[] {
-            "0115A8", // LLOutfitL
-        });
-        return m;
-    }
-    @Override
-    boolean UseAll() {
-        return false;
-    }
-    @Override
-    boolean CalcAllLevelsEqualOrBelowPC() {
-        return true;
-    }
-    @Override
-    boolean CalcForEachItemInCount() {
-        return false;
-    }
-}
-
-class HunterTier0 extends TierBase {
-    @Override
-    String EDID() {
-        return "DienesLVLI_Hunter_Tier_0";
-    }
-    @Override
-    Map<String, String[]> FormIDList() {
-        Map<String, String[]> m = new HashMap<>();
-        m.put("Lootification.esm", new String[] {
-            "0166F2", // LLOutfit
-        });
-        return m;
-    }
-    @Override
-    boolean UseAll() {
-        return false;
-    }
-    @Override
-    boolean CalcAllLevelsEqualOrBelowPC() {
-        return true;
-    }
-    @Override
-    boolean CalcForEachItemInCount() {
-        return false;
-    }
-}
-
-class WenchTier0 extends TierBase {
-    @Override
-    String EDID() {
-        return "DienesLVLI_Wench_Tier_0";
-    }
-    @Override
-    Map<String, String[]> FormIDList() {
-        Map<String, String[]> m = new HashMap<>();
-        m.put("Lootification.esm", new String[] {
-            "016718", // LLOutfit
-        });
-        return m;
-    }
-    @Override
-    boolean UseAll() {
-        return false;
-    }
-    @Override
-    boolean CalcAllLevelsEqualOrBelowPC() {
-        return true;
-    }
-    @Override
-    boolean CalcForEachItemInCount() {
-        return false;
-    }
-}
-
-class BladesTier0 extends TierBase {
-    @Override
-    String EDID() {
-        return "DienesLVLI_Blades_Tier_0";
-    }
-    @Override
-    Map<String, String[]> FormIDList() {
-        Map<String, String[]> m = new HashMap<>();
-        m.put("Skyrim.esm", new String[] {
-            "04B288", // boots
-            "04B28F", // helm
-            "04B28B", // cuirass
-            "04B28D", // gloves
-        });
-        return m;
-    }
-    @Override
-    boolean UseAll() {
-        return true;
-    }
-    @Override
-    boolean CalcAllLevelsEqualOrBelowPC() {
-        return false;
-    }
-    @Override
-    boolean CalcForEachItemInCount() {
-        return false;
-    }
-}
-
-class ForswornBossTier0 extends TierBase {
-    @Override
-    String EDID() {
-        return "DienesLVLI_ForswornBoss_Tier_0";
-    }
-    @Override
-    Map<String, String[]> FormIDList() {
-        Map<String, String[]> m = new HashMap<>();
-        m.put("Skyrim.esm", new String[] {
-            "0442FE", // boots
-            "0442FF", // cuirass
-            "0647AE", // gloves
-        });
-        return m;
-    }
-    @Override
-    boolean UseAll() {
-        return true;
-    }
-    @Override
-    boolean CalcAllLevelsEqualOrBelowPC() {
-        return false;
-    }
-    @Override
-    boolean CalcForEachItemInCount() {
-        return false;
-    }
-}
-
-class ForswornTier0 extends TierBase {
-    @Override
-    String EDID() {
-        return "DienesLVLI_Forsworn_Tier_0";
-    }
-    @Override
-    Map<String, String[]> FormIDList() {
-        Map<String, String[]> m = new HashMap<>();
-        m.put("Skyrim.esm", new String[] {
-            "043BD4", // boots
-            "0647B2", // helm
-            "043BCE", // cuirass
-            "0647B0", // gloves
-        });
-        return m;
-    }
-    @Override
-    boolean UseAll() {
-        return true;
-    }
-    @Override
-    boolean CalcAllLevelsEqualOrBelowPC() {
-        return false;
-    }
-    @Override
-    boolean CalcForEachItemInCount() {
-        return false;
-    }
-}
-class TiersList{
-    static TierBase[] Get() {
-        return new TierBase[] {
-            new ThalmorTier9(),
-            new NecromancerTier0(),
-            new WarlockTier0(),
-            new ImperialHeavyTier0(),
-            new ImperialLightTier0(),
-            new ImperialBossTier0(),
-            new StormcloakTier0(),
-            new StormcloakBossTier0(),
-            new VampireTier0(),
-            new VampireBossTier0(),
-            new ChildTier0(),
-            new NobleTier0(),
-            new JarlTier0(),
-            new RedguardTier0(),
-            new FarmTier0(),
-            new DraugrTier0(),
-            new VigilantTier0(),
-            new DawnguardTier0(),
-            new DawnguardHeavyTier0(),
-            new DawnguardLightTier0(),
-            new SkaalTier0(),
-            new HunterTier0(),
-            new WenchTier0(),
-            new BladesTier0(),
-            new ForswornBossTier0(),
-            new ForswornTier0(),
-        };
-    }
-}
-
-// TIERS INFO ------------------------------------------------------------------
