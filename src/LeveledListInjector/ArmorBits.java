@@ -1,13 +1,7 @@
 package LeveledListInjector;
 
-import static LeveledListInjector.ArmorTools.hasKeyStartsWith;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import skyproc.ARMO;
-import skyproc.BodyTemplate;
-import skyproc.KYWD;
-import skyproc.Mod;
 import skyproc.genenums.FirstPersonFlags;
 
 class BitsInfo {    

@@ -14,6 +14,7 @@ import java.util.Map;
 //import java.util.logging.Logger;
 import skyproc.*;
 import skyproc.exceptions.BadParameter;
+import skyproc.genenums.ArmorType;
 import skyproc.genenums.FirstPersonFlags;
 
 /**
@@ -1021,396 +1022,417 @@ public class ArmorTools {
         return ret;
     }
 
-    static String getNameFromArrayWithKey(ArrayList<ARMO> a, KYWD k, Mod merger) {
+    static String getNameFromArrayWithKey(ArrayList<ARMO> ar, KYWD k, Mod merger) {
         String ret;// = null;
         if (k.getEDID().contains("dienes_outfit")) {
             ret = "DienesLVLIOutfit" + k.getEDID().substring(13);
         } else {
             ret = "DienesLVLIOutfit" + k.getEDID();
         }
-        boolean h = false;
-        for (ARMO arm : a) {
-            if        (arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.HEAD)
-                    || arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.CIRCLET)
-                    || arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.HAIR)) {
-                h = true;
-                break;
+        
+        Map<String, FirstPersonFlags[]> bitsInfo = BitsInfo.Get();
+        for (String sBit : bitsInfo.keySet()){
+            for (ARMO a : ar) {
+                boolean bitAdded = false;
+                for (FirstPersonFlags flag : bitsInfo.get(sBit)){
+                    if (a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, flag)){
+                        ret += sBit;
+                        
+                        bitAdded = true;
+                        break;
+                    }
+                }
+                if(bitAdded){
+                    break;
+                }
             }
         }
-        boolean c = false;
-        for (ARMO arm : a) {
-            if        (arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BODY)) {
-                c = true;
-                break;
-            }
-        }
-        boolean g = false;
-        for (ARMO arm : a) {
-            if        (arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.HANDS)) {
-                g = true;
-                break;
-            }
-        }
-        boolean b = false;
-        for (ARMO arm : a) {
-            if        (arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.FEET)) {
-                b = true;
-                break;
-            }
-        }
-        KYWD shield = (KYWD) merger.getMajor("ArmorShield", GRUP_TYPE.KYWD);
-        boolean s = false;
-        for (ARMO arm : a) {
-            if (armorHasKeyword(arm, shield, merger)) {
-                s = true;
-                break;
-            }
-        }
-//--------------------------------------------------------------------------------------------
-        boolean l = false;
-        for (ARMO arm : a)
-		{
-            if        (	    arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.LONG_HAIR))
-		    {
-                l = true;
-                break;
-            }
-        }
-        boolean r = false;
-        for (ARMO arm : a)
-		{
-            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.EARS))
-		    {
-                r = true;
-                break;
-            }
-        }
-        boolean w = false;
-        for (ARMO arm : a)
-		{
-            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.DecapitateHead))
-		    {
-                w = true;
-                break;
-            }
-        }
-        boolean d = false;
-        for (ARMO arm : a)
-		{
-            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.Decapitate))
-		    {
-                d = true;
-                break;
-            }
-        }
-//--------------------------------------------------------------------------------------------
-        boolean f = false;
-        for (ARMO arm : a)
-		{
-            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.FOREARMS))
-		    {
-                f = true;
-                break;
-            }
-        }
-//--------------------------------------------------------------------------------------------
-        boolean v = false;
-        for (ARMO arm : a)
-		{
-            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.CALVES))
-		    {
-                v = true;
-                break;
-            }
-        }
-//--------------------------------------------------------------------------------------------
-        boolean t = false;
-        for (ARMO arm : a)
-		{
-            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.TAIL))
-		    {
-                t = true;
-                break;
-            }
-        }
-
-        boolean z3 = false;
-        for (ARMO arm : a)
-		{
-            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn3))
-		    {
-                z3 = true;
-                break;
-            }
-        }
-
-        boolean z4 = false;
-        for (ARMO arm : a)
-		{
-            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn4))
-		    {
-                z4 = true;
-                break;
-            }
-        }
-
-        boolean z5 = false;
-        for (ARMO arm : a)
-		{
-            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn5))
-		    {
-                z5 = true;
-                break;
-            }
-        }
-
-        boolean z6 = false;
-        for (ARMO arm : a)
-		{
-            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn6))
-		    {
-                z6 = true;
-                break;
-            }
-        }
-
-        boolean z7 = false;
-        for (ARMO arm : a)
-		{
-            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn7))
-		    {
-                z7 = true;
-                break;
-            }
-        }
-
-        boolean z8 = false;
-        for (ARMO arm : a)
-		{
-            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn8))
-		    {
-                z8 = true;
-                break;
-            }
-        }
-
-        boolean z9 = false;
-        /*KYWD z9k = (KYWD) merger.getMajor("BodyAddOn9", GRUP_TYPE.KYWD);*/
-        for (ARMO arm : a)
-		{
-            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn9)
-                            /*|| armorHasKeyword(arm, z9k, merger)*/)
-		    {
-                z9 = true;
-                break;
-            }
-        }
-
-        boolean z10 = false;
-        for (ARMO arm : a)
-		{
-            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn10))
-		    {
-                z10 = true;
-                break;
-            }
-        }
-
-        boolean z11 = false;
-        for (ARMO arm : a)
-		{
-            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn11))
-		    {
-                z11 = true;
-                break;
-            }
-        }
-
-        boolean z12 = false;
-        for (ARMO arm : a)
-		{
-            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn12))
-		    {
-                z12 = true;
-                break;
-            }
-        }
-
-        boolean z13 = false;
-        for (ARMO arm : a)
-		{
-            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn13))
-		    {
-                z13 = true;
-                break;
-            }
-        }
-
-        boolean z14 = false;
-        for (ARMO arm : a)
-		{
-            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn14))
-		    {
-                z14 = true;
-                break;
-            }
-        }
-
-        boolean z15 = false;
-        for (ARMO arm : a)
-		{
-            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn15))
-		    {
-                z15 = true;
-                break;
-            }
-        }
-
-        boolean z16 = false;
-        for (ARMO arm : a)
-		{
-            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn16))
-		    {
-                z16 = true;
-                break;
-            }
-        }
-
-        boolean z17 = false;
-        for (ARMO arm : a)
-		{
-            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn17))
-		    {
-                z17 = true;
-                break;
-            }
-        }
-
-        boolean fx01 = false;
-        for (ARMO arm : a)
-		{
-            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.FX01))
-		    {
-                fx01 = true;
-                break;
-            }
-        }
-//------------------------------------------------------------
-        if (h) {
-            ret = ret + "H";
-        }
-        if (c) {
-            ret = ret + "C";
-        }
-        if (g) {
-            ret = ret + "G";
-        }
-        if (b) {
-            ret = ret + "B";
-        }
-        if (s) {
-            ret = ret + "S";
-        }
-//---------------------------------
-/*
-H
-C
-G
-B
-S
-"FARMS"; = F
-"CLVS"; = V
-"TL"; = T
-"LHR"; = L
-"ERS"; = R
-"DCH"; = W
-"DC"; = D
-Z3 = A
-Z4 = E
-Z5 = I
-Z6 = J
-Z7 = K
-Z8 = M
-Z9 = N
-Z10 = O
-Z11 = P
-Z12 = Q
-Z13 = U
-Z14 = X
-Z15 = Y
-Z16 = Z
-Z17 = -
-FX01 = _
-*/
-        if (f) {
-            ret = ret + "F";
-        }
-        if (v) {
-            ret = ret + "V";
-        }
-        if (t) {
-            ret = ret + "T";
-        }
-        if (l) {
-            ret = ret + "L";
-        }
-        if (r) {
-            ret = ret + "R";
-        }
-        if (z3) {
-            ret = ret + "A";
-        }
-        if (z4) {
-            ret = ret + "E";
-        }
-        if (z5) {
-            ret = ret + "I";
-        }
-        if (z6) {
-            ret = ret + "J";
-        }
-        if (z7) {
-            ret = ret + "K";
-        }
-        if (z8) {
-            ret = ret + "M";
-        }
-        if (w) {
-            ret = ret + "W";
-        }
-        if (d) {
-            ret = ret + "D";
-        }
-        if (z9) {
-            ret = ret + "N";
-        }
-        if (z10) {
-            ret = ret + "O";
-        }
-        if (z11) {
-            ret = ret + "P";
-        }
-        if (z12) {
-            ret = ret + "Q";
-        }
-        if (z13) {
-            ret = ret + "U";
-        }
-        if (z14) {
-            ret = ret + "X";
-        }
-        if (z15) {
-            ret = ret + "Y";
-        }
-        if (z16) {
-            ret = ret + "Z";
-        }
-        if (z17) {
-            ret = ret + "-";
-        }
-        if (fx01) {
-            ret = ret + "_";
-        }
+        
+        
+        
+//        boolean h = false;
+//        for (ARMO arm : a) {
+//            if        (arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.HEAD)
+//                    || arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.CIRCLET)
+//                    || arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.HAIR)) {
+//                h = true;
+//                break;
+//            }
+//        }
+//        boolean c = false;
+//        for (ARMO arm : a) {
+//            if        (arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BODY)) {
+//                c = true;
+//                break;
+//            }
+//        }
+//        boolean g = false;
+//        for (ARMO arm : a) {
+//            if        (arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.HANDS)) {
+//                g = true;
+//                break;
+//            }
+//        }
+//        boolean b = false;
+//        for (ARMO arm : a) {
+//            if        (arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.FEET)) {
+//                b = true;
+//                break;
+//            }
+//        }
+//        KYWD shield = (KYWD) merger.getMajor("ArmorShield", GRUP_TYPE.KYWD);
+//        boolean s = false;
+//        for (ARMO arm : a) {
+//            if (armorHasKeyword(arm, shield, merger)) {
+//                s = true;
+//                break;
+//            }
+//        }
+////--------------------------------------------------------------------------------------------
+//        boolean l = false;
+//        for (ARMO arm : a)
+//		{
+//            if        (	    arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.LONG_HAIR))
+//		    {
+//                l = true;
+//                break;
+//            }
+//        }
+//        boolean r = false;
+//        for (ARMO arm : a)
+//		{
+//            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.EARS))
+//		    {
+//                r = true;
+//                break;
+//            }
+//        }
+//        boolean w = false;
+//        for (ARMO arm : a)
+//		{
+//            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.DecapitateHead))
+//		    {
+//                w = true;
+//                break;
+//            }
+//        }
+//        boolean d = false;
+//        for (ARMO arm : a)
+//		{
+//            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.Decapitate))
+//		    {
+//                d = true;
+//                break;
+//            }
+//        }
+////--------------------------------------------------------------------------------------------
+//        boolean f = false;
+//        for (ARMO arm : a)
+//		{
+//            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.FOREARMS))
+//		    {
+//                f = true;
+//                break;
+//            }
+//        }
+////--------------------------------------------------------------------------------------------
+//        boolean v = false;
+//        for (ARMO arm : a)
+//		{
+//            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.CALVES))
+//		    {
+//                v = true;
+//                break;
+//            }
+//        }
+////--------------------------------------------------------------------------------------------
+//        boolean t = false;
+//        for (ARMO arm : a)
+//		{
+//            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.TAIL))
+//		    {
+//                t = true;
+//                break;
+//            }
+//        }
+//
+//        boolean z3 = false;
+//        for (ARMO arm : a)
+//		{
+//            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn3))
+//		    {
+//                z3 = true;
+//                break;
+//            }
+//        }
+//
+//        boolean z4 = false;
+//        for (ARMO arm : a)
+//		{
+//            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn4))
+//		    {
+//                z4 = true;
+//                break;
+//            }
+//        }
+//
+//        boolean z5 = false;
+//        for (ARMO arm : a)
+//		{
+//            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn5))
+//		    {
+//                z5 = true;
+//                break;
+//            }
+//        }
+//
+//        boolean z6 = false;
+//        for (ARMO arm : a)
+//		{
+//            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn6))
+//		    {
+//                z6 = true;
+//                break;
+//            }
+//        }
+//
+//        boolean z7 = false;
+//        for (ARMO arm : a)
+//		{
+//            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn7))
+//		    {
+//                z7 = true;
+//                break;
+//            }
+//        }
+//
+//        boolean z8 = false;
+//        for (ARMO arm : a)
+//		{
+//            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn8))
+//		    {
+//                z8 = true;
+//                break;
+//            }
+//        }
+//
+//        boolean z9 = false;
+//        /*KYWD z9k = (KYWD) merger.getMajor("BodyAddOn9", GRUP_TYPE.KYWD);*/
+//        for (ARMO arm : a)
+//		{
+//            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn9)
+//                            /*|| armorHasKeyword(arm, z9k, merger)*/)
+//		    {
+//                z9 = true;
+//                break;
+//            }
+//        }
+//
+//        boolean z10 = false;
+//        for (ARMO arm : a)
+//		{
+//            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn10))
+//		    {
+//                z10 = true;
+//                break;
+//            }
+//        }
+//
+//        boolean z11 = false;
+//        for (ARMO arm : a)
+//		{
+//            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn11))
+//		    {
+//                z11 = true;
+//                break;
+//            }
+//        }
+//
+//        boolean z12 = false;
+//        for (ARMO arm : a)
+//		{
+//            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn12))
+//		    {
+//                z12 = true;
+//                break;
+//            }
+//        }
+//
+//        boolean z13 = false;
+//        for (ARMO arm : a)
+//		{
+//            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn13))
+//		    {
+//                z13 = true;
+//                break;
+//            }
+//        }
+//
+//        boolean z14 = false;
+//        for (ARMO arm : a)
+//		{
+//            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn14))
+//		    {
+//                z14 = true;
+//                break;
+//            }
+//        }
+//
+//        boolean z15 = false;
+//        for (ARMO arm : a)
+//		{
+//            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn15))
+//		    {
+//                z15 = true;
+//                break;
+//            }
+//        }
+//
+//        boolean z16 = false;
+//        for (ARMO arm : a)
+//		{
+//            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn16))
+//		    {
+//                z16 = true;
+//                break;
+//            }
+//        }
+//
+//        boolean z17 = false;
+//        for (ARMO arm : a)
+//		{
+//            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn17))
+//		    {
+//                z17 = true;
+//                break;
+//            }
+//        }
+//
+//        boolean fx01 = false;
+//        for (ARMO arm : a)
+//		{
+//            if        (     arm.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.FX01))
+//		    {
+//                fx01 = true;
+//                break;
+//            }
+//        }
+////------------------------------------------------------------
+//        if (h) {
+//            ret = ret + "H";
+//        }
+//        if (c) {
+//            ret = ret + "C";
+//        }
+//        if (g) {
+//            ret = ret + "G";
+//        }
+//        if (b) {
+//            ret = ret + "B";
+//        }
+//        if (s) {
+//            ret = ret + "S";
+//        }
+////---------------------------------
+///*
+//H
+//C
+//G
+//B
+//S
+//"FARMS"; = F
+//"CLVS"; = V
+//"TL"; = T
+//"LHR"; = L
+//"ERS"; = R
+//"DCH"; = W
+//"DC"; = D
+//Z3 = A
+//Z4 = E
+//Z5 = I
+//Z6 = J
+//Z7 = K
+//Z8 = M
+//Z9 = N
+//Z10 = O
+//Z11 = P
+//Z12 = Q
+//Z13 = U
+//Z14 = X
+//Z15 = Y
+//Z16 = Z
+//Z17 = -
+//FX01 = _
+//*/
+//        if (f) {
+//            ret = ret + "F";
+//        }
+//        if (v) {
+//            ret = ret + "V";
+//        }
+//        if (t) {
+//            ret = ret + "T";
+//        }
+//        if (l) {
+//            ret = ret + "L";
+//        }
+//        if (r) {
+//            ret = ret + "R";
+//        }
+//        if (z3) {
+//            ret = ret + "A";
+//        }
+//        if (z4) {
+//            ret = ret + "E";
+//        }
+//        if (z5) {
+//            ret = ret + "I";
+//        }
+//        if (z6) {
+//            ret = ret + "J";
+//        }
+//        if (z7) {
+//            ret = ret + "K";
+//        }
+//        if (z8) {
+//            ret = ret + "M";
+//        }
+//        if (w) {
+//            ret = ret + "W";
+//        }
+//        if (d) {
+//            ret = ret + "D";
+//        }
+//        if (z9) {
+//            ret = ret + "N";
+//        }
+//        if (z10) {
+//            ret = ret + "O";
+//        }
+//        if (z11) {
+//            ret = ret + "P";
+//        }
+//        if (z12) {
+//            ret = ret + "Q";
+//        }
+//        if (z13) {
+//            ret = ret + "U";
+//        }
+//        if (z14) {
+//            ret = ret + "X";
+//        }
+//        if (z15) {
+//            ret = ret + "Y";
+//        }
+//        if (z16) {
+//            ret = ret + "Z";
+//        }
+//        if (z17) {
+//            ret = ret + "-";
+//        }
+//        if (fx01) {
+//            ret = ret + "_";
+//        }
 //---------------------------------
 
         return ret;
@@ -2042,7 +2064,7 @@ FX01 = _
                 }
                 boolean key = k1.equals(p1.getBase());*/
                 boolean key = false;
-                //asdf 310518 вставка проверки о всем ключам из массива asdf
+                //asdf 310518 вставка проверки по всем ключам из массива asdf
                 KYWD[] outfitKeys = hasArrayOfKeysStartsWith(arm, "dienes_outfit", merger);
                 for (KYWD outfitKey1 : outfitKeys) {
                     if (outfitKey1 != null) {
@@ -2227,7 +2249,7 @@ FX01 = _
                                         KYWD slotKey = getSlotKYWD(armor, merger);
                                         if (slotKey == null) {
                                             //SPGlobal.log("line 1865 slotKey.toString()="+slotKey.toString());
-                                            int test = 1;
+                                            //int test = 1;
                                         } else {
                                             for (Pair<KYWD, ArrayList<ARMO>> p : varSets) {
                                                 if (p.getBase().equals(slotKey)) {
@@ -2310,7 +2332,7 @@ FX01 = _
                                         KYWD slotKey = getSlotKYWD(armor, merger);
                                         if (slotKey == null) {
                                             //SPGlobal.log("line 1865 slotKey.toString()="+slotKey.toString());
-                                            int test = 1;
+                                            //int test = 1;
                                         } else {
                                             for (Pair<KYWD, ArrayList<ARMO>> p : varSets) {
                                                 if (p.getBase().equals(slotKey)) {
@@ -4879,16 +4901,28 @@ FX01 = _
     static KYWD getSlotKYWD(ARMO armor, Mod merger) {
         KYWD ret = null;
         //asdf Armor Keys
-
-        if (       armor.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.CIRCLET)
-                || armor.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.HEAD)
-                || armor.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.HAIR)/*
+        if ( armor.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.HEAD)
+                || armor.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.HAIR)
+                || armor.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.LONG_HAIR)
+                /*
 		|| armor.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.LONG_HAIR)
                 || armor.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.EARS)
                 || armor.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.DecapitateHead)
                 || armor.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.Decapitate)*/) {
-            ret = (KYWD) merger.getMajor("ArmorHelmet", GRUP_TYPE.KYWD);
+            
+            if(armor.getBodyTemplate().getArmorType(BodyTemplate.BodyTemplateType.Biped).equals(ArmorType.CLOTHING)){
+                ret = (KYWD) merger.getMajor("ClothingHead" , GRUP_TYPE.KYWD);
+            }else{
+                ret = (KYWD) merger.getMajor("ArmorHelmet", GRUP_TYPE.KYWD);
             }
+        }
+        else if (armor.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.CIRCLET)) {            
+            if(armor.getBodyTemplate().getArmorType(BodyTemplate.BodyTemplateType.Biped).equals(ArmorType.CLOTHING)){
+                ret = (KYWD) merger.getMajor("ClothingCirclet", GRUP_TYPE.KYWD);
+            }else{
+                ret = (KYWD) merger.getMajor("ArmorHelmet", GRUP_TYPE.KYWD);
+            }
+        }
         else if (  armor.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BODY)/*
 		|| armor.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.TAIL)
 		|| armor.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn3)
@@ -5005,9 +5039,9 @@ FX01 = _
         else if (armor.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.TAIL)) {
             ret = (KYWD) merger.getMajor("ClothingBody", GRUP_TYPE.KYWD);
         }
-        else if (armor.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.LONG_HAIR)) {
-            ret = (KYWD) merger.getMajor("ClothingHead", GRUP_TYPE.KYWD);
-        }
+        //else if (armor.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.LONG_HAIR)) {
+        //    ret = (KYWD) merger.getMajor(armor.getBodyTemplate().getArmorType(BodyTemplate.BodyTemplateType.Biped).equals(ArmorType.CLOTHING)?"ClothingHead":"ArmorHelmet", GRUP_TYPE.KYWD);
+        //}
         else if (armor.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.EARS)) {
             ret = (KYWD) merger.getMajor("ClothingHead", GRUP_TYPE.KYWD);
         }

@@ -54,7 +54,7 @@ import java.util.Map;
                     else if (name.contains("Light")){
                         return Name() + "Light_Tier_";
                     }
-                    else if (name.contains("Light")){
+                    else{
                         return Name() + "_Tier_";
                     }
                 }
