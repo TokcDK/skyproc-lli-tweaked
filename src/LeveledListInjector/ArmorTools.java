@@ -2106,9 +2106,7 @@ public class ArmorTools {
                             boolean found = false;
                             //asdf getSlotKYWD
                             KYWD slotKey = getSlotKYWD(armor, merger);
-                            if (slotKey == null) {
-                                //int test = 1;//asdf not used
-                            } else {
+                            if (slotKey != null) {
                                 for (Pair<KYWD, ArrayList<ARMO>> p : varSets) {
                                     if (p.getBase().equals(slotKey)) {
                                         ArrayList<ARMO> q = p.getVar();
