@@ -3354,21 +3354,15 @@ public class ArmorTools {
     }
 
     static boolean addListIfNotLevel(LVLI list, LVLI subList, int level) {
-        boolean added = false;
-        boolean found = false;
-        ArrayList<LeveledEntry> ar = list.getEntries();
-        for (LeveledEntry l : ar) {
+        for (LeveledEntry l : list.getEntries()) {
             if (l.getLevel() == level) {
                 if (l.getForm().equals(subList.getForm())) {
-                    found = true;
+                    return false;
                 }
             }
         }
-        if (!found) {
-            added = true;
-            list.addEntry(subList.getForm(), level, 1);
-        }
-        return added;
+        list.addEntry(subList.getForm(), level, 1);
+        return true;
     }
 
     static void addArmorByBit(LVLI set, ArrayList<ARMO> ar, String bits, Mod merger) {
