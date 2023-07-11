@@ -710,25 +710,27 @@ public class ArmorTools {
         }
     }
 
-    private static String longestCommonSubstring(String S1, String S2) {
-        int Start = 0;
-        int Max = 0;
-        for (int i = 0; i < S1.length(); i++) {
-            for (int j = 0; j < S2.length(); j++) {
+    private static String longestCommonSubstring(String s1, String s2) {
+        int start = 0;
+        int max = 0;
+        int s1Length = s1.length();
+        int s2Length = s2.length();
+        for (int i = 0; i < s1Length; i++) {
+            for (int j = 0; j < s2Length; j++) {
                 int x = 0;
-                while (S1.charAt(i + x) == S2.charAt(j + x)) {
+                while (s1.charAt(i + x) == s2.charAt(j + x)) {
                     x++;
-                    if (((i + x) >= S1.length()) || ((j + x) >= S2.length())) {
+                    if (((i + x) >= s1.length()) || ((j + x) >= s2.length())) {
                         break;
                     }
                 }
-                if (x > Max) {
-                    Max = x;
-                    Start = i;
+                if (x > max) {
+                    max = x;
+                    start = i;
                 }
             }
         }
-        return S1.substring(Start, (Start + Max));
+        return s1.substring(start, (start + max));
     }
 
     public static String lcs(String a, String b) {
