@@ -720,7 +720,7 @@ public class ArmorTools {
                 int x = 0;
                 while (s1.charAt(i + x) == s2.charAt(j + x)) {
                     x++;
-                    if (((i + x) >= s1.length()) || ((j + x) >= s2.length())) {
+                    if (((i + x) >= s1Length) || ((j + x) >= s2Length)) {
                         break;
                     }
                 }
