@@ -571,17 +571,15 @@ public class ArmorTools {
 
     static KYWD armorHasAnyKeyword(ARMO rec, FLST f, Mod m) {
         ArrayList<FormID> a = f.getFormIDEntries();
-        KYWD hasKey = null;
         for (int i = 0; i < a.size(); i++) {
             FormID temp = (FormID) a.get(i);
             KYWD armorKey = (KYWD) m.getMajor(temp, GRUP_TYPE.KYWD);
             if (armorHasKeyword(rec, armorKey, m)) {
-                hasKey = armorKey;
-                //continue;
+                return armorKey;
             }
         }
         //SPGlobal.log("HasAnyKeyword", rec.toString() + " " + hasKey);
-        return hasKey;
+        return null;
     }
 
     static boolean armorHasKeyword(ARMO rec, KYWD varKey, Mod m) {
