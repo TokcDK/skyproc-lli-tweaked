@@ -25,10 +25,11 @@ import skyproc.genenums.FirstPersonFlags;
 public class ArmorTools {
 
     public static ArrayList<Pair<KYWD, KYWD>> armorMatches;
-    private static ArrayList<ArrayList<FormID>> armorVariants = new ArrayList<>(0);
-    private static ArrayList<Pair<KYWD, ArrayList<ARMO>>> matchingSets = new ArrayList<>(0);
+    private static final ArrayList<ArrayList<FormID>> armorVariants = new ArrayList<>(0);
+    private static final ArrayList<Pair<KYWD, ArrayList<ARMO>>> matchingSets = new ArrayList<>(0);
     //private static Mod merger;
     //private static Mod patch;
+    private static final Map<String, FirstPersonFlags[]> bitsInfo = BitsInfo.Get();
 
     public static class Pair<L, R> {
 
@@ -670,7 +671,6 @@ public class ArmorTools {
                     FormID tempForm = llist.getEntry(i).getForm();
                     if (item.equals(tempForm)) {
                         llist.removeEntry(i);
-                        continue;
                     }
                 }
 
@@ -1032,7 +1032,6 @@ public class ArmorTools {
             ret = "DienesLVLIOutfit" + k.getEDID();
         }
         
-        Map<String, FirstPersonFlags[]> bitsInfo = BitsInfo.Get();
         for (String sBit : bitsInfo.keySet()){
             for (ARMO a : ar) {
                 boolean bitAdded = false;
@@ -2574,375 +2573,391 @@ public class ArmorTools {
 
     static boolean arrayHasBits(ArrayList<ARMO> ar, String bits, Mod merger) {
 
-
-
-//        boolean ret = true;
-        boolean passed = false;
-
-//--------code start
-        if (bits.contains("H")) {
-            //boolean passed = false;
+        for (String sBit : bitsInfo.keySet()){
+            if(!bits.contains(sBit)) continue;
+            
+            boolean haveAnyFirstPersonFlagForThesBit = false;
+            FirstPersonFlags[] flags = bitsInfo.get(sBit);
             for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.HEAD)
-                        || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.CIRCLET)
-                        || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.HAIR)
-                   ) {
-                    passed = true;
+                for (FirstPersonFlags firstPersonFlag : flags) {
+                    if(a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, firstPersonFlag)){
+                         haveAnyFirstPersonFlagForThesBit = true;  
+                         break;
+                    }                    
                 }
             }
-//            if (passed == false) {
-//                ret = false;
-//            }
+            
+            if(!haveAnyFirstPersonFlagForThesBit) return false;
         }
-        if (bits.contains("C")) {
-            //boolean passed = false;
-            for (ARMO a : ar) {
-                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BODY)
-                   ) {
-                    passed = true;
-                }
-            }
-//            if (passed == false) {
-//                ret = false;
-//            }
-        }
-        if (bits.contains("G")) {
-            //boolean passed = false;
-            for (ARMO a : ar) {
-                if (      a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.HANDS)
-                   ) {
-                    passed = true;
-                }
-            }
-//            if (passed == false) {
-//                ret = false;
-//            }
-        }
-        if (bits.contains("B")) {
-            //boolean passed = false;
-            for (ARMO a : ar) {
-                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.FEET)
-                   ){
-                        passed = true;
-                    }
-            }
-//            if (passed == false) {
-//                ret = false;
-//            }
-        }
-        if (bits.contains("S")) {
-            //boolean passed = false;
-            for (ARMO a : ar) {
-                KYWD k = hasKeyStartsWith(a, "ArmorShield", merger);
-                if (k != null) {
-                    passed = true;
-                }
-            }
-//            if (passed == false) {
-//                ret = false;
-//            }
-        }       
         
-        //--------------------------------------------------------------------------------------------
+        return true;
 
-        if (bits.contains("L")) {
-            //boolean passed = false;
-            for (ARMO a : ar) {
-                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.LONG_HAIR)
-                   ) {
-                    passed = true;
-                }
-            }
-//            if (passed == false) {
-//                ret = false;
+////        boolean ret = true;
+//        boolean passed = false;
+//
+////--------code start
+//        if (bits.contains("H")) {
+//            //boolean passed = false;
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.HEAD)
+//                        || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.CIRCLET)
+//                        || a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.HAIR)
+//                   ) {
+//                    passed = true;
+//                }
 //            }
-        }
-        if (bits.contains("R")) {
-            //boolean passed = false;
-            for (ARMO a : ar) {
-                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.EARS)
-                   ) {
-                    passed = true;
-                }
-            }
-//            if (passed == false) {
-//                ret = false;
+////            if (passed == false) {
+////                ret = false;
+////            }
+//        }
+//        if (bits.contains("C")) {
+//            //boolean passed = false;
+//            for (ARMO a : ar) {
+//                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BODY)
+//                   ) {
+//                    passed = true;
+//                }
 //            }
-        }
-        if (bits.contains("W")) {
-            //boolean passed = false;
-            for (ARMO a : ar) {
-                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.DecapitateHead)
-                   ) {
-                    passed = true;
-                }
-            }
-//            if (passed == false) {
-//                ret = false;
+////            if (passed == false) {
+////                ret = false;
+////            }
+//        }
+//        if (bits.contains("G")) {
+//            //boolean passed = false;
+//            for (ARMO a : ar) {
+//                if (      a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.HANDS)
+//                   ) {
+//                    passed = true;
+//                }
 //            }
-        }
-        if (bits.contains("D")) {
-            //boolean passed = false;
-            for (ARMO a : ar) {
-                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.Decapitate)
-                   ) {
-                    passed = true;
-                }
-            }
-//            if (passed == false) {
-//                ret = false;
+////            if (passed == false) {
+////                ret = false;
+////            }
+//        }
+//        if (bits.contains("B")) {
+//            //boolean passed = false;
+//            for (ARMO a : ar) {
+//                if (       a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.FEET)
+//                   ){
+//                        passed = true;
+//                    }
 //            }
-        }
-//--------------------------------------------------------------------------------------------
-
-        if (bits.contains("F")) {
-            //boolean passed = false;
-            for (ARMO a : ar) {
-                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.FOREARMS)
-                   ) {
-                    passed = true;
-                }
-            }
-//            if (passed == false) {
-//                ret = false;
+////            if (passed == false) {
+////                ret = false;
+////            }
+//        }
+//        if (bits.contains("S")) {
+//            //boolean passed = false;
+//            for (ARMO a : ar) {
+//                KYWD k = hasKeyStartsWith(a, "ArmorShield", merger);
+//                if (k != null) {
+//                    passed = true;
+//                }
 //            }
-        }
-//--------------------------------------------------------------------------------------------
-
-        if (bits.contains("V")) {
-            //boolean passed = false;
-            for (ARMO a : ar) {
-                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.CALVES)
-                   ) {
-                    passed = true;
-                }
-            }
-//            if (passed == false) {
-//                ret = false;
+////            if (passed == false) {
+////                ret = false;
+////            }
+//        }       
+//        
+//        //--------------------------------------------------------------------------------------------
+//
+//        if (bits.contains("L")) {
+//            //boolean passed = false;
+//            for (ARMO a : ar) {
+//                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.LONG_HAIR)
+//                   ) {
+//                    passed = true;
+//                }
 //            }
-        }
-//--------------------------------------------------------------------------------------------
-
-        if (bits.contains("T")) {
-            //boolean passed = false;
-            for (ARMO a : ar) {
-                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.TAIL)
-                   ) {
-                    passed = true;
-                }
-            }
-//            if (passed == false) {
-//                ret = false;
+////            if (passed == false) {
+////                ret = false;
+////            }
+//        }
+//        if (bits.contains("R")) {
+//            //boolean passed = false;
+//            for (ARMO a : ar) {
+//                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.EARS)
+//                   ) {
+//                    passed = true;
+//                }
 //            }
-        }
-        if (bits.contains("A")) {
-            //boolean passed = false;
-            for (ARMO a : ar) {
-                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn3)
-                   ) {
-                    passed = true;
-                }
-            }
-//            if (passed == false) {
-//                ret = false;
+////            if (passed == false) {
+////                ret = false;
+////            }
+//        }
+//        if (bits.contains("W")) {
+//            //boolean passed = false;
+//            for (ARMO a : ar) {
+//                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.DecapitateHead)
+//                   ) {
+//                    passed = true;
+//                }
 //            }
-        }
-        if (bits.contains("E")) {
-            //boolean passed = false;
-            for (ARMO a : ar) {
-                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn4)
-                   ) {
-                    passed = true;
-                }
-            }
-//            if (passed == false) {
-//                ret = false;
+////            if (passed == false) {
+////                ret = false;
+////            }
+//        }
+//        if (bits.contains("D")) {
+//            //boolean passed = false;
+//            for (ARMO a : ar) {
+//                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.Decapitate)
+//                   ) {
+//                    passed = true;
+//                }
 //            }
-        }
-        if (bits.contains("I")) {
-            //boolean passed = false;
-            for (ARMO a : ar) {
-                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn5)
-                   ) {
-                    passed = true;
-                }
-            }
-//            if (passed == false) {
-//                ret = false;
+////            if (passed == false) {
+////                ret = false;
+////            }
+//        }
+////--------------------------------------------------------------------------------------------
+//
+//        if (bits.contains("F")) {
+//            //boolean passed = false;
+//            for (ARMO a : ar) {
+//                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.FOREARMS)
+//                   ) {
+//                    passed = true;
+//                }
 //            }
-        }
-        if (bits.contains("J")) {
-            //boolean passed = false;
-            for (ARMO a : ar) {
-                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn6)
-                   ) {
-                    passed = true;
-                }
-            }
-//            if (passed == false) {
-//                ret = false;
+////            if (passed == false) {
+////                ret = false;
+////            }
+//        }
+////--------------------------------------------------------------------------------------------
+//
+//        if (bits.contains("V")) {
+//            //boolean passed = false;
+//            for (ARMO a : ar) {
+//                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.CALVES)
+//                   ) {
+//                    passed = true;
+//                }
 //            }
-        }
-        if (bits.contains("K")) {
-            //boolean passed = false;
-            for (ARMO a : ar) {
-                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn7)
-                   ) {
-                    passed = true;
-                }
-            }
-//            if (passed == false) {
-//                ret = false;
+////            if (passed == false) {
+////                ret = false;
+////            }
+//        }
+////--------------------------------------------------------------------------------------------
+//
+//        if (bits.contains("T")) {
+//            //boolean passed = false;
+//            for (ARMO a : ar) {
+//                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.TAIL)
+//                   ) {
+//                    passed = true;
+//                }
 //            }
-        }
-        if (bits.contains("M")) {
-            //boolean passed = false;
-            for (ARMO a : ar) {
-                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn8)
-                   ) {
-                    passed = true;
-                }
-            }
-//            if (passed == false) {
-//                ret = false;
+////            if (passed == false) {
+////                ret = false;
+////            }
+//        }
+//        if (bits.contains("A")) {
+//            //boolean passed = false;
+//            for (ARMO a : ar) {
+//                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn3)
+//                   ) {
+//                    passed = true;
+//                }
 //            }
-        }
-        if (bits.contains("N")) {
-            //boolean passed = false;
-            /*KYWD z9k = (KYWD) merger.getMajor("BodyAddOn9", GRUP_TYPE.KYWD);*/
-            for (ARMO a : ar) {
-                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn9)
-                        /*|| armorHasKeyword(a, z9k, merger)*/
-                   ) {
-                    passed = true;
-                }
-            }
-//            if (passed == false) {
-//                ret = false;
+////            if (passed == false) {
+////                ret = false;
+////            }
+//        }
+//        if (bits.contains("E")) {
+//            //boolean passed = false;
+//            for (ARMO a : ar) {
+//                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn4)
+//                   ) {
+//                    passed = true;
+//                }
 //            }
-        }
-        if (bits.contains("O")) {
-            //boolean passed = false;
-            for (ARMO a : ar) {
-                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn10)
-                   ) {
-                    passed = true;
-                }
-            }
-//            if (passed == false) {
-//                ret = false;
+////            if (passed == false) {
+////                ret = false;
+////            }
+//        }
+//        if (bits.contains("I")) {
+//            //boolean passed = false;
+//            for (ARMO a : ar) {
+//                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn5)
+//                   ) {
+//                    passed = true;
+//                }
 //            }
-        }
-        if (bits.contains("P")) {
-            //boolean passed = false;
-            for (ARMO a : ar) {
-                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn11)
-                   ) {
-                    passed = true;
-                }
-            }
-//            if (passed == false) {
-//                ret = false;
+////            if (passed == false) {
+////                ret = false;
+////            }
+//        }
+//        if (bits.contains("J")) {
+//            //boolean passed = false;
+//            for (ARMO a : ar) {
+//                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn6)
+//                   ) {
+//                    passed = true;
+//                }
 //            }
-        }
-        if (bits.contains("Q")) {
-            //boolean passed = false;
-            for (ARMO a : ar) {
-                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn12)
-                   ) {
-                    passed = true;
-                }
-            }
-//            if (passed == false) {
-//                ret = false;
+////            if (passed == false) {
+////                ret = false;
+////            }
+//        }
+//        if (bits.contains("K")) {
+//            //boolean passed = false;
+//            for (ARMO a : ar) {
+//                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn7)
+//                   ) {
+//                    passed = true;
+//                }
 //            }
-        }
-        if (bits.contains("U")) {
-            //boolean passed = false;
-            for (ARMO a : ar) {
-                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn13)
-                   ) {
-                    passed = true;
-                }
-            }
-//            if (passed == false) {
-//                ret = false;
+////            if (passed == false) {
+////                ret = false;
+////            }
+//        }
+//        if (bits.contains("M")) {
+//            //boolean passed = false;
+//            for (ARMO a : ar) {
+//                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn8)
+//                   ) {
+//                    passed = true;
+//                }
 //            }
-        }
-        if (bits.contains("X")) {
-            //boolean passed = false;
-            for (ARMO a : ar) {
-                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn14)
-                   ) {
-                    passed = true;
-                }
-            }
-//            if (passed == false) {
-//                ret = false;
+////            if (passed == false) {
+////                ret = false;
+////            }
+//        }
+//        if (bits.contains("N")) {
+//            //boolean passed = false;
+//            /*KYWD z9k = (KYWD) merger.getMajor("BodyAddOn9", GRUP_TYPE.KYWD);*/
+//            for (ARMO a : ar) {
+//                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn9)
+//                        /*|| armorHasKeyword(a, z9k, merger)*/
+//                   ) {
+//                    passed = true;
+//                }
 //            }
-        }
-        if (bits.contains("Y")) {
-            //boolean passed = false;
-            for (ARMO a : ar) {
-                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn15)
-                   ) {
-                    passed = true;
-                }
-            }
-//            if (passed == false) {
-//                ret = false;
+////            if (passed == false) {
+////                ret = false;
+////            }
+//        }
+//        if (bits.contains("O")) {
+//            //boolean passed = false;
+//            for (ARMO a : ar) {
+//                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn10)
+//                   ) {
+//                    passed = true;
+//                }
 //            }
-        }
-        if (bits.contains("Z")) {
-            //boolean passed = false;
-            for (ARMO a : ar) {
-                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn16)
-                   ) {
-                    passed = true;
-                }
-            }
-//            if (passed == false) {
-//                ret = false;
+////            if (passed == false) {
+////                ret = false;
+////            }
+//        }
+//        if (bits.contains("P")) {
+//            //boolean passed = false;
+//            for (ARMO a : ar) {
+//                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn11)
+//                   ) {
+//                    passed = true;
+//                }
 //            }
-        }
-        if (bits.contains("-")) {
-            //boolean passed = false;
-            for (ARMO a : ar) {
-                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn17)
-                   ) {
-                    passed = true;
-                }
-            }
-//            if (passed == false) {
-//                ret = false;
+////            if (passed == false) {
+////                ret = false;
+////            }
+//        }
+//        if (bits.contains("Q")) {
+//            //boolean passed = false;
+//            for (ARMO a : ar) {
+//                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn12)
+//                   ) {
+//                    passed = true;
+//                }
 //            }
-        }
-        if (bits.contains("_")) {
-            //boolean passed = false;
-            for (ARMO a : ar) {
-                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.FX01)
-                   ) {
-                    passed = true;
-                }
-            }
-//            if (passed == false) {
-//                ret = false;
+////            if (passed == false) {
+////                ret = false;
+////            }
+//        }
+//        if (bits.contains("U")) {
+//            //boolean passed = false;
+//            for (ARMO a : ar) {
+//                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn13)
+//                   ) {
+//                    passed = true;
+//                }
 //            }
-        }
-//--------code finish
-
-//ret = passed;
-//------------------------------------------------------------
-        //asdf4
-
-        return passed;
+////            if (passed == false) {
+////                ret = false;
+////            }
+//        }
+//        if (bits.contains("X")) {
+//            //boolean passed = false;
+//            for (ARMO a : ar) {
+//                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn14)
+//                   ) {
+//                    passed = true;
+//                }
+//            }
+////            if (passed == false) {
+////                ret = false;
+////            }
+//        }
+//        if (bits.contains("Y")) {
+//            //boolean passed = false;
+//            for (ARMO a : ar) {
+//                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn15)
+//                   ) {
+//                    passed = true;
+//                }
+//            }
+////            if (passed == false) {
+////                ret = false;
+////            }
+//        }
+//        if (bits.contains("Z")) {
+//            //boolean passed = false;
+//            for (ARMO a : ar) {
+//                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn16)
+//                   ) {
+//                    passed = true;
+//                }
+//            }
+////            if (passed == false) {
+////                ret = false;
+////            }
+//        }
+//        if (bits.contains("-")) {
+//            //boolean passed = false;
+//            for (ARMO a : ar) {
+//                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.BodyAddOn17)
+//                   ) {
+//                    passed = true;
+//                }
+//            }
+////            if (passed == false) {
+////                ret = false;
+////            }
+//        }
+//        if (bits.contains("_")) {
+//            //boolean passed = false;
+//            for (ARMO a : ar) {
+//                if (   a.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, skyproc.genenums.FirstPersonFlags.FX01)
+//                   ) {
+//                    passed = true;
+//                }
+//            }
+////            if (passed == false) {
+////                ret = false;
+////            }
+//        }
+////--------code finish
+//
+////ret = passed;
+////------------------------------------------------------------
+//        //asdf4
+//
+//        return passed;
     }
 //asdf
     
     static String getBitsFromArray(ArrayList<ARMO> ar, Mod merger) {        
         String ret = "";
         
-        Map<String, FirstPersonFlags[]> bitsInfo = BitsInfo.Get();
         for (String sBit : bitsInfo.keySet()){
             for (ARMO a : ar) {
                 boolean bitAdded = false;
@@ -3367,7 +3382,6 @@ public class ArmorTools {
 
     static void addArmorByBit(LVLI set, ArrayList<ARMO> ar, String bits, Mod merger) {
         
-        Map<String, FirstPersonFlags[]> bitsInfo = BitsInfo.Get();
         for (String sBit : bitsInfo.keySet()){
             if (bits.contains(sBit)){
                 for (ARMO a : ar) {
@@ -3760,7 +3774,6 @@ public class ArmorTools {
     static ArrayList<ARMO> addArmorByBitToArray(ArrayList<ARMO> ar, String bits, Mod merger) {
         ArrayList<ARMO> ret = new ArrayList<>(0);
         
-        Map<String, FirstPersonFlags[]> bitsInfo = BitsInfo.Get();
         for (String sBit : bitsInfo.keySet()){
             if (bits.contains(sBit)){
                 for (ARMO a : ar) {
