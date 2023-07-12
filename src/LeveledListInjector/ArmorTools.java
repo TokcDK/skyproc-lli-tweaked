@@ -867,8 +867,6 @@ public class ArmorTools {
 
                 //---------------------добавление оригинального кода для теста
 
-
-
                 //>Второй вариант попытки внедрить проверку по всем ключам--------------------------------------------
 
                 //KYWD outfitKey = hasKeyStartsWith(armor, "dienes_outfit", merger);
@@ -877,31 +875,30 @@ public class ArmorTools {
                 //int indx = 0;
                 //found = false;
                 for (KYWD outfitKey1 : outfitKeys) {
-                    if (outfitKey1 != null && outfitKey1 != outfitKey) {
-                        found = false;
-                        //SPGlobal.log("line 768 outfitKey="+outfitKey.toString());
-                        //boolean found = false;
-                        for (Pair<KYWD, ArrayList<ARMO>> p : matchingSets) {
-                            if (p.getBase().equals(outfitKey1)) {
-                                //SPGlobal.log("line 853 outfitKey="+outfitKey1,", p.getBase()="+p.getBase(),", armorEDID="+armor.getEDID(), ", p.getVar().contains(armor)=" + (p.getVar().contains(armor)));
-                                if (!p.getVar().contains(armor)) {
-                                    p.getVar().add(armor);
-                                    found = true;
-                                    //SPGlobal.log("p.getVar().contains(armor)=" + (p.getVar().contains(armor)));
-                                    break;
-                                }
+                    if (outfitKey1 == null || outfitKey1 == outfitKey) continue;
+
+                    found = false;
+                    //SPGlobal.log("line 768 outfitKey="+outfitKey.toString());
+                    //boolean found = false;
+                    for (Pair<KYWD, ArrayList<ARMO>> p : matchingSets) {
+                        if (p.getBase().equals(outfitKey1)) {
+                            //SPGlobal.log("line 853 outfitKey="+outfitKey1,", p.getBase()="+p.getBase(),", armorEDID="+armor.getEDID(), ", p.getVar().contains(armor)=" + (p.getVar().contains(armor)));
+                            if (!p.getVar().contains(armor)) {
+                                p.getVar().add(armor);
+                                found = true;
+                                //SPGlobal.log("p.getVar().contains(armor)=" + (p.getVar().contains(armor)));
+                                break;
                             }
                         }
-                        if (found == false) {
-                            Pair<KYWD, ArrayList<ARMO>> q = new Pair<>(outfitKey1, new ArrayList<ARMO>(0));
-                            //SPGlobal.log("line 863 outfitKey1="+outfitKey1 , ", line 865 q="+q);
-                            q.getVar().add(armor);
-                            matchingSets.add(q);
-                        }
+                    }
+                    if (found == false) {
+                        Pair<KYWD, ArrayList<ARMO>> q = new Pair<>(outfitKey1, new ArrayList<ARMO>(0));
+                        //SPGlobal.log("line 863 outfitKey1="+outfitKey1 , ", line 865 q="+q);
+                        q.getVar().add(armor);
+                        matchingSets.add(q);
                     }
                 }
                 //<Второй вариант попытки внедрить проверку по всем ключам--------------------------------------------
-
 
                 /*//это оригинальный код
                 KYWD outfitKey = hasKeyStartsWith(armor, "dienes_outfit", merger);
