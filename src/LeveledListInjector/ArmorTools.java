@@ -520,7 +520,7 @@ public class ArmorTools {
             } else {
 
                 //К хуям все проверки, если не прошла первая, когда проверяется по шаблону чар, то просто не менять имя
-                ret = name;
+                ret = name + " ("+baseName+")";
 
                 /*
                 String[] s = baseName.split(" ");
