@@ -344,68 +344,67 @@ public class ArmorTools {
 
         for (ARMO armor : merger.getArmors()) {
             //SPGlobal.log("armor", armor.getEDID());
-            KYWD variantKey = armorHasAnyKeyword(armor, varKeys, merger);
-            if (variantKey != null) {
-                //SPGlobal.log(armor.getEDID(), "is variant");
-                FormID ench = armor.getEnchantment();
-                if (ench.isNull()) {
-                    for (int j = 0; j < armorVariants.size(); j++) {
-                        ArrayList<FormID> a2 = armorVariants.get(j);
-                        ARMO form = (ARMO) merger.getMajor((FormID) a2.get(0), GRUP_TYPE.ARMO);
+            KYWD variantKey = armorHasAnyKeyword(armor, varKeys, merger);            
+            if (variantKey == null) continue;
+            
+            //SPGlobal.log(armor.getEDID(), "is variant");
+            FormID ench = armor.getEnchantment();
+            if (!ench.isNull()) continue;
 
-                        boolean passed = true;
-                        ////SPGlobal.log("line 345 comparing to", form.getEDID());
+            for (int j = 0; j < armorVariants.size(); j++) {
+                ArrayList<FormID> a2 = armorVariants.get(j);
+                ARMO form = (ARMO) merger.getMajor((FormID) a2.get(0), GRUP_TYPE.ARMO);
 
+                boolean passed = true;
+                ////SPGlobal.log("line 345 comparing to", form.getEDID());
 
-                        if (armorHasKeyword(form, getBaseArmor(variantKey), merger)) {
+                if (armorHasKeyword(form, getBaseArmor(variantKey), merger)) {
 
-                            //SPGlobal.log(form.getEDID(), "has base keyword line 350");
+                    //SPGlobal.log(form.getEDID(), "has base keyword line 350");
 
-                            ARMO replace = form;
-                            FormID tmp = replace.getTemplate();
-                            if (!tmp.isNull()) {
-                                replace = (ARMO) merger.getMajor(tmp, GRUP_TYPE.ARMO);
-                            }
-                            for (skyproc.genenums.FirstPersonFlags c : skyproc.genenums.FirstPersonFlags.values()) {
-                                //skyproc.genenums.FirstPersonFlags[] test = skyproc.genenums.FirstPersonFlags.values();
-                                ////SPGlobal.log("line 359 getFlags", c.toString());
-                                boolean armorFlag = armor.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, c);
-                                boolean formFlag = replace.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, c);
-                                //asdf варианты брони
-                                boolean flagMatch = (armorFlag == formFlag);
-                                ////SPGlobal.log("line 364 flag match" + c, armorFlag + " " + formFlag + " " + flagMatch);
-                                if (flagMatch == false) {
-                                    passed = false;
-                                }
-                            }
-                            if (!passed) {
-                                KYWD helm = (KYWD) merger.getMajor("ArmorHelmet", GRUP_TYPE.KYWD);
-                                if (armorHasKeyword(replace, helm, merger) && armorHasKeyword(armor, helm, merger)) {
-                                    passed = true;
-                                }
-                            }
-                            if (passed) {
-                                //SPGlobal.log("variant found", armor.getEDID() + " is variant of " + form.getEDID());
-                                FormID template = form.getTemplate();
-                                //SPGlobal.log("template", template.getFormStr());
-                                if (template.isNull()) {
-                                    a2.add(armor.getForm());
-                                    //SPGlobal.log("variant added", a2.contains(armor.getForm()) + " " + a2.size());
-                                } else {
-                                    //SPGlobal.log("Enchant found", armor.getEDID() + "  " + form.getEDID());
-                                    String name = generateArmorName(armor, form, merger);
-                                    String newEdid = generateArmorEDID(armor, form, merger);
-                                    ARMO armorDupe = (ARMO) patch.makeCopy(armor, "DienesARMO" + newEdid);
-                                    //SPGlobal.log("armor copied", armorDupe.getEDID());
-                                    armorDupe.setEnchantment(form.getEnchantment());
-                                    SPGlobal.log("line 389 form.getEnchantment()="+form.getEnchantment());
-                                    armorDupe.setName(name);
-                                    SPGlobal.log("line 391 name="+name);
-                                    armorDupe.setTemplate(armor.getForm());
-                                    a2.add(armorDupe.getForm());
-                                    patch.addRecord(armorDupe);
-                                }
-                            }
+                    ARMO replace = form;
+                    FormID tmp = replace.getTemplate();
+                    if (!tmp.isNull()) {
+                        replace = (ARMO) merger.getMajor(tmp, GRUP_TYPE.ARMO);
+                    }
+                    for (skyproc.genenums.FirstPersonFlags c : skyproc.genenums.FirstPersonFlags.values()) {
+                        //skyproc.genenums.FirstPersonFlags[] test = skyproc.genenums.FirstPersonFlags.values();
+                        ////SPGlobal.log("line 359 getFlags", c.toString());
+                        boolean armorFlag = armor.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, c);
+                        boolean formFlag = replace.getBodyTemplate().get(BodyTemplate.BodyTemplateType.Biped, c);
+                        //asdf варианты брони
+                        boolean flagMatch = (armorFlag == formFlag);
+                        ////SPGlobal.log("line 364 flag match" + c, armorFlag + " " + formFlag + " " + flagMatch);
+                        if (flagMatch == false) {
+                            passed = false;
+                        }
+                    }
+                    if (!passed) {
+                        KYWD helm = (KYWD) merger.getMajor("ArmorHelmet", GRUP_TYPE.KYWD);
+                        if (armorHasKeyword(replace, helm, merger) && armorHasKeyword(armor, helm, merger)) {
+                            passed = true;
+                        }
+                    }
+                    if (passed) {
+                        //SPGlobal.log("variant found", armor.getEDID() + " is variant of " + form.getEDID());
+                        FormID template = form.getTemplate();
+                        //SPGlobal.log("template", template.getFormStr());
+                        if (template.isNull()) {
+                            a2.add(armor.getForm());
+                            //SPGlobal.log("variant added", a2.contains(armor.getForm()) + " " + a2.size());
+                        } else {
+                            //SPGlobal.log("Enchant found", armor.getEDID() + "  " + form.getEDID());
+                            String name = generateArmorName(armor, form, merger);
+                            String newEdid = generateArmorEDID(armor, form, merger);
+                            ARMO armorDupe = (ARMO) patch.makeCopy(armor, "DienesARMO" + newEdid);
+                            //SPGlobal.log("armor copied", armorDupe.getEDID());
+                            armorDupe.setEnchantment(form.getEnchantment());
+                            SPGlobal.log("line 389 form.getEnchantment()="+form.getEnchantment());
+                            armorDupe.setName(name);
+                            SPGlobal.log("line 391 name="+name);
+                            armorDupe.setTemplate(armor.getForm());
+                            a2.add(armorDupe.getForm());
+                            patch.addRecord(armorDupe);
                         }
                     }
                 }
